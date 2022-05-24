@@ -1,0 +1,440 @@
+\begin{thebibliography}{}
+
+\bibitem[Allen et~al., 2010]{allen2010financial}
+Allen, F., Babus, A., and Carletti, E. (2010).
+\newblock Financial connections and systemic risk.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[Altinbas and Biskin, 2015]{fs_fraud}
+Altinbas, H. and Biskin, O.~T. (2015).
+\newblock Selecting macroeconomic influencers on stock markets by using feature
+  selection algorithms.
+\newblock {\em Procedia Economics and Finance}.
+
+\bibitem[Altman et~al., 2017]{barboza2017machine}
+Altman, E., Kimura, H., and Barboza, F. (2017).
+\newblock Machine learning models and bankruptcy prediction.
+\newblock {\em Expert Systems with Applications}.
+
+\bibitem[Altman, 1968]{altman}
+Altman, E.~I. (1968).
+\newblock Financial ratios, discriminant analysis and the prediction of
+  corporate bankruptcy.
+\newblock {\em The Journal of Finance}.
+
+\bibitem[Antweiler and Frank, 2004]{antweiler2004all}
+Antweiler, W. and Frank, M.~Z. (2004).
+\newblock Is all that talk just noise? the information content of internet
+  stock message boards.
+\newblock {\em The Journal of finance}.
+
+\bibitem[Barigozzi and Hallin, 2016]{barigozzi2016network}
+Barigozzi, M. and Hallin, M. (2016).
+\newblock A network analysis of the volatility of high dimensional financial
+  series.
+\newblock {\em Journal of the Royal Statistical Society: Series C (Applied
+  Statistics)}.
+
+\bibitem[Bernardi and Costola, 2019]{bernardi2019high}
+Bernardi, M. and Costola, M. (2019).
+\newblock High-dimensional sparse financial networks through a regularised
+  regression model.
+\newblock {\em SAFE Working Paper}.
+
+\bibitem[Bianchi et~al., 2019]{bianchi2019modeling}
+Bianchi, D., Billio, M., Casarin, R., and Guidolin, M. (2019).
+\newblock Modeling systemic risk with markov switching graphical sur models.
+\newblock {\em Journal of Econometrics}.
+
+\bibitem[Billio et~al., 2019]{billio2019bayesian}
+Billio, M., Casarin, R., and Rossini, L. (2019).
+\newblock Bayesian nonparametric sparse var models.
+\newblock {\em Journal of Econometrics}.
+
+\bibitem[Billio et~al., 2010]{billio2010measuring}
+Billio, M., Getmansky, M., Lo, A.~W., and Pelizzon, L. (2010).
+\newblock Measuring systemic risk in the finance and insurance sectors.
+\newblock {\em MIT Sloan School of Management Working Paper}.
+
+\bibitem[Billio et~al., 2012]{billio2012econometric}
+Billio, M., Getmansky, M., Lo, A.~W., and Pelizzon, L. (2012).
+\newblock Econometric measures of connectedness and systemic risk in the
+  finance and insurance sectors.
+\newblock {\em Journal of Financial Economics}.
+
+\bibitem[Bonaccolto et~al., 2019]{bonaccolto2019estimation}
+Bonaccolto, G., Caporin, M., and Panzica, R. (2019).
+\newblock Estimation and model-based combination of causality networks among
+  large us banks and insurance companies.
+\newblock {\em Journal of Empirical Finance}.
+
+\bibitem[Cecchini et~al., 2010]{cecchini2010making}
+Cecchini, M., Aytug, H., Koehler, G.~J., and Pathak, P. (2010).
+\newblock Making words work: Using financial text as a predictor of financial
+  events.
+\newblock {\em Decision Support Systems}.
+
+\bibitem[Challet and Ayed, 2013]{challet2013predicting}
+Challet, D. and Ayed, A. B.~H. (2013).
+\newblock Predicting financial markets with google trends and not so random
+  keywords.
+\newblock {\em arXiv preprint arXiv:1307.4643}.
+
+\bibitem[Chawla et~al., 2004]{chawla2004special}
+Chawla, N.~V., Japkowicz, N., and Kotcz, A. (2004).
+\newblock Special issue on learning from imbalanced data sets.
+\newblock {\em ACM SIGKDD explorations newsletter}, 6(1):1--6.
+
+\bibitem[Chen et~al., 2020]{chen2020large}
+Chen, E., Lu, Z., Xu, H., Cao, L., Zhang, Y., and Fan, J. (2020).
+\newblock A large scale speech sentiment corpus.
+\newblock In {\em Proceedings of the 12th Language Resources and Evaluation
+  Conference}, pages 6549--6555.
+
+\bibitem[Corsi et~al., 2018]{corsi2018measuring}
+Corsi, F., Lillo, F., Pirino, D., and Trapin, L. (2018).
+\newblock Measuring the propagation of financial distress with
+  granger-causality tail risk networks.
+\newblock {\em Journal of Financial Stability}.
+
+\bibitem[Cover and Thomas, 2012]{cover2012elements}
+Cover, T.~M. and Thomas, J.~A. (2012).
+\newblock {\em Elements of information theory}.
+\newblock John Wiley \& Sons.
+
+\bibitem[Crosbie and Bohn, 2003]{KMV}
+Crosbie, P. and Bohn, J. (2003).
+\newblock Modeling default risk.
+
+\bibitem[Culver, 1966]{culver1966existence}
+Culver, W.~J. (1966).
+\newblock On the existence and uniqueness of the real logarithm of a matrix.
+\newblock {\em Proceedings of the American Mathematical Society}.
+
+\bibitem[Dekking et~al., 2005]{boxplot1}
+Dekking, F., Kraaikamp, C., Lopuhaa, H., and Meester, L. (2005).
+\newblock {\em A Modern Introduction toProbability and Statistics}.
+
+\bibitem[Diebold and Y{\i}lmaz, 2014]{diebold2014network}
+Diebold, F.~X. and Y{\i}lmaz, K. (2014).
+\newblock On the network topology of variance decompositions: Measuring the
+  connectedness of financial firms.
+\newblock {\em Journal of Econometrics}.
+
+\bibitem[Duan et~al., 2012]{Duan2012}
+Duan, J.-C., Sun, J., and Wang, T. (2012).
+\newblock Multiperiod corporate default prediction — a forward intensity
+  approach.
+\newblock {\em Journal of Econometrics}.
+
+\bibitem[Duan and Wang, 2012]{Duan2012DTD}
+Duan, J.-C. and Wang, T. (2012).
+\newblock Measuring distance-to-default for financial and non-financial firms.
+\newblock {\em Global Credit Review}.
+
+\bibitem[Duffie et~al., 2007]{DSW}
+Duffie, D., Saita, L., and Wang, K. (2007).
+\newblock Multi-period corporate default prediction with stochastic covariates.
+\newblock {\em Journal of Econometrics}.
+
+\bibitem[Erdemlioglu et~al., 2017]{erdemlioglu2017market}
+Erdemlioglu, D., Gillet, R.~L., and Renault, T. (2017).
+\newblock Market reaction to news and investor attention in real time.
+\newblock {\em Available at SSRN 3010847}.
+
+\bibitem[Etesami et~al., ults]{etesami2018econometric}
+Etesami, J., Habibnia, A., and Kiyavash, N. (Unpublished results).
+\newblock Econometric modeling of systemic risk: A time series approach.
+
+\bibitem[Etesami and Kiyavash, 2014]{acc2014}
+Etesami, J. and Kiyavash, N. (2014).
+\newblock Directed information graphs: A generalization of linear dynamical
+  graphs.
+\newblock In {\em American Control Conference}. IEEE.
+
+\bibitem[Fama, 1991]{fama1991efficient}
+Fama, E.~F. (1991).
+\newblock Efficient capital markets: Ii.
+\newblock {\em The journal of finance}, 46(5):1575--1617.
+
+\bibitem[Fama et~al., 1969]{fama1969}
+Fama, E.~F., Fisher, L., Jensen, M.~C., and Roll, R. (1969).
+\newblock The adjustment of stock prices to new information.
+\newblock {\em International Economic Review}, 10(1):1--21.
+
+\bibitem[Ghoshal and Roberts, 2016]{Ghoshal}
+Ghoshal, S. and Roberts, S. (2016).
+\newblock Extracting predictive information from heterogeneous data streams
+  using gaussian processes.
+\newblock {\em Algorithmic Finance}, 5(1-2):21--30.
+
+\bibitem[Granger, 1969]{granger}
+Granger, C.~W. (1969).
+\newblock Investigating causal relations by econometric models and
+  cross-spectral methods.
+\newblock {\em Econometrica}.
+
+\bibitem[Granger, 1963]{granger1963economic}
+Granger, C. W.~J. (1963).
+\newblock Economic processes involving feedback.
+\newblock {\em Information and control}.
+
+\bibitem[Hong et~al., 2009]{hong2009granger}
+Hong, Y., Liu, Y., and Wang, S. (2009).
+\newblock Granger causality in risk and detection of extreme risk spillover
+  between financial markets.
+\newblock {\em Journal of Econometrics}.
+
+\bibitem[Hornik et~al., 1989]{HORNIK1989359}
+Hornik, K., Stinchcombe, M., and White, H. (1989).
+\newblock Multilayer feedforward networks are universal approximators.
+\newblock {\em Neural Networks}.
+
+\bibitem[Huang and Wang, 2006]{fs2}
+Huang, C.-L. and Wang, C.-J. (2006).
+\newblock A ga-based feature selection and parameters optimization for support
+  vector machines.
+\newblock {\em Expert Systems with Applications}.
+
+\bibitem[Iacopini and Rossini, ults]{iacopini2019bayesian}
+Iacopini, M. and Rossini, L. (Unpublished results).
+\newblock Bayesian nonparametric graphical models for time-varying parameters
+  var.
+
+\bibitem[Jiao et~al., 2013]{jiao2013universal}
+Jiao, J., Permuter, H.~H., Zhao, L., Kim, Y.-H., and Weissman, T. (2013).
+\newblock Universal estimation of directed information.
+\newblock {\em Information Theory}.
+
+\bibitem[Kalli and Griffin, 2018]{kalli2018bayesian}
+Kalli, M. and Griffin, J.~E. (2018).
+\newblock Bayesian nonparametric vector autoregressive models.
+\newblock {\em Journal of econometrics}.
+
+\bibitem[Kim et~al., 2011]{di12}
+Kim, S., Putrino, D., Ghosh, S., and Brown, E.~N. (2011).
+\newblock A granger causality measure for point process models of ensemble
+  neural spiking activity.
+\newblock {\em PLoS computational biology}.
+
+\bibitem[Koopman, 1931]{koopman1931hamiltonian}
+Koopman, B.~O. (1931).
+\newblock Hamiltonian systems and transformation in hilbert space.
+\newblock {\em Proceedings of the national academy of sciences of the united
+  states of america}.
+
+\bibitem[Leippold et~al., 2012]{leippold}
+Leippold, M., Maire, B., and Blochlinger, A. (2012).
+\newblock {Are ratings the worst form of credit assessment apart from all the
+  others?}
+\newblock {\em Swiss Finance Institute Research Paper}.
+
+\bibitem[Loftsgaarden et~al., 1965]{loftsgaarden1965nonparametric}
+Loftsgaarden, D.~O., Quesenberry, C.~P., et~al. (1965).
+\newblock A nonparametric estimate of a multivariate density function.
+\newblock {\em The Annals of Mathematical Statistics}.
+
+\bibitem[Longin and Solnik, 2001]{correlcrisis}
+Longin, F. and Solnik, B. (2001).
+\newblock Extreme correlation of international equity markets.
+\newblock {\em The Journal of Finance}.
+
+\bibitem[Lorenz, 1905]{lorenz}
+Lorenz, M.~O. (1905).
+\newblock Methods of measuring the concentration of wealth.
+\newblock {\em Publications of the American Statistical Association}.
+
+\bibitem[Loughran and McDonald, 2011a]{loughran2011barron}
+Loughran, T. and McDonald, B. (2011a).
+\newblock Barron's red flags: Do they actually work?
+\newblock {\em Journal of Behavioral Finance}.
+
+\bibitem[Loughran and McDonald, 2011b]{loughran2011liability}
+Loughran, T. and McDonald, B. (2011b).
+\newblock When is a liability not a liability? textual analysis, dictionaries,
+  and 10-ks.
+\newblock {\em The Journal of Finance}.
+
+\bibitem[MacKinlay, 1997]{mackinlay1997event}
+MacKinlay, A.~C. (1997).
+\newblock Event studies in economics and finance.
+\newblock {\em Journal of economic literature}, 35(1):13--39.
+
+\bibitem[Mann and Whitney, 1947]{utest}
+Mann, H.~B. and Whitney, D.~R. (1947).
+\newblock On a test of whether one of two random variables is stochastically
+  larger than the other.
+\newblock {\em The Annals of Mathematical Statistics}, 18(1):50--60.
+
+\bibitem[Massey, 1990]{massey}
+Massey, J. (1990).
+\newblock Causality, feedback and directed information.
+\newblock In {\em Proc. Int. Symp. Inf. Theory Applic.(ISITA-90)}.
+
+\bibitem[Mauroy and Goncalves, 2019]{mauroy2019koopman}
+Mauroy, A. and Goncalves, J. (2019).
+\newblock Koopman-based lifting techniques for nonlinear systems
+  identification.
+\newblock {\em IEEE Transactions on Automatic Control}.
+
+\bibitem[Merton, 1974]{Merton1974}
+Merton, R.~C. (1974).
+\newblock {On the pricing of corporate debt: the risk structure of interest
+  rates}.
+\newblock {\em Journal of Finance}.
+
+\bibitem[Nikfarjam et~al., 2010]{nikfarjam2010text}
+Nikfarjam, A., Emadzadeh, E., and Muthaiyah, S. (2010).
+\newblock Text mining approaches for stock market prediction.
+
+\bibitem[Nikolov and Whited, 2014]{nikolov2014agency}
+Nikolov, B. and Whited, T.~M. (2014).
+\newblock Agency conflicts and cash: Estimates from a dynamic model.
+\newblock {\em The Journal of Finance}, 69(5):1883--1921.
+
+\bibitem[Noshad et~al., 2019]{noshad2019scalable}
+Noshad, M., Zeng, Y., and Hero, A.~O. (2019).
+\newblock Scalable mutual information estimation using dependence graphs.
+\newblock In {\em ICASSP 2019-2019 IEEE International Conference on Acoustics,
+  Speech and Signal Processing (ICASSP)}.
+
+\bibitem[Paninski, 2003]{paninski2003estimation}
+Paninski, L. (2003).
+\newblock Estimation of entropy and mutual information.
+\newblock {\em Neural computation}.
+
+\bibitem[Petrova, 2019]{petrova2019quasi}
+Petrova, K. (2019).
+\newblock A quasi-bayesian local likelihood approach to time varying parameter
+  var models.
+\newblock {\em Journal of Econometrics}.
+
+\bibitem[Piramuthu, 2004]{fs1}
+Piramuthu, S. (2004).
+\newblock Evaluating feature selection methods for learning in data mining
+  applications.
+\newblock {\em European Journal of Operational Research}.
+
+\bibitem[Psaradakis et~al., 2005]{psaradakis2005markov}
+Psaradakis, Z., Ravn, M.~O., and Sola, M. (2005).
+\newblock Markov switching causality and the money--output relationship.
+\newblock {\em Journal of Applied Econometrics}.
+
+\bibitem[{Qasem} et~al., 2015]{classifq}
+{Qasem}, M., {Thulasiram}, R., and {Thulasiram}, P. (2015).
+\newblock Twitter sentiment classification using machine learning techniques
+  for stock markets.
+\newblock {\em 2015 International Conference on Advances in Computing,
+  Communications and Informatics (ICACCI)}.
+
+\bibitem[Quinn et~al., 2015]{directed}
+Quinn, C., Kiyavash, N., and Coleman, T.~P. (2015).
+\newblock Directed information graphs.
+\newblock {\em Transactions on Information Theory}.
+
+\bibitem[Quinn et~al., 2011]{spike}
+Quinn, C.~J., Coleman, T.~P., Kiyavash, N., and Hatsopoulos, N.~G. (2011).
+\newblock Estimating the directed information to infer causal relationships in
+  ensemble neural spike train recordings.
+\newblock {\em Journal of computational neuroscience}.
+
+\bibitem[Quinn et~al., 2013]{quinn2013efficient}
+Quinn, C.~J., Kiyavash, N., and Coleman, T.~P. (2013).
+\newblock Efficient methods to compute optimal tree approximations of directed
+  information graphs.
+\newblock {\em IEEE Transactions on Signal Processing}.
+
+\bibitem[Quinn et~al., 2017]{quinn2015bounded}
+Quinn, C.~J., Pinar, A., and Kiyavash, N. (2017).
+\newblock Bounded degree approximations of stochastic networks.
+\newblock {\em IEEE Transactions on Molecular, Biological and Multi-Scale
+  Communications}.
+
+\bibitem[Ranco et~al., 2015]{ranco2015effects}
+Ranco, G., Aleksovski, D., Caldarelli, G., Gr{\v{c}}ar, M., and Mozeti{\v{c}},
+  I. (2015).
+\newblock The effects of twitter sentiment on stock price returns.
+\newblock {\em PloS one}, 10(9):e0138441.
+
+\bibitem[Renault, 2017]{renault2017intraday}
+Renault, T. (2017).
+\newblock Intraday online investor sentiment and return patterns in the us
+  stock market.
+\newblock {\em Journal of Banking \& Finance}.
+
+\bibitem[Renault, 2020]{renault2020sentiment}
+Renault, T. (2020).
+\newblock Sentiment analysis and machine learning in finance: a comparison of
+  methods and models on one million messages.
+\newblock {\em Digital Finance}, 2(1):1--13.
+
+\bibitem[Saif et~al., 2014]{saif2014stopwords}
+Saif, H., Fern{\'a}ndez, M., He, Y., and Alani, H. (2014).
+\newblock On stopwords, filtering and data sparsity for sentiment analysis of
+  twitter.
+
+\bibitem[Sch{\"o}nbucher, 2003]{book}
+Sch{\"o}nbucher, P. (2003).
+\newblock {\em Credit Derivatives Pricing Models: Models, Pricing and
+  Implementation}.
+\newblock The Wiley Finance Series. Wiley.
+
+\bibitem[Sheskin, 1998]{sheskin}
+Sheskin, D.~J. (1998).
+\newblock {\em Handbook of Parametric and Nonparametric Statistical
+  Procedures}.
+
+\bibitem[Shirata et~al., 2011]{shirata2011extracting}
+Shirata, C.~Y., Takeuchi, H., Ogino, S., and Watanabe, H. (2011).
+\newblock Extracting key phrases as predictors of corporate bankruptcy:
+  Empirical analysis of annual reports by text mining.
+\newblock {\em Journal of emerging technologies in accounting}.
+
+\bibitem[Sprenger et~al., 2014]{sprenger2014tweets}
+Sprenger, T.~O., Tumasjan, A., Sandner, P.~G., and Welpe, I.~M. (2014).
+\newblock Tweets and trades: The information content of stock microblogs.
+\newblock {\em European Financial Management}.
+
+\bibitem[Sricharan et~al., 2011]{sricharan2011k}
+Sricharan, K., Raich, R., and Hero, A.~O. (2011).
+\newblock k-nearest neighbor estimation of entropies with confidence.
+\newblock In {\em Information Theory Proceedings}.
+
+\bibitem[Tetlock et~al., 2008]{tetlock2008more}
+Tetlock, P.~C., Saar-Tsechansky, M., and Macskassy, S. (2008).
+\newblock More than words: Quantifying language to measure firms' fundamentals.
+\newblock {\em The Journal of Finance}.
+
+\bibitem[Tsai, 2009]{tsai2009}
+Tsai, C.-F. (2009).
+\newblock Feature selection in bankruptcy prediction.
+\newblock {\em Knowledge-Based Systems}.
+
+\bibitem[Tukey, 1977]{boxplot2}
+Tukey, J.~W. (1977).
+\newblock {\em Explanatory Data Analysis}.
+
+\bibitem[Wiener, 1956]{wiener1956theory}
+Wiener, N. (1956).
+\newblock The theory of prediction.
+\newblock {\em Modern mathematics for engineers}.
+
+\bibitem[Wilson et~al., 2005]{wilson2005recognizing}
+Wilson, T., Wiebe, J., and Hoffmann, P. (2005).
+\newblock Recognizing contextual polarity in phrase-level sentiment analysis.
+\newblock In {\em Proceedings of human language technology conference and
+  conference on empirical methods in natural language processing}, pages
+  347--354.
+
+\bibitem[{Yildirim} et~al., 2018]{nlp1}
+{Yildirim}, S., {Jothimani}, D., {Kavaklioglu}, C., and {Basar}, A. (2018).
+\newblock Classification of hot news for financial forecast using nlp
+  techniques.
+\newblock {\em 2018 IEEE International Conference on Big Data}.
+
+\bibitem[Yuqinq et~al., 2013]{fs_stock}
+Yuqinq, H., Kamaladdin, F., and Lipo, W. (2013).
+\newblock Feature selection for stock market analysis.
+\newblock {\em Lecture Notes in Computer Science}.
+
+\end{thebibliography}

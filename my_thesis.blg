@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: my_thesis.aux
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+A level-1 auxiliary file: head/dedication.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: head/acknowledgements.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: head/preface.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: head/abstracts.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: main/ch1_introduction.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+A level-1 auxiliary file: main/paper1.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+A level-1 auxiliary file: main/paper2.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+A level-1 auxiliary file: main/paper3.aux
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+A level-1 auxiliary file: tail/appendix.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+A level-1 auxiliary file: tail/biblio.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+A level-1 auxiliary file: tail/cv.aux
+Database file #1: tail/bibliography.bib
+Warning--empty journal in KMV
+Warning--empty publisher in boxplot1
+Warning--empty journal in etesami2018econometric
+Warning--empty journal in iacopini2019bayesian
+Warning--empty journal in nikfarjam2010text
+Warning--empty journal in saif2014stopwords
+Warning--empty publisher in sheskin
+Warning--empty publisher in boxplot2
+You've used 80 entries,
+            1935 wiz_defined-function locations,
+            855 strings with 16407 characters,
+and the built_in function-call counts, 27034 in all, are:
+= -- 2542
+> -- 1220
+< -- 42
++ -- 421
+- -- 400
+* -- 2117
+:= -- 4990
+add.period$ -- 234
+call.type$ -- 80
+change.case$ -- 595
+chr.to.int$ -- 79
+cite$ -- 88
+duplicate$ -- 1102
+empty$ -- 1776
+format.name$ -- 520
+if$ -- 5111
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 84
+newline$ -- 395
+num.names$ -- 240
+pop$ -- 593
+preamble$ -- 1
+purify$ -- 599
+quote$ -- 0
+skip$ -- 851
+stack$ -- 0
+substring$ -- 1236
+swap$ -- 94
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 470
+warning$ -- 8
+while$ -- 182
+width$ -- 0
+write$ -- 960
+(There were 8 warnings)

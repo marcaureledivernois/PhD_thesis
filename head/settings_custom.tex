@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%		Thesis Settings
+%		Custom settings
+%
+%		2011
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %
+% %   Use this file for your own custom packages, command-definitions, etc...
+% %
+% % 
+% % Packages for references - cleverref must be last
+% \usepackage{nameref}
+% \usepackage{hyperref}
+% \usepackage{cleveref}
+% \usepackage[shortlabels]{enumitem}
+% % Reduce spacing in bibliography
+% \setlength{\bibsep}{0pt plus 0.3ex}
+% % Allow equations to break between pages
+% \allowdisplaybreaks
+% % Penalty for widow and orphan
+% \widowpenalty=9999
+% \clubpenalty=9999
+% %Penalty for relation and binary operation breaks in equations
+% \relpenalty=9999
+% \binoppenalty=9999
+
+\usepackage{afterpage}
+\usepackage{amssymb} % for \subsetneq
+\usepackage{epsfig}
+\usepackage{url}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{multirow}
+\usepackage{tikz-cd}
+\tikzcdset{ampersand replacement=\&}
+\usepackage{todonotes} % for todos
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*}
+\usepackage{tabularx} % for 'tabularx' environment
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\VaR}{VaR}
+\DeclareMathOperator{\ES}{ES}
+\DeclareMathOperator{\vect}{vec}
+\DeclareMathOperator{\prob}{Prob}
+
+
+\usepackage{amsthm,amssymb,amsfonts}
+\usepackage{amsmath}
+ \usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{float}
+\usepackage{natbib}
+\usepackage{listings}
+\usepackage{mathrsfs} 
+\usepackage{tikz} 
+\usepackage{subcaption}
+\usepackage[skip=0.5\baselineskip]{caption}
+\def\layersep{3cm}
+\def\nodeinlayersep{1.5cm}
+
+\usepackage{algorithmic}
+\usepackage{wrapfig}
+\input xy
+\xyoption{all}
+
+\newtheorem{criteria}{Condition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{remark}{Remark}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{theorem}{Theorem}
+\DeclareMathOperator{\PP}{{\mathbb{P}}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+%\usepackage[colorlinks,pagebackref=true]{hyperref}
+\renewcommand\bibname{\normalfont\Large\centering\bfseries REFERENCES}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
