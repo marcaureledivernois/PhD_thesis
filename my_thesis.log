@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  19 MAY 2022 13:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  24 MAY 2022 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1687,11 +1687,33 @@ l.26 \include{head/preface}
 
  [13] [14
 
+] (my_thesis.lof
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15
+
+]
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+ [16])
+\tf@lof=\write7
+\openout7 = `my_thesis.lof'.
+
+
+[17] [18
+
+] (my_thesis.lot)
+\tf@lot=\write8
+\openout8 = `my_thesis.lot'.
+
+ [19
+
+] [20
+
 ]
 \openout2 = `main/ch1_introduction.aux'.
 
- (main/ch1_introduction.tex)
-[1
+ (main/ch1_introduction.tex) [1
 
 
 
@@ -1702,7 +1724,8 @@ l.26 \include{head/preface}
 ]
 \openout2 = `main/paper1.aux'.
 
- (main/paper1.tex
+
+(main/paper1.tex
 Chapter 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
@@ -1722,6 +1745,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 75.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 75.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 75.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 75.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
@@ -1753,14 +1785,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
-[10]
-Underfull \vbox (badness 1112) has occurred while \output is active []
-
- [11]
+[10] [11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
-<images//def_surv_oe_plot.jpg, id=414, 1159.33125pt x 624.08156pt>
+<images//def_surv_oe_plot.jpg, id=631, 1159.33125pt x 624.08156pt>
 File: images//def_surv_oe_plot.jpg Graphic file (type jpg)
 <use images//def_surv_oe_plot.jpg>
 Package pdftex.def Info: images//def_surv_oe_plot.jpg  used on input line 311.
@@ -1779,7 +1808,7 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 407.
 
-<images//corrmatrix.jpeg, id=442, 794.97pt x 648.9846pt>
+<images//corrmatrix.jpeg, id=657, 794.97pt x 648.9846pt>
 File: images//corrmatrix.jpeg Graphic file (type jpg)
 <use images//corrmatrix.jpeg>
 Package pdftex.def Info: images//corrmatrix.jpeg  used on input line 409.
@@ -1799,7 +1828,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 438--439
 
  []
 
-<images//duan_vs_NN.jpeg, id=461, 1123.0758pt x 565.8741pt>
+<images//duan_vs_NN.jpeg, id=675, 1123.0758pt x 565.8741pt>
 File: images//duan_vs_NN.jpeg Graphic file (type jpg)
 <use images//duan_vs_NN.jpeg>
 Package pdftex.def Info: images//duan_vs_NN.jpeg  used on input line 443.
@@ -1808,32 +1837,32 @@ Package pdftex.def Info: images//duan_vs_NN.jpeg  used on input line 443.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
-<images//0.png, id=476, 462.528pt x 346.896pt>
+<images//0.png, id=689, 462.528pt x 346.896pt>
 File: images//0.png Graphic file (type png)
 <use images//0.png>
 Package pdftex.def Info: images//0.png  used on input line 460.
 (pdftex.def)             Requested size: 200.48772pt x 150.36922pt.
-<images//3.png, id=478, 462.528pt x 346.896pt>
+<images//3.png, id=691, 462.528pt x 346.896pt>
 File: images//3.png Graphic file (type png)
 <use images//3.png>
 Package pdftex.def Info: images//3.png  used on input line 466.
 (pdftex.def)             Requested size: 200.48772pt x 150.36922pt.
-<images//6.png, id=479, 462.528pt x 346.896pt>
+<images//6.png, id=692, 462.528pt x 346.896pt>
 File: images//6.png Graphic file (type png)
 <use images//6.png>
 Package pdftex.def Info: images//6.png  used on input line 472.
 (pdftex.def)             Requested size: 200.48772pt x 150.36922pt.
-<images//12.png, id=480, 462.528pt x 346.896pt>
+<images//12.png, id=693, 462.528pt x 346.896pt>
 File: images//12.png Graphic file (type png)
 <use images//12.png>
 Package pdftex.def Info: images//12.png  used on input line 478.
 (pdftex.def)             Requested size: 200.48772pt x 150.36922pt.
-<images//24.png, id=481, 462.528pt x 346.896pt>
+<images//24.png, id=694, 462.528pt x 346.896pt>
 File: images//24.png Graphic file (type png)
 <use images//24.png>
 Package pdftex.def Info: images//24.png  used on input line 484.
 (pdftex.def)             Requested size: 200.48772pt x 150.36922pt.
-<images//35.png, id=482, 462.528pt x 346.896pt>
+<images//35.png, id=695, 462.528pt x 346.896pt>
 File: images//35.png Graphic file (type png)
 <use images//35.png>
 Package pdftex.def Info: images//35.png  used on input line 490.
@@ -1843,7 +1872,7 @@ Package pdftex.def Info: images//35.png  used on input line 490.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 497.
 
-<images//lor0duan.png, id=483, 402.5439pt x 302.0886pt>
+<images//lor0duan.png, id=696, 402.5439pt x 302.0886pt>
 File: images//lor0duan.png Graphic file (type png)
 <use images//lor0duan.png>
 Package pdftex.def Info: images//lor0duan.png  used on input line 547.
@@ -1851,50 +1880,50 @@ Package pdftex.def Info: images//lor0duan.png  used on input line 547.
 [18 <./images//duan_vs_NN.jpeg>] [19 <./images//0.png> <./images//3.png> <./ima
 ges//6.png> <./images//12.png> <./images//24.png> <./images//35.png>] [20 <./im
 ages//lor0duan.png>]
-<images//compgraphr.png, id=513, 715.92468pt x 574.39594pt>
+<images//compgraphr.png, id=722, 715.92468pt x 574.39594pt>
 File: images//compgraphr.png Graphic file (type png)
 <use images//compgraphr.png>
 Package pdftex.def Info: images//compgraphr.png  used on input line 560.
 (pdftex.def)             Requested size: 417.68646pt x 335.12189pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6741) has occurred while \output is active []
 
  [21 <./images//compgraphr.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 577--578
 
  []
 
-<images//legendsensi.JPG, id=522, 619.56468pt x 48.93282pt>
+<images//legendsensi.JPG, id=730, 619.56468pt x 48.93282pt>
 File: images//legendsensi.JPG Graphic file (type jpg)
 <use images//legendsensi.JPG>
 Package pdftex.def Info: images//legendsensi.JPG  used on input line 587.
 (pdftex.def)             Requested size: 417.68646pt x 32.98788pt.
-<images//0_corr.png, id=523, 889.47693pt x 664.884pt>
+<images//0_corr.png, id=731, 889.47693pt x 664.884pt>
 File: images//0_corr.png Graphic file (type png)
 <use images//0_corr.png>
 Package pdftex.def Info: images//0_corr.png  used on input line 593.
 (pdftex.def)             Requested size: 198.40361pt x 148.30399pt.
-<images//3_corr.png, id=524, 889.47693pt x 664.884pt>
+<images//3_corr.png, id=732, 889.47693pt x 664.884pt>
 File: images//3_corr.png Graphic file (type png)
 <use images//3_corr.png>
 Package pdftex.def Info: images//3_corr.png  used on input line 599.
 (pdftex.def)             Requested size: 198.40361pt x 148.30399pt.
-<images//6_corr.png, id=525, 889.47693pt x 667.1077pt>
+<images//6_corr.png, id=733, 889.47693pt x 667.1077pt>
 File: images//6_corr.png Graphic file (type png)
 <use images//6_corr.png>
 Package pdftex.def Info: images//6_corr.png  used on input line 605.
 (pdftex.def)             Requested size: 198.40361pt x 148.79999pt.
-<images//12_corr.png, id=526, 889.47693pt x 667.1077pt>
+<images//12_corr.png, id=734, 889.47693pt x 667.1077pt>
 File: images//12_corr.png Graphic file (type png)
 <use images//12_corr.png>
 Package pdftex.def Info: images//12_corr.png  used on input line 612.
 (pdftex.def)             Requested size: 198.40361pt x 148.79999pt.
-<images//24_corr.png, id=527, 889.47693pt x 667.1077pt>
+<images//24_corr.png, id=735, 889.47693pt x 667.1077pt>
 File: images//24_corr.png Graphic file (type png)
 <use images//24_corr.png>
 Package pdftex.def Info: images//24_corr.png  used on input line 619.
 (pdftex.def)             Requested size: 198.40361pt x 148.79999pt.
-<images//35_corr.png, id=528, 889.47693pt x 667.1077pt>
+<images//35_corr.png, id=736, 889.47693pt x 667.1077pt>
 File: images//35_corr.png Graphic file (type png)
 <use images//35_corr.png>
 Package pdftex.def Info: images//35_corr.png  used on input line 625.
@@ -1936,23 +1965,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [27]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 121.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 121.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 121.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 121.
 
 [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29]
-[30]
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 202.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 202.
- [31] [32]
+[30] [31] [32]
 Underfull \vbox (badness 2012) has occurred while \output is active []
 
  [33]
@@ -1960,13 +1980,13 @@ Underfull \vbox (badness 1275) has occurred while \output is active []
 
  [34]
 [35]
-<images//koopman.pdf, id=819, 564.15277pt x 406.97816pt>
+<images//koopman.pdf, id=1025, 564.15277pt x 406.97816pt>
 File: images//koopman.pdf Graphic file (type pdf)
 <use images//koopman.pdf>
 Package pdftex.def Info: images//koopman.pdf  used on input line 467.
 (pdftex.def)             Requested size: 225.6571pt x 162.78838pt.
  [36] [37 <./images//koopman.pdf>]
-<images//fig_matrix.pdf, id=888, 581.55875pt x 550.56061pt>
+<images//fig_matrix.pdf, id=1093, 581.55875pt x 550.56061pt>
 File: images//fig_matrix.pdf Graphic file (type pdf)
 <use images//fig_matrix.pdf>
 Package pdftex.def Info: images//fig_matrix.pdf  used on input line 557.
@@ -1976,27 +1996,27 @@ Underfull \vbox (badness 1472) has occurred while \output is active []
 
  [38]
 [39 <./images//fig_matrix.pdf>]
-<images//Linear_Performance_True parents.jpg, id=934, 642.4pt x 481.8pt>
+<images//Linear_Performance_True parents.jpg, id=1136, 642.4pt x 481.8pt>
 File: images//Linear_Performance_True parents.jpg Graphic file (type jpg)
 <use images//Linear_Performance_True parents.jpg>
 Package pdftex.def Info: images//Linear_Performance_True parents.jpg  used on i
 nput line 610.
 (pdftex.def)             Requested size: 200.48772pt x 150.36363pt.
-<images//Linear_Performance_Most correlated assets.jpg, id=935, 642.4pt x 481.8
-pt>
+<images//Linear_Performance_Most correlated assets.jpg, id=1137, 642.4pt x 481.
+8pt>
 File: images//Linear_Performance_Most correlated assets.jpg Graphic file (type 
 jpg)
 <use images//Linear_Performance_Most correlated assets.jpg>
 Package pdftex.def Info: images//Linear_Performance_Most correlated assets.jpg 
  used on input line 615.
 (pdftex.def)             Requested size: 200.48772pt x 150.36363pt.
-<images//Linear_Performance_Ideal Portfolio.jpg, id=936, 642.4pt x 481.8pt>
+<images//Linear_Performance_Ideal Portfolio.jpg, id=1138, 642.4pt x 481.8pt>
 File: images//Linear_Performance_Ideal Portfolio.jpg Graphic file (type jpg)
 <use images//Linear_Performance_Ideal Portfolio.jpg>
 Package pdftex.def Info: images//Linear_Performance_Ideal Portfolio.jpg  used o
 n input line 620.
 (pdftex.def)             Requested size: 200.48772pt x 150.36363pt.
-<images//Linear_Performance_RNN.jpg, id=937, 638.385pt x 475.7775pt>
+<images//Linear_Performance_RNN.jpg, id=1139, 638.385pt x 475.7775pt>
 File: images//Linear_Performance_RNN.jpg Graphic file (type jpg)
 <use images//Linear_Performance_RNN.jpg>
 Package pdftex.def Info: images//Linear_Performance_RNN.jpg  used on input line
@@ -2011,7 +2031,7 @@ pg> <./images//Linear_Performance_RNN.jpg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41]
-<images//precrecall_15assets.jpg, id=964, 436.63126pt x 303.38344pt>
+<images//precrecall_15assets.jpg, id=1164, 436.63126pt x 303.38344pt>
 File: images//precrecall_15assets.jpg Graphic file (type jpg)
 <use images//precrecall_15assets.jpg>
 Package pdftex.def Info: images//precrecall_15assets.jpg  used on input line 69
@@ -2028,12 +2048,12 @@ Underfull \vbox (badness 3872) has occurred while \output is active []
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 738.
 
-<images//net1994.JPG, id=994, 609.02531pt x 598.48593pt>
+<images//net1994.JPG, id=1188, 609.02531pt x 598.48593pt>
 File: images//net1994.JPG Graphic file (type jpg)
 <use images//net1994.JPG>
 Package pdftex.def Info: images//net1994.JPG  used on input line 763.
 (pdftex.def)             Requested size: 250.61443pt x 246.27577pt.
-<images//net1999.JPG, id=995, 594.72188pt x 590.95781pt>
+<images//net1999.JPG, id=1189, 594.72188pt x 590.95781pt>
 File: images//net1999.JPG Graphic file (type jpg)
 <use images//net1999.JPG>
 Package pdftex.def Info: images//net1999.JPG  used on input line 768.
@@ -2042,22 +2062,22 @@ Package pdftex.def Info: images//net1999.JPG  used on input line 768.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 775.
 
-<images//net2004.JPG, id=996, 593.21625pt x 599.99156pt>
+<images//net2004.JPG, id=1190, 593.21625pt x 599.99156pt>
 File: images//net2004.JPG Graphic file (type jpg)
 <use images//net2004.JPG>
 Package pdftex.def Info: images//net2004.JPG  used on input line 779.
 (pdftex.def)             Requested size: 250.61443pt x 253.47786pt.
-<images//net2009.JPG, id=997, 601.4972pt x 582.67688pt>
+<images//net2009.JPG, id=1191, 601.4972pt x 582.67688pt>
 File: images//net2009.JPG Graphic file (type jpg)
 <use images//net2009.JPG>
 Package pdftex.def Info: images//net2009.JPG  used on input line 784.
 (pdftex.def)             Requested size: 250.61443pt x 242.77551pt.
-<images//net2014.JPG, id=998, 596.2275pt x 586.44093pt>
+<images//net2014.JPG, id=1192, 596.2275pt x 586.44093pt>
 File: images//net2014.JPG Graphic file (type jpg)
 <use images//net2014.JPG>
 Package pdftex.def Info: images//net2014.JPG  used on input line 794.
 (pdftex.def)             Requested size: 250.61443pt x 246.50037pt.
-<images//net2019.JPG, id=999, 603.0028pt x 583.42969pt>
+<images//net2019.JPG, id=1193, 603.0028pt x 583.42969pt>
 File: images//net2019.JPG Graphic file (type jpg)
 <use images//net2019.JPG>
 Package pdftex.def Info: images//net2019.JPG  used on input line 799.
@@ -2099,7 +2119,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [53]
-<images//tweet_vol_daily.JPG, id=1094, 477.28313pt x 358.33875pt>
+<images//tweet_vol_daily.JPG, id=1287, 477.28313pt x 358.33875pt>
 File: images//tweet_vol_daily.JPG Graphic file (type jpg)
 <use images//tweet_vol_daily.JPG>
 Package pdftex.def Info: images//tweet_vol_daily.JPG  used on input line 34.
@@ -2108,14 +2128,14 @@ Package pdftex.def Info: images//tweet_vol_daily.JPG  used on input line 34.
 Underfull \vbox (badness 1895) has occurred while \output is active []
 
  [54 <./images//tweet_vol_daily.JPG>]
-<images//stocktwits_screeshot_3march2020.JPG, id=1101, 442.65375pt x 367.3725pt
+<images//stocktwits_screeshot_3march2020.JPG, id=1294, 442.65375pt x 367.3725pt
 >
 File: images//stocktwits_screeshot_3march2020.JPG Graphic file (type jpg)
 <use images//stocktwits_screeshot_3march2020.JPG>
 Package pdftex.def Info: images//stocktwits_screeshot_3march2020.JPG  used on i
 nput line 43.
 (pdftex.def)             Requested size: 313.26485pt x 260.00104pt.
-<images//preclassif.JPG, id=1105, 475.7775pt x 358.33875pt>
+<images//preclassif.JPG, id=1298, 475.7775pt x 358.33875pt>
 File: images//preclassif.JPG Graphic file (type jpg)
 <use images//preclassif.JPG>
 Package pdftex.def Info: images//preclassif.JPG  used on input line 57.
@@ -2129,12 +2149,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 68.
 
-<images//Followers.JPG, id=1116, 462.528pt x 346.896pt>
+<images//Followers.JPG, id=1306, 462.528pt x 346.896pt>
 File: images//Followers.JPG Graphic file (type jpg)
 <use images//Followers.JPG>
 Package pdftex.def Info: images//Followers.JPG  used on input line 72.
 (pdftex.def)             Requested size: 313.26485pt x 234.95984pt.
-<images//Tweets.jpg, id=1117, 476.53032pt x 357.58594pt>
+<images//Tweets.jpg, id=1307, 476.53032pt x 357.58594pt>
 File: images//Tweets.jpg Graphic file (type jpg)
 <use images//Tweets.jpg>
 Package pdftex.def Info: images//Tweets.jpg  used on input line 77.
@@ -2143,12 +2163,12 @@ Package pdftex.def Info: images//Tweets.jpg  used on input line 77.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 87.
 
-<images//top30tickers.jpg, id=1119, 478.78876pt x 359.09157pt>
+<images//top30tickers.jpg, id=1309, 478.78876pt x 359.09157pt>
 File: images//top30tickers.jpg Graphic file (type jpg)
 <use images//top30tickers.jpg>
 Package pdftex.def Info: images//top30tickers.jpg  used on input line 91.
 (pdftex.def)             Requested size: 313.26485pt x 234.94643pt.
-<images//LogTweetsPerFirm_3.jpg, id=1120, 478.03593pt x 357.58594pt>
+<images//LogTweetsPerFirm_3.jpg, id=1310, 478.03593pt x 357.58594pt>
 File: images//LogTweetsPerFirm_3.jpg Graphic file (type jpg)
 <use images//LogTweetsPerFirm_3.jpg>
 Package pdftex.def Info: images//LogTweetsPerFirm_3.jpg  used on input line 96.
@@ -2156,13 +2176,13 @@ Package pdftex.def Info: images//LogTweetsPerFirm_3.jpg  used on input line 96.
 (pdftex.def)             Requested size: 313.26485pt x 234.33235pt.
 [56 <./images//preclassif.JPG>] [57 <./images//Followers.JPG> <./images//Tweets
 .jpg>] [58 <./images//top30tickers.jpg> <./images//LogTweetsPerFirm_3.jpg>]
-<images//Positive rate words.jpg, id=1145, 1204.5pt x 602.25pt>
+<images//Positive rate words.jpg, id=1333, 1204.5pt x 602.25pt>
 File: images//Positive rate words.jpg Graphic file (type jpg)
 <use images//Positive rate words.jpg>
 Package pdftex.def Info: images//Positive rate words.jpg  used on input line 11
 3.
 (pdftex.def)             Requested size: 313.26485pt x 156.62724pt.
-<images//Negative rate words.jpg, id=1146, 1204.5pt x 602.25pt>
+<images//Negative rate words.jpg, id=1334, 1204.5pt x 602.25pt>
 File: images//Negative rate words.jpg Graphic file (type jpg)
 <use images//Negative rate words.jpg>
 Package pdftex.def Info: images//Negative rate words.jpg  used on input line 11
@@ -2171,7 +2191,7 @@ Package pdftex.def Info: images//Negative rate words.jpg  used on input line 11
 
 [59] [60 <./images//Positive rate words.jpg> <./images//Negative rate words.jpg
 >]
-<images//preclassif_acrosstime.JPG, id=1158, 476.53032pt x 358.33875pt>
+<images//preclassif_acrosstime.JPG, id=1345, 476.53032pt x 358.33875pt>
 File: images//preclassif_acrosstime.JPG Graphic file (type jpg)
 <use images//preclassif_acrosstime.JPG>
 Package pdftex.def Info: images//preclassif_acrosstime.JPG  used on input line 
@@ -2185,7 +2205,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [62 <./images//preclassif_acrosstime.JPG>]
-<images//optimal thresholds.JPG, id=1182, 476.53032pt x 356.0803pt>
+<images//optimal thresholds.JPG, id=1367, 476.53032pt x 356.0803pt>
 File: images//optimal thresholds.JPG Graphic file (type jpg)
 <use images//optimal thresholds.JPG>
 Package pdftex.def Info: images//optimal thresholds.JPG  used on input line 184
@@ -2199,7 +2219,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63]
-<images//postclassif_acrosstime3.JPG, id=1196, 475.02469pt x 356.83313pt>
+<images//postclassif_acrosstime3.JPG, id=1380, 475.02469pt x 356.83313pt>
 File: images//postclassif_acrosstime3.JPG Graphic file (type jpg)
 <use images//postclassif_acrosstime3.JPG>
 Package pdftex.def Info: images//postclassif_acrosstime3.JPG  used on input lin
@@ -2214,7 +2234,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [64 <./images//optimal thresholds.JPG>] [65 <./images//postclassif_acrosstime3
 .JPG>]
-<images//spy_vs_marketpol.JPG, id=1216, 477.28313pt x 359.09157pt>
+<images//spy_vs_marketpol.JPG, id=1400, 477.28313pt x 359.09157pt>
 File: images//spy_vs_marketpol.JPG Graphic file (type jpg)
 <use images//spy_vs_marketpol.JPG>
 Package pdftex.def Info: images//spy_vs_marketpol.JPG  used on input line 221.
@@ -2229,32 +2249,32 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 253.
 
-<images//ts_pol_ret_aapl.JPG, id=1228, 477.28313pt x 357.58594pt>
+<images//ts_pol_ret_aapl.JPG, id=1410, 477.28313pt x 357.58594pt>
 File: images//ts_pol_ret_aapl.JPG Graphic file (type jpg)
 <use images//ts_pol_ret_aapl.JPG>
 Package pdftex.def Info: images//ts_pol_ret_aapl.JPG  used on input line 257.
 (pdftex.def)             Requested size: 200.48772pt x 150.20688pt.
-<images//ts_pol_ret_amzn.JPG, id=1229, 478.03593pt x 359.09157pt>
+<images//ts_pol_ret_amzn.JPG, id=1411, 478.03593pt x 359.09157pt>
 File: images//ts_pol_ret_amzn.JPG Graphic file (type jpg)
 <use images//ts_pol_ret_amzn.JPG>
 Package pdftex.def Info: images//ts_pol_ret_amzn.JPG  used on input line 262.
 (pdftex.def)             Requested size: 200.48772pt x 150.59825pt.
-<images//ts_pol_ret_tsla.JPG, id=1230, 479.54156pt x 359.09157pt>
+<images//ts_pol_ret_tsla.JPG, id=1412, 479.54156pt x 359.09157pt>
 File: images//ts_pol_ret_tsla.JPG Graphic file (type jpg)
 <use images//ts_pol_ret_tsla.JPG>
 Package pdftex.def Info: images//ts_pol_ret_tsla.JPG  used on input line 267.
 (pdftex.def)             Requested size: 200.48772pt x 150.1325pt.
-<images//ts_pol_ret_spy.JPG, id=1231, 476.53032pt x 357.58594pt>
+<images//ts_pol_ret_spy.JPG, id=1413, 476.53032pt x 357.58594pt>
 File: images//ts_pol_ret_spy.JPG Graphic file (type jpg)
 <use images//ts_pol_ret_spy.JPG>
 Package pdftex.def Info: images//ts_pol_ret_spy.JPG  used on input line 272.
 (pdftex.def)             Requested size: 200.48772pt x 150.44696pt.
-<images//ts_pol_ret_amd.JPG, id=1232, 478.78876pt x 357.58594pt>
+<images//ts_pol_ret_amd.JPG, id=1414, 478.78876pt x 357.58594pt>
 File: images//ts_pol_ret_amd.JPG Graphic file (type jpg)
 <use images//ts_pol_ret_amd.JPG>
 Package pdftex.def Info: images//ts_pol_ret_amd.JPG  used on input line 277.
 (pdftex.def)             Requested size: 200.48772pt x 149.7322pt.
-<images//ts_pol_ret_fb.JPG, id=1233, 478.78876pt x 355.3275pt>
+<images//ts_pol_ret_fb.JPG, id=1415, 478.78876pt x 355.3275pt>
 File: images//ts_pol_ret_fb.JPG Graphic file (type jpg)
 <use images//ts_pol_ret_fb.JPG>
 Package pdftex.def Info: images//ts_pol_ret_fb.JPG  used on input line 282.
@@ -2266,13 +2286,13 @@ Underfull \vbox (badness 7777) has occurred while \output is active []
 [68 <./images//ts_pol_ret_aapl.JPG> <./images//ts_pol_ret_amzn.JPG> <./images//
 ts_pol_ret_tsla.JPG> <./images//ts_pol_ret_spy.JPG> <./images//ts_pol_ret_amd.J
 PG> <./images//ts_pol_ret_fb.JPG>]
-<images//timeline.JPG, id=1255, 561.59813pt x 113.67468pt>
+<images//timeline.JPG, id=1436, 561.59813pt x 113.67468pt>
 File: images//timeline.JPG Graphic file (type jpg)
 <use images//timeline.JPG>
 Package pdftex.def Info: images//timeline.JPG  used on input line 303.
 (pdftex.def)             Requested size: 313.26485pt x 63.40761pt.
  [69 <./images//timeline.JPG>]
-<images//activity-volume.jpg, id=1265, 462.528pt x 346.896pt>
+<images//activity-volume.jpg, id=1444, 462.528pt x 346.896pt>
 File: images//activity-volume.jpg Graphic file (type jpg)
 <use images//activity-volume.jpg>
 Package pdftex.def Info: images//activity-volume.jpg  used on input line 323.
@@ -2281,7 +2301,7 @@ Package pdftex.def Info: images//activity-volume.jpg  used on input line 323.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [70 <./images//activity-volume.jpg>]
-<images//abnpol_distr_all.JPG, id=1272, 478.78876pt x 357.58594pt>
+<images//abnpol_distr_all.JPG, id=1451, 478.78876pt x 357.58594pt>
 File: images//abnpol_distr_all.JPG Graphic file (type jpg)
 <use images//abnpol_distr_all.JPG>
 Package pdftex.def Info: images//abnpol_distr_all.JPG  used on input line 355.
@@ -2291,7 +2311,7 @@ Package pdftex.def Info: images//abnpol_distr_all.JPG  used on input line 355.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 364.
 
-<images//activity_aapl.JPG, id=1278, 478.03593pt x 359.09157pt>
+<images//activity_aapl.JPG, id=1457, 478.03593pt x 359.09157pt>
 File: images//activity_aapl.JPG Graphic file (type jpg)
 <use images//activity_aapl.JPG>
 Package pdftex.def Info: images//activity_aapl.JPG  used on input line 366.
@@ -2300,7 +2320,7 @@ Package pdftex.def Info: images//activity_aapl.JPG  used on input line 366.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 407.
 
-<images//events_across_time.JPG, id=1279, 477.28313pt x 357.58594pt>
+<images//events_across_time.JPG, id=1458, 477.28313pt x 357.58594pt>
 File: images//events_across_time.JPG Graphic file (type jpg)
 <use images//events_across_time.JPG>
 Package pdftex.def Info: images//events_across_time.JPG  used on input line 409
@@ -2311,7 +2331,7 @@ Underfull \vbox (badness 6445) has occurred while \output is active []
 
  [71 <./images//abnpol_distr_all.JPG>] [72 <./images//activity_aapl.JPG> <./ima
 ges//events_across_time.JPG>]
-<images//caar.JPG, id=1303, 479.54156pt x 356.83313pt>
+<images//caar.JPG, id=1479, 479.54156pt x 356.83313pt>
 File: images//caar.JPG Graphic file (type jpg)
 <use images//caar.JPG>
 Package pdftex.def Info: images//caar.JPG  used on input line 431.
@@ -2329,7 +2349,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 451.
 
-<images//caap.JPG, id=1336, 477.28313pt x 357.58594pt>
+<images//caap.JPG, id=1508, 477.28313pt x 357.58594pt>
 File: images//caap.JPG Graphic file (type jpg)
 <use images//caap.JPG>
 Package pdftex.def Info: images//caap.JPG  used on input line 453.
@@ -2338,32 +2358,32 @@ Package pdftex.def Info: images//caap.JPG  used on input line 453.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 458.
 
-<images//box_car_t-5.JPG, id=1337, 477.28313pt x 356.83313pt>
+<images//box_car_t-5.JPG, id=1509, 477.28313pt x 356.83313pt>
 File: images//box_car_t-5.JPG Graphic file (type jpg)
 <use images//box_car_t-5.JPG>
 Package pdftex.def Info: images//box_car_t-5.JPG  used on input line 462.
 (pdftex.def)             Requested size: 175.42754pt x 131.15501pt.
-<images//box_cap_t-5.JPG, id=1338, 477.28313pt x 358.33875pt>
+<images//box_cap_t-5.JPG, id=1510, 477.28313pt x 358.33875pt>
 File: images//box_cap_t-5.JPG Graphic file (type jpg)
 <use images//box_cap_t-5.JPG>
 Package pdftex.def Info: images//box_cap_t-5.JPG  used on input line 468.
 (pdftex.def)             Requested size: 175.42754pt x 131.7084pt.
-<images//box_car_t.JPG, id=1339, 478.03593pt x 355.3275pt>
+<images//box_car_t.JPG, id=1511, 478.03593pt x 355.3275pt>
 File: images//box_car_t.JPG Graphic file (type jpg)
 <use images//box_car_t.JPG>
 Package pdftex.def Info: images//box_car_t.JPG  used on input line 474.
 (pdftex.def)             Requested size: 175.42754pt x 130.39558pt.
-<images//box_cap_t.JPG, id=1340, 478.78876pt x 357.58594pt>
+<images//box_cap_t.JPG, id=1512, 478.78876pt x 357.58594pt>
 File: images//box_cap_t.JPG Graphic file (type jpg)
 <use images//box_cap_t.JPG>
 Package pdftex.def Info: images//box_cap_t.JPG  used on input line 480.
 (pdftex.def)             Requested size: 175.42754pt x 131.01703pt.
-<images//box_car_t+5.JPG, id=1341, 477.28313pt x 358.33875pt>
+<images//box_car_t+5.JPG, id=1513, 477.28313pt x 358.33875pt>
 File: images//box_car_t+5.JPG Graphic file (type jpg)
 <use images//box_car_t+5.JPG>
 Package pdftex.def Info: images//box_car_t+5.JPG  used on input line 486.
 (pdftex.def)             Requested size: 175.42754pt x 131.7084pt.
-<images//box_cap_t+5.JPG, id=1342, 477.28313pt x 359.09157pt>
+<images//box_cap_t+5.JPG, id=1514, 477.28313pt x 359.09157pt>
 File: images//box_cap_t+5.JPG Graphic file (type jpg)
 <use images//box_cap_t+5.JPG>
 Package pdftex.def Info: images//box_cap_t+5.JPG  used on input line 492.
@@ -2375,7 +2395,7 @@ LaTeX Warning: No positions in optional float specifier.
 [75] [76 <./images//caap.JPG>] [77 <./images//box_car_t-5.JPG> <./images//box_c
 ap_t-5.JPG> <./images//box_car_t.JPG> <./images//box_cap_t.JPG> <./images//box_
 car_t+5.JPG> <./images//box_cap_t+5.JPG>]
-<images//cross_sectional_cap.jpg, id=1362, 462.528pt x 346.896pt>
+<images//cross_sectional_cap.jpg, id=1534, 462.528pt x 346.896pt>
 File: images//cross_sectional_cap.jpg Graphic file (type jpg)
 <use images//cross_sectional_cap.jpg>
 Package pdftex.def Info: images//cross_sectional_cap.jpg  used on input line 55
@@ -2388,7 +2408,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [79 <./images//cross_sectional_cap.jpg>]
-<images//cumulative_log_return.jpg, id=1375, 462.528pt x 346.896pt>
+<images//cumulative_log_return.jpg, id=1546, 462.528pt x 346.896pt>
 File: images//cumulative_log_return.jpg Graphic file (type jpg)
 <use images//cumulative_log_return.jpg>
 Package pdftex.def Info: images//cumulative_log_return.jpg  used on input line 
@@ -2399,24 +2419,24 @@ Package pdftex.def Info: images//cumulative_log_return.jpg  used on input line
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 642.
 
-<images//distribution_long_positions.JPG, id=1376, 462.528pt x 346.896pt>
+<images//distribution_long_positions.JPG, id=1547, 462.528pt x 346.896pt>
 File: images//distribution_long_positions.JPG Graphic file (type jpg)
 <use images//distribution_long_positions.JPG>
 Package pdftex.def Info: images//distribution_long_positions.JPG  used on input
  line 658.
 (pdftex.def)             Requested size: 175.42754pt x 131.57306pt.
-<images//distribution_short_positions.JPG, id=1377, 462.528pt x 346.896pt>
+<images//distribution_short_positions.JPG, id=1548, 462.528pt x 346.896pt>
 File: images//distribution_short_positions.JPG Graphic file (type jpg)
 <use images//distribution_short_positions.JPG>
 Package pdftex.def Info: images//distribution_short_positions.JPG  used on inpu
 t line 664.
 (pdftex.def)             Requested size: 175.42754pt x 131.57306pt.
-<images//positions.JPG, id=1378, 462.528pt x 346.896pt>
+<images//positions.JPG, id=1549, 462.528pt x 346.896pt>
 File: images//positions.JPG Graphic file (type jpg)
 <use images//positions.JPG>
 Package pdftex.def Info: images//positions.JPG  used on input line 670.
 (pdftex.def)             Requested size: 175.42754pt x 131.57306pt.
-<images//returns.JPG, id=1379, 462.528pt x 346.896pt>
+<images//returns.JPG, id=1550, 462.528pt x 346.896pt>
 File: images//returns.JPG Graphic file (type jpg)
 <use images//returns.JPG>
 Package pdftex.def Info: images//returns.JPG  used on input line 676.
@@ -2516,7 +2536,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [86]
-<images//DTD_Crosbie_Bohn.JPG, id=1439, 392.06474pt x 257.763pt>
+<images//DTD_Crosbie_Bohn.JPG, id=1608, 392.06474pt x 257.763pt>
 File: images//DTD_Crosbie_Bohn.JPG Graphic file (type jpg)
 <use images//DTD_Crosbie_Bohn.JPG>
 Package pdftex.def Info: images//DTD_Crosbie_Bohn.JPG  used on input line 135.
@@ -2576,23 +2596,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Appendix C.
-<images//hist_tic.JPG, id=1561, 478.78876pt x 359.09157pt>
+<images//hist_tic.JPG, id=1729, 478.78876pt x 359.09157pt>
 File: images//hist_tic.JPG Graphic file (type jpg)
 <use images//hist_tic.JPG>
 Package pdftex.def Info: images//hist_tic.JPG  used on input line 631.
 (pdftex.def)             Requested size: 313.26485pt x 234.94643pt.
-<images//uniq.JPG, id=1562, 478.03593pt x 358.33875pt>
+<images//uniq.JPG, id=1730, 478.03593pt x 358.33875pt>
 File: images//uniq.JPG Graphic file (type jpg)
 <use images//uniq.JPG>
 Package pdftex.def Info: images//uniq.JPG  used on input line 638.
 (pdftex.def)             Requested size: 313.26485pt x 234.82568pt.
-<images//ratio.JPG, id=1563, 477.28313pt x 359.09157pt>
+<images//ratio.JPG, id=1731, 477.28313pt x 359.09157pt>
 File: images//ratio.JPG Graphic file (type jpg)
 <use images//ratio.JPG>
 Package pdftex.def Info: images//ratio.JPG  used on input line 645.
 (pdftex.def)             Requested size: 313.26485pt x 235.68613pt.
 [99] [100 <./images//hist_tic.JPG> <./images//uniq.JPG>]
-<images//trim.JPG, id=1579, 479.54156pt x 356.83313pt>
+<images//trim.JPG, id=1744, 479.54156pt x 356.83313pt>
 File: images//trim.JPG Graphic file (type jpg)
 <use images//trim.JPG>
 Package pdftex.def Info: images//trim.JPG  used on input line 658.
@@ -2613,30 +2633,30 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 709.
 
-<images//cumulative_log_return1.jpg, id=1596, 462.528pt x 346.896pt>
+<images//cumulative_log_return1.jpg, id=1759, 462.528pt x 346.896pt>
 File: images//cumulative_log_return1.jpg Graphic file (type jpg)
 <use images//cumulative_log_return1.jpg>
 Package pdftex.def Info: images//cumulative_log_return1.jpg  used on input line
  715.
 (pdftex.def)             Requested size: 313.26485pt x 234.95984pt.
-<images//distribution_long_positions1.jpg, id=1597, 462.528pt x 346.896pt>
+<images//distribution_long_positions1.jpg, id=1760, 462.528pt x 346.896pt>
 File: images//distribution_long_positions1.jpg Graphic file (type jpg)
 <use images//distribution_long_positions1.jpg>
 Package pdftex.def Info: images//distribution_long_positions1.jpg  used on inpu
 t line 736.
 (pdftex.def)             Requested size: 175.42754pt x 131.57306pt.
-<images//distribution_short_positions1.jpg, id=1598, 462.528pt x 346.896pt>
+<images//distribution_short_positions1.jpg, id=1761, 462.528pt x 346.896pt>
 File: images//distribution_short_positions1.jpg Graphic file (type jpg)
 <use images//distribution_short_positions1.jpg>
 Package pdftex.def Info: images//distribution_short_positions1.jpg  used on inp
 ut line 742.
 (pdftex.def)             Requested size: 175.42754pt x 131.57306pt.
-<images//positions1.jpg, id=1599, 462.528pt x 346.896pt>
+<images//positions1.jpg, id=1762, 462.528pt x 346.896pt>
 File: images//positions1.jpg Graphic file (type jpg)
 <use images//positions1.jpg>
 Package pdftex.def Info: images//positions1.jpg  used on input line 748.
 (pdftex.def)             Requested size: 175.42754pt x 131.57306pt.
-<images//returns1.jpg, id=1600, 462.528pt x 346.896pt>
+<images//returns1.jpg, id=1763, 462.528pt x 346.896pt>
 File: images//returns1.jpg Graphic file (type jpg)
 <use images//returns1.jpg>
 Package pdftex.def Info: images//returns1.jpg  used on input line 754.
@@ -2649,30 +2669,30 @@ LaTeX Warning: `h' float specifier changed to `ht'.
  <./images//cumulative_log_return1.jpg>] [105 <./images//distribution_long_posi
 tions1.jpg> <./images//distribution_short_positions1.jpg> <./images//positions1
 .jpg> <./images//returns1.jpg>]
-<images//cumulative_log_return3.jpg, id=1611, 462.528pt x 346.896pt>
+<images//cumulative_log_return3.jpg, id=1772, 462.528pt x 346.896pt>
 File: images//cumulative_log_return3.jpg Graphic file (type jpg)
 <use images//cumulative_log_return3.jpg>
 Package pdftex.def Info: images//cumulative_log_return3.jpg  used on input line
  766.
 (pdftex.def)             Requested size: 313.26485pt x 234.95984pt.
-<images//distribution_long_positions3.jpg, id=1612, 462.528pt x 346.896pt>
+<images//distribution_long_positions3.jpg, id=1773, 462.528pt x 346.896pt>
 File: images//distribution_long_positions3.jpg Graphic file (type jpg)
 <use images//distribution_long_positions3.jpg>
 Package pdftex.def Info: images//distribution_long_positions3.jpg  used on inpu
 t line 787.
 (pdftex.def)             Requested size: 175.42754pt x 131.57306pt.
-<images//distribution_short_positions3.jpg, id=1613, 462.528pt x 346.896pt>
+<images//distribution_short_positions3.jpg, id=1774, 462.528pt x 346.896pt>
 File: images//distribution_short_positions3.jpg Graphic file (type jpg)
 <use images//distribution_short_positions3.jpg>
 Package pdftex.def Info: images//distribution_short_positions3.jpg  used on inp
 ut line 793.
 (pdftex.def)             Requested size: 175.42754pt x 131.57306pt.
-<images//positions3.jpg, id=1614, 462.528pt x 346.896pt>
+<images//positions3.jpg, id=1775, 462.528pt x 346.896pt>
 File: images//positions3.jpg Graphic file (type jpg)
 <use images//positions3.jpg>
 Package pdftex.def Info: images//positions3.jpg  used on input line 799.
 (pdftex.def)             Requested size: 175.42754pt x 131.57306pt.
-<images//returns3.jpg, id=1615, 462.528pt x 346.896pt>
+<images//returns3.jpg, id=1776, 462.528pt x 346.896pt>
 File: images//returns3.jpg Graphic file (type jpg)
 <use images//returns3.jpg>
 Package pdftex.def Info: images//returns3.jpg  used on input line 805.
@@ -2706,50 +2726,50 @@ tions3.jpg> <./images//distribution_short_positions3.jpg> <./images//positions3
 
 
 ]
-<tail/cv.pdf, id=1656, 597.23125pt x 845.1575pt>
+<tail/cv.pdf, id=1815, 614.295pt x 794.97pt>
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf>
 Package pdftex.def Info: tail/cv.pdf  used on input line 6.
-(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf>
 Package pdftex.def Info: tail/cv.pdf  used on input line 6.
-(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
-<tail/cv.pdf, id=1659, page=1, 597.23125pt x 845.1575pt>
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<tail/cv.pdf, id=1818, page=1, 614.295pt x 794.97pt>
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf, page 1>
 Package pdftex.def Info: tail/cv.pdf , page1 used on input line 6.
-(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf, page 1>
 Package pdftex.def Info: tail/cv.pdf , page1 used on input line 6.
-(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf, page 1>
 Package pdftex.def Info: tail/cv.pdf , page1 used on input line 6.
-(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf, page 1>
 Package pdftex.def Info: tail/cv.pdf , page1 used on input line 6.
-(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf, page 1>
 Package pdftex.def Info: tail/cv.pdf , page1 used on input line 6.
-(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [115 <./tail/cv.pdf>]
-<tail/cv.pdf, id=1673, page=2, 597.23125pt x 845.1575pt>
+<tail/cv.pdf, id=1855, page=2, 614.295pt x 794.97pt>
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf, page 2>
 Package pdftex.def Info: tail/cv.pdf , page2 used on input line 6.
-(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf, page 2>
 Package pdftex.def Info: tail/cv.pdf , page2 used on input line 6.
-(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: tail/cv.pdf Graphic file (type pdf)
 <use tail/cv.pdf, page 2>
 Package pdftex.def Info: tail/cv.pdf , page2 used on input line 6.
-(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 
 [116 <./tail/cv.pdf>]) (my_thesis.aux (head/dedication.aux)
 (head/acknowledgements.aux) (head/preface.aux) (head/abstracts.aux)
@@ -2760,36 +2780,37 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 39050 strings out of 478547
- 724239 string characters out of 2841836
- 1181785 words of memory out of 3000000
- 55263 multiletter control sequences out of 15000+600000
- 744953 words of font info for 644 fonts, out of 8000000 for 9000
+ 39095 strings out of 478547
+ 724923 string characters out of 2841836
+ 1187815 words of memory out of 3000000
+ 55280 multiletter control sequences out of 15000+600000
+ 745705 words of font info for 654 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,18n,134p,3327b,1401s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:
 /Users/Diver/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Use
-rs/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/fourier-bb.pf
+rs/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b><C:/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/four
-ier-mcl.pfb><C:/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/fo
-urier/fourier-mex.pfb><C:/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/fourier/fourier-ml.pfb><C:/Users/Diver/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/fourier/fourier-mlit.pfb><C:/Users/Diver/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Users/Diver/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/Diver/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/Diver/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/Diver/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Users/Diver/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/Diver/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb><C:/Users/Dive
-r/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Di
-ver/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/xyatip10.pfb><C:/Use
-rs/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/xybtip10.pfb><C
-:/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/xydash10.p
-fb>
-Output written on my_thesis.pdf (134 pages, 6014574 bytes).
+ier-bb.pfb><C:/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/fou
+rier/fourier-mcl.pfb><C:/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/fourier/fourier-mex.pfb><C:/Users/Diver/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/fourier/fourier-ml.pfb><C:/Users/Diver/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Users/Diver/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Users/Diver/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/Diver/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/Diver/App
+Data/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/Diver/
+AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Users/Di
+ver/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users
+/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb><C:/U
+sers/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:
+/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/xyatip10.pf
+b><C:/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/xybtip
+10.pfb><C:/Users/Diver/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/x
+ydash10.pfb>
+Output written on my_thesis.pdf (140 pages, 6803248 bytes).
 PDF statistics:
- 2073 PDF objects out of 2073 (max. 8388607)
- 473 named destinations out of 1000 (max. 500000)
- 148503 words of extra memory for PDF output out of 154059 (max. 10000000)
+ 2272 PDF objects out of 2487 (max. 8388607)
+ 483 named destinations out of 1000 (max. 500000)
+ 148519 words of extra memory for PDF output out of 154059 (max. 10000000)
 
