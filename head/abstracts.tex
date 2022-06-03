@@ -6,24 +6,27 @@
 \cleardoublepage
 \chapter*{Abstract}
 \markboth{Abstract}{Abstract}
-\addcontentsline{toc}{chapter}{Abstract (English/Français/Deutsch)} % adds an entry to the table of contents
+\addcontentsline{toc}{chapter}{Abstract (English/Français)} % adds an entry to the table of contents
 % put your text here
-\lipsum[1-2]
+
+This thesis consists of three applications of machine learning techniques to risk management. \\
+
+The first chapter proposes a deep learning approach to estimate physical forward default intensities of companies. Default probabilities are computed using artificial neural networks to estimate the intensities of the inhomogeneous Poisson processes governing default process. The major contribution to previous literature is to allow the estimation of non-linear forward intensities by using neural networks instead of classical maximum likelihood estimation. The model specification allows an easy replication of previous literature using linear assumption and shows the improvement that can be achieved. \\
+
+The second chapter, titled `Causal Networks with Neural Networks` is a co-authored work with Damir Filipović (SFI \& EPFL), Negar Kiyavash (EPFL) and Jalal Etesami (EPFL). We develop a data-driven framework to identify the interconnections between firms using an information-theoretic measure. 
+This measure generalizes Granger causality and is capable of detecting nonlinear relationships within a network. 
+Moreover, we develop an algorithm using recurrent neural networks and Granger causality to identify the interconnections of high-dimensional nonlinear systems. 
+The outcome of this algorithm is the causal graph encoding the interconnections among the firms.
+These causal graphs can be used as preliminary feature selection for another predictive model or for systemic risk management.
+We evaluate the performance of our algorithm using both synthetic linear and nonlinear experiments and apply it to the daily stock returns of U.S. listed firms and infer their interconnections from 1990 to 2020. \\
+
+The third chapter, titled `StockTwits Classified Sentiment and Stock Returns` is a co-authored work with Damir Filipović (SFI \& EPFL). We scrape 90 million messages from StockTwits over 10 years and classify them into bullish, bearish or neutral classes to create firm-individual sentiment polarity time-series. Polarity is positively associated with contemporaneous stock returns. On average, polarity is not able to predict next-day stock returns but when we focus on specific events (defined as sudden peak of message volume), polarity has predictive power on abnormal returns. \\
+
+\textbf{Keywords:} Risk management, machine learning, neural networks, asset pricing, big data, alternative data.
 
 
 
-
-% German abstract
-\begin{otherlanguage}{german}
-\cleardoublepage
-\chapter*{Zusammenfassung}
-\markboth{Zusammenfassung}{Zusammenfassung}
-% put your text here
-\lipsum[1-2]
-\end{otherlanguage}
-
-
-
+ 
 
 % French abstract
 \begin{otherlanguage}{french}
@@ -31,7 +34,17 @@
 \chapter*{Résumé}
 \markboth{Résumé}{Résumé}
 % put your text here
-\lipsum[1-2]
+
+Cette thèse consiste en trois applications de techniques d'apprentissage automatique à la gestion des risques. \\
+
+Le premier chapitre propose une approche d'apprentissage automatique profond pour estimer les probabilités physiques de défaut des entreprises. Les probabilités de défaut sont calculées en utilisant des réseaux de neurones artificiels pour estimer les intensités des processus de Poisson non-homogènes qui gouvernent les processus stochastiques de défaut. La contribution majeure apportée à la littérature existante est de rendre possible l'estimation non-linéaire des intensités en utilisant les réseaux de neurones artificiels au lieu de la classique estimation du maximum de vraisemblance. Les propriétés du modèle autorisent une réplication aisée de la littérature existante (qui utilise l'hypothèse de linéarité de l'intensité) et montre l'amélioration qui peut être obtenue. \\
+
+Le deuxième chapitre, intitulé `Causal Networks wih Neural Networks` est un travail conjoint avec Damir Filipović (SFI \& EPFL), Negar Kiyavash (EPFL) et Jalal Etesami (EPFL). Nous développons un modèle axé sur les données et reposant sur une mesure d'information théorique pour identifier les interconnexions entre les entreprises. Cette mesure utilise la causalité de Granger et est capable de détecter des relations non-linéaires à l'intérieur d'un réseau. De plus, nous développons un algorithme qui utilise les réseaux de neurones récurrents ainsi que la causalité de Granger pour identifier les interconnexions dans les systèmes non-linéaires à haute dimension. Le résultat de cet algorithme est le diagramme causal encodant les interconnexions des entreprises. Ces diagrammes causaux peuvent être utilisés comme modèles préliminaires de sélection de variables d'un autre modèle de prédiction ou pour la gestion de risque systémique. Nous évaluons en premier lieu la performance de notre algorithme en utilisant des expériences synthétiques linéaires et non-linéaires puis nous appliquons notre modèle aux rendements journaliers d'actions américaines cotées pour en déduire leurs interconnexions de 1990 à 2020. \\
+
+Le troisième chapitre, intitulé `StockTwits Classified Sentiment and Stock Returns` est un travail conjoint avec Damir Filipović (SFI \& EPFL). Nous récupérons 90 millions de messages (couvrant 10 ans) provenant de StockTwits et les classifions dans la classe haussière, baissière ou neutre pour créer des séries temporelles de polarité propres à chaque entreprise. La polarité est associée positivement aux rendements d'actions contemporains. En moyenne, la polarité n'est pas capable de prédire les rendements du jour suivant mais lorsque nous nous focalisons sur des évenements spécifiques (définis par une augmentation soudaine du volume de messages), la polarité a de la puissance prédictive sur les rendements anormaux. \\
+
+\textbf{Mots-clés:} Gestion des risques, apprentissage automatique, réseaux de neurones artificiels, évaluation d'actifs, mégadonnées, données alternatives.
+
 \end{otherlanguage}
 
 

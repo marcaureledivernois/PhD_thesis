@@ -236,7 +236,8 @@ where $|\Sigma_{Y_{t-1},Y_{t},X_{t-1}}|$ denotes the determinant of the covarian
 "x":"y"
 "y":"z"
 }
-   \caption{DIG of the system in \eqref{model1}.}\label{fig:example_dig}
+   \mycaption{DIG of the system in \eqref{model1}}{}
+\label{fig:example_dig}
 \end{figure}
 \begin{small}
 \begin{align*}
@@ -465,7 +466,8 @@ The main steps of this technique are; transforming the data (lifting the data), 
 \begin{figure}
 \centering
 \includegraphics[scale=.4]{koopman.pdf}
-\caption{Koopman lifting technique compared to classical non-linear identification.}\label{fig:koopman}
+\mycaption{Koopman lifting technique compared to classical non-linear identification}{}
+\label{fig:koopman}
 \end{figure}
 
 Although, the Koopman-based lifting technique is theoretically sound but it has some shortcomings facing real-world applications.
@@ -494,7 +496,8 @@ To overcome such shortcomings, we propose an alternative approach to estimate $Q
    $d_{j,i}=0$
   }
   }
- \caption{Infer-DIG}\label{alg}
+ \mycaption{Infer-DIG}{}
+ \label{alg}
 \end{algorithm}
  Given the aforementioned result, we train an RNN using the observational data to estimate the time series $Q$ defined in Lemma \ref{lemma:nonlinear}.
  More precisely, our RNN maps $\mathcal{X}_{-\{i\}}^{t-1}$ as the inputs to $X_{j,t}$ as the output. 
@@ -555,7 +558,7 @@ In our experiment, we select $(s,m)=(85,100)$ and $(\underline{\epsilon},\bar{\e
 \begin{figure}
     \centering
     \includegraphics[scale=.2]{fig_matrix.pdf}
-    \caption{Structure of matrix $\textbf{A}$ in \eqref{eq:ex_lin} that is build using \eqref{eq:rules}.}
+    \mycaption{Structure of matrix $\textbf{A}$ in \eqref{eq:ex_lin} that is build using \eqref{eq:rules}.}{}
     \label{fig:matrix}
 \end{figure}
 Finally, to guarantee the stability of the time series, we rescale\footnote{Formally, we use $\textbf{A}/(\rho(\textbf{A}) + \epsilon)$, where $0<\epsilon$.} $\textbf{A}$ such that its spectral radius is strictly less than one, i.e.,  $\rho(\textbf{A})< 1$. 
@@ -624,7 +627,7 @@ where
             \centering 
             \includegraphics[width=\textwidth]{Linear_Performance_RNN.jpg}
         \end{subfigure}
-        \caption{Precision and recall curves in the linear framework for the \textit{True parents}, \textit{Most correlated}, \textit{Ideal portfolio}, and the \textit{RNN}, respectively.} 
+        \mycaption{Precision and recall curves in the linear framework.}{Precision and recall curves for the \textit{True parents}, \textit{Most correlated}, \textit{Ideal portfolio}, and the \textit{RNN}, respectively.} 
         \label{perflin}
     \end{figure*}
     
@@ -693,7 +696,8 @@ The slight difference between the performance of the \textit{RNN} and the \texti
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{precrecall_15assets.jpg}
-\caption{Precision-Recall curves for the quadratic model.}\label{fig:perfnonlin}
+\mycaption{Precision-Recall curves for the quadratic model.}{}
+\label{fig:perfnonlin}
 \end{figure}
 
 \subsection{Empirical DIG}
@@ -752,7 +756,7 @@ This result suggests that the market return is influencing a high number of firm
   \multicolumn{1}{c|}{0.25} \\ \hline
 
 \end{tabular}
-\caption{Degree of Granger Causality (DGC) for each sub-graph. DGC is defined as the fraction of relationships in the network among all potential relationships.}
+\mycaption{Degree of Granger Causality (DGC) for each sub-graph.}{DGC is defined as the fraction of relationships in the network among all potential relationships.}
 \label{GrangerCausality}
 \end{table}
 
@@ -767,7 +771,7 @@ This result suggests that the market return is influencing a high number of firm
             \centering 
             \includegraphics[width=\textwidth]{net1999.JPG}
         \end{subfigure}
-        \caption{Empirical DIG for the periods 1990-1994 (top) and 1995-1999 (bottom). Interactive graphs can be found at https://marcaureledivernois.github.io/firm-network/} 
+        \mycaption{Empirical DIG for the periods 1990-1994 and 1995-1999.}{Empirical DIG for the periods 1990-1994 (top) and 1995-1999 (bottom). Interactive graphs can be found at https://marcaureledivernois.github.io/firm-network/} 
         \label{empdig1}
     \end{figure*}
     
@@ -783,7 +787,7 @@ This result suggests that the market return is influencing a high number of firm
             \centering 
             \includegraphics[width=\textwidth]{net2009.JPG}
         \end{subfigure}
-        \caption{Empirical DIG for the periods 2000-2004 (top) and 2005-2009 (bottom). Interactive graphs can be found at https://marcaureledivernois.github.io/firm-network/} 
+        \mycaption{Empirical DIG for the periods 2000-2004 and 2005-2009.}{Empirical DIG for the periods 2000-2004 (top) and 2005-2009 (bottom). Interactive graphs can be found at https://marcaureledivernois.github.io/firm-network/} 
         \label{empdig2}
     \end{figure*}
     
@@ -798,7 +802,7 @@ This result suggests that the market return is influencing a high number of firm
             \centering 
             \includegraphics[width=\textwidth]{net2019.JPG}
         \end{subfigure}
-        \caption{Empirical DIG for the periods 2010-2014 (top) and 2015-2019 (bottom). Interactive graphs can be found at https://marcaureledivernois.github.io/firm-network/} 
+        \mycaption{Empirical DIG for the periods 2010-2014 and 2015-2019.}{Empirical DIG for the periods 2010-2014 (top) and 2015-2019 (bottom). Interactive graphs can be found at https://marcaureledivernois.github.io/firm-network/} 
         \label{empdig3}
     \end{figure*}    
 
@@ -857,7 +861,7 @@ JNJ  & 4  & WMT  & 4  & LU   & 1  & BAC  & 5  & WFC   & 5  & GE    & 3  \\
 PFE  & 4  & EMC  & 2  & EMC  & 0  & MT   & 4  & AMZN  & 5  & HD    & 3  \\
 KO   & 2  & AOL  & 2  & NT   & 0  & AIG  & 4  & GILD  & 5  & AMZN  & 2  \\ \hline
 \end{tabular}}
-\caption{Outdegrees (Out) ranked for each sub-graph. Outdegree is defined as the number of edges going out of a specific node.}
+\mycaption{Outdegrees ranked for each sub-graph.}{Outdegree (Out) is defined as the number of edges going out of a specific node.}
 \label{outdegree}
 \end{table}
 
@@ -906,7 +910,7 @@ INTC & 2  & PG   & 2  & SBC  & 1  & UBS  & 2  & SLB   & 5  & BAC   & 2  \\
 DIS  & 1  & HD   & 2  & IBM  & 0  & IBM  & 1  & T     & 4  & V     & 1  \\
 MOT  & 1  & EMC  & 1  & JNJ  & 0  & PG   & 1  & BRK   & 4  & VZ    & 1  \\ \hline
 \end{tabular}}
-\caption{Indegrees (In) ranked for each sub-graph. Indegree is defined as the number of edges going to a specific node.}
+\mycaption{Indegrees ranked for each sub-graph.}{Indegree (In) is defined as the number of edges going to a specific node.}
 \label{indegree}
 \end{table}
 

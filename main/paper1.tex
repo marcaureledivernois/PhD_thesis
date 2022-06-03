@@ -72,7 +72,7 @@ every label/.append style = {inner sep=0pt, rotate around={0:(-0.5,1.5)}},
     \node[dot,label={$\tau_{D_i}$}] at (10*0.8,0) {};
 
 \end{tikzpicture}
-\caption{Example of the lifespan of a firm. Each dot corresponds to a time period where the econometrician gathers firm-specific (if available) and macroeconomic variables. $t^0_i$ is the entry time of the firm i and $\tau_{D_i}$ denotes the default time of the firm i.}
+\mycaption{Example of the lifespan of a firm}{Each dot corresponds to a time period where the econometrician gathers firm-specific (if available) and macroeconomic variables. $t^0_i$ is the entry time of the firm i and $\tau_{D_i}$ denotes the default time of the firm i.}
 \label{fig:lifespan}
 \end{figure}
 
@@ -239,7 +239,7 @@ Neural networks can be seen as a very general function to map a given input (in 
     \node[annot,left of=hl1] {Input Layer};
     \node[annot,right of=hl\Nhidden] {Output Layer};
 \end{tikzpicture}
-    \caption{Illustration of a neural network [5, 3]. In this network, there are three input features, five neurons in the first hidden layer and 3 neurons in the second hidden layer. Each neuron is activated with a sigmoid function.}
+    \mycaption{Illustration of a neural network \text{[}5, 3\text{]}}{In this network, there are three input features, five neurons in the first hidden layer and 3 neurons in the second hidden layer. Each neuron is activated with a sigmoid function.}
     \label{fig:net}
 \end{figure}
 
@@ -309,7 +309,7 @@ Since neural networks need plenty of data points to be well trained, I chose not
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{def_surv_oe_plot.jpg}
-    \caption{Number of firms defaulted, exited for other reasons, surviving each year}
+    \mycaption{Number of firms defaulted, exited for other reasons, surviving each year}{}
     \label{fig:defsurv}
 \end{figure}
 
@@ -357,7 +357,7 @@ Horizon & Surviving & Defaults & Other exits \\
 35 &  1'457'240 & 343 & 8'295 \\
 \hline
     \end{tabular}
-    \caption{Number of firms in each category for each horizon of prediction $\tau$ which corresponds to the firm-month observations used in the likelihood for horizon $\tau$}
+    \mycaption{Number of firms in each category for each horizon of prediction $\tau$}{These correspond to the firm-month observations used in the likelihood for horizon $\tau$.}
     \label{tab:observ}
 \end{table}
 
@@ -399,7 +399,7 @@ $\Delta$   DtD       & -0.1366 & -0.7346  &    0.0295 \\
 $\Delta$  MBratio   & -0.0285 &  0.0520  &    0.0801 \\
 \hline
     \end{tabular}
-    \caption{Mean of variables for surviving firms, defaulted firms and other exits. $\Delta$ are one period lagged differences.}
+    \mycaption{Mean of variables for surviving firms, defaulted firms and other exits}{$\Delta$ are one period lagged differences.}
     \label{tab:meanvar}
 \end{table}
 
@@ -407,7 +407,7 @@ $\Delta$  MBratio   & -0.0285 &  0.0520  &    0.0801 \\
 \begin{figure}[]
     \centering
     \includegraphics[scale=0.6]{corrmatrix.jpeg}
-    \caption{Correlation matrix for firm-specific and macroeconomic covariates}
+    \mycaption{Correlation matrix for firm-specific and macroeconomic covariates}{}
     \label{fig:corrmat}
 \end{figure}
 
@@ -441,7 +441,7 @@ The choice of the optimal architecture of the neural network has been made using
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{duan_vs_NN.jpeg}
-    \caption{Gini coefficient : Linear vs Neural Networks}
+    \mycaption{Gini coefficient : Linear vs Neural Networks}{}
     \label{fig:ginicomp}
 \end{figure}
 
@@ -490,7 +490,7 @@ For comparison purposes, figure \ref{fig:lor0duan} shows the Lorenz curves for b
             \includegraphics[width=\textwidth]{35.png}
             \caption*{Horizon 35}  
         \end{subfigure}
-        \caption{Out-of-sample Lorenz Curves for each horizon. The orange line shows the performance of Duan's model and the red line shows the performance of the [5,3] neural network.} 
+        \mycaption{Out-of-sample Lorenz Curves for each horizon}{The orange line shows the performance of Duan's model and the red line shows the performance of the [5,3] neural network.} 
         \label{fig:perf}
     \end{figure*}
 
@@ -538,14 +538,14 @@ Horizon	&	[5, 3]	&	Linear	\\
 35	&	0.57	&	0.39	\\
 \hline
     \end{tabular}
-    \caption{Gini coefficients}
+    \mycaption{Gini coefficients}{}
     \label{tab:ginicoeff}
 \end{table}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{lor0duan.png}
-    \caption{Comparison with the benchmark model \citet{Duan2012}. The green line shows the performance of the [1] neural network (i.e a single hidden layer with a single neuron) with an exponential activation function. The orange line shows the performance of Duan's model and the red line shows the performance of the [5,3] neural network.}
+    \mycaption{Comparison with the benchmark model \citet{Duan2012}}{The green line shows the performance of the [1] neural network (i.e a single hidden layer with a single neuron) with an exponential activation function. The orange line shows the performance of Duan's model and the red line shows the performance of the [5,3] neural network.}
     \label{fig:lor0duan}
 \end{figure}
 
@@ -558,7 +558,7 @@ In the input layer, all variables seem to be used in the computation of the firs
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{compgraphr.png}
-    \caption{Trained [5, 3] Neural Network for forward default intensity at horizon 0. Negative weights are drawn as blue lines connecting neurons where orange lines show positive weights. The thicker the line, the higher the weight is in absolute value.}
+    \mycaption{Trained \text{[}5, 3\text{]} Neural Network for forward default intensity at horizon 0}{Negative weights are drawn as blue lines connecting neurons where orange lines show positive weights. The thicker the line, the higher the weight is in absolute value.}
     \label{fig:compgraph}
 \end{figure}
 
@@ -625,7 +625,7 @@ it appears that the most important predictors of default in this model are in sh
             \includegraphics[width=\textwidth]{35_corr.png}
             \caption*{\small Horizon 35}
         \end{subfigure}
-        \caption{Sensitivities for each horizon.} 
+        \mycaption{Sensitivities for each horizon}{}
         \label{fig:sensi}
     \end{figure*}
 

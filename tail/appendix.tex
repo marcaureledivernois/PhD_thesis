@@ -1,7 +1,9 @@
 \appendix
 
-\chapter{Appendix to Chapter 1}
-\section{Relation between $g_{it}(\tau)$ and $\psi_{it}(\tau)$}
+\chapter{Appendix}
+
+\section{Appendix to Chapter 1}
+\subsection{Relation between $g_{it}(\tau)$ and $\psi_{it}(\tau)$}
 
 The relation between $g_{it}(\tau)$ and $\psi_{it}(\tau)$  is given by :
 \begin{align} \label{gphi}
@@ -20,7 +22,7 @@ The last equation above can be computed with the first derivative of $\psi_{it}(
 \end{align*} \qed
 \end{proof1}
 
-\section{Computation of $\psi_{it}(\tau) \tau$}
+\subsection{Computation of $\psi_{it}(\tau) \tau$}
 
 The quantity $\psi_{it}(\tau) \tau$ that we are looking for is :
 \begin{equation}
@@ -42,7 +44,7 @@ Integrating both sides of equation \ref{gphi} leads to :
 \end{align*} \qed
 \end{proof2}
 
-\section{Likelihood function}
+\subsection{Likelihood function}
 \label{appendix1}
 
 
@@ -102,11 +104,11 @@ Similar to previous literature, we can still decompose the likelihoods into term
 \end{align}
 For all horizon of prediction s. We are now left with many small likelihoods that we can maximize separately instead of the huge maximum likelihood \ref{biglik}. Ultimately, we can design two neural networks $NN_{\lambda}$ and $NN_{\mu}$ with outputs $N_{it}^{\lambda}$ and $N_{it}^{\mu}$ respectively to maximize the two above loss functions. 
 
-\section{Distance-to-Default estimation}
+\subsection{Distance-to-Default estimation}
 \label{appendix2}
 
 
-\subsection{Distance-to-default}
+\subsubsection{Distance-to-default}
 
 Let $V_T$ be the firm value at time T, $L$ the amount of debt to be repaid and $E_T$ the equity value at time T. In case of bankruptcy debt holders receive money before shareholders in case of bankruptcy. The payoff to shareholders is then given by $E_T = \max(V_T - L,0)$. This payoff is the same as a call option $E_T$ on the underlying $V_T$ with the strike being $L$. \citet{Merton1974} model considers $V_t$ is following a geometric Brownian motion :
 \begin{equation*}
@@ -133,13 +135,13 @@ In the figure \ref{fig:DD} taken from \citet{KMV}, the distance to default is de
 \begin{figure}[h!]
 \centering
 \includegraphics[width=6in]{DTD_Crosbie_Bohn.JPG} 
-\caption{Distance-to-default} 
+\mycaption{Distance-to-default}{} 
 \label{fig:DD}
 \end{figure}
 
 
 
-\subsection{Variance restriction method to estimate DtD}
+\subsubsection{Variance restriction method to estimate DtD}
 The variance restriction method is used in \citet{DSW} to estimate the distance-to-default (DtD). This method is based on \citet{Merton1974} model which states that firm's equity value can be seen as a call option on the underlying asset and the strike being the amount of debt. This holds because stockholders receive money only once debt holders are fully paid. \\
 Applying the Black-Scholes call option formula to equity value, we get the following :
 \begin{equation*}
@@ -176,7 +178,7 @@ DtD = \dfrac{\ln(\dfrac{V_A}{L})}{\sigma_A \sqrt{T-t}}.
 
 The major drawback of the variance restriction method used in \citet{DSW} is the definition of the default point. The default point in the variance restriction method is following the so-called KMV assumption. This assumption states that for every firm the default point is exactly equal to short term debt plus one half of long-term debt. However, many financial firms do not account debt as short or long-term debt but as ``other liabilities''. This causes the default point to be abnormally low for financial firms when using KMV assumption. Therefore, to take financial firms into account, we need to adjust the default point by taking into account other liabilities. The method proposed by \citet{Duan2012} employs a maximum likelihood to estimate the optimal fraction $\delta$ of other liabilities to include in the model.
 
-\subsection{Maximum likelihood estimation to estimate DtD}
+\subsubsection{Maximum likelihood estimation to estimate DtD}
 
 \citet{Duan2012} and \citet{Duan2012DTD} presented a method to estimate distance-to-defaults without having to exclude financial firms. The method accounts for other liabilities using a maximum likelihood estimation including a parameter $\delta$ to take into account other liabilities. 
 The default point in this method becomes :
@@ -193,9 +195,9 @@ where n is the number of period observations for each firm $i$. The likelihood a
 
 
 
-\chapter{Appendix to Chapter 2}
-\section{Technical proofs}
-\subsection{Proof of Lemma \ref{lemma:small}}
+\section{Appendix to Chapter 2}
+\subsection{Technical proofs}
+\subsubsection{Proof of Lemma \ref{lemma:small}}
 From the definition of DIG, we know that for any $R_k\not\in\mathcal{PA}_j$, 
 $
  I(R_k\rightarrow R_j||\mathcal{R}_{-\{k,j\}})=0   
@@ -237,7 +239,7 @@ By repeating the above procedure, we obtain
 
 
 
-\subsection{Proof of Lemma \ref{lemma:lin}}
+\subsubsection{Proof of Lemma \ref{lemma:lin}}
 Consider the VAR model in \eqref{eq:linearsys}. 
 First, we assume that $X_i$ has no influence on $X_j$, i.e., $I(X_i\rightarrow X_j||\mathcal{X}_{-\{i,j\}})=0$ or equivalently $a_{j,i}=0$ and show that \eqref{eq:lemma_linear} holds. Given this assumption, we have that for all $t$,
 \begin{align*}
@@ -294,7 +296,7 @@ This equation should hold for any $x_{i,t-1}$. This is only possible if $a_{j,i}
 
 
 
-\subsection{Proof of Lemma \ref{lemma:nonlinear}}
+\subsubsection{Proof of Lemma \ref{lemma:nonlinear}}
 The proof is similar to the linear version and uses the fact that exogenous noises $\{\varepsilon_{j,t}\}$ are independent. More precisely, we have  
 \begin{align*}
     &p(X_{j,t}|\mathcal{X}^{t-1})=p(F_{j}(\mathcal{X}^{t-1}) + \varepsilon_{j,t}|F_{j}(\mathcal{X}^{t-1})).
@@ -341,7 +343,7 @@ This is equivalent to
 
 
 
-\section{k-Nearest Neighbors estimator of mutual information}
+\subsection{k-Nearest Neighbors estimator of mutual information}
 Suppose that $N+M$ i.i.d. realizations $\{\textbf{x}_1, ..., \textbf{x}_{N+M}\}$ are available from $\PP_{X,Y,Z}$, where $\textbf{x}_i$ denotes the $i$-th realization of $(X,Y,Z)$.
 The data is randomly divided into two subsets $\mathcal{S}_1$ and $\mathcal{S}_2$ of $N$ and $M$ points, respectively.  
 The estimator has two main stages:
@@ -364,7 +366,7 @@ Subsequently, the $N$ samples of $\mathcal{S}_1$ is used to approximate the cond
 For more details corresponding this estimator including its bias, variance, and confidence, please see the works by \cite{sricharan2011k} and \cite{loftsgaarden1965nonparametric}.
 
 
-\section{Koopman-based Lifting Method}
+\subsection{Koopman-based Lifting Method}
 Let $\textbf{X}_t:=\{X_{1,t}, ..., X_{m,t}\}$ denote a network of $m$ time series such that 
 \begin{align}\label{dyn}
 \dot{\textbf{X}}_t = F(\textbf{X}_t),
@@ -484,7 +486,7 @@ where $\widehat{\textbf{F}}_{:,j}$ denotes the $j$-th column of matrix $\widehat
 % \widehat{F}_j(X) := \sum_{k=1}^K \hat{w}_j^k h_k(X).
 % \end{align*}
 
-\section{Ideal portfolio}
+\subsection{Ideal portfolio}
 In this section, we show how the ideal portfolio is related to the coefficients of the linear system in \eqref{eq:linearsys}.  
 Recall the optimization problem in Lemma \ref{lemma:lin}. 
 \begin{align*}
@@ -514,7 +516,7 @@ The last equality is due to the fact $N_{j,t}$ is independent of $\{X_{k,t-1}\}$
 
 
 \begin{comment}
-\section*{Appendix D : Ideal portfolio}
+\subsection*{Appendix D : Ideal portfolio}
 In this section, we present the relation between the ideal portfolio defined in Lemma \ref{lemma:lin} and maximally correlated portfolio. 
 We use the following notations and definitions,
 \begin{itemize}
@@ -621,42 +623,42 @@ Equality \eqref{vareqXR} is not true in general for non-Gaussian $(X,\textbf{R})
 
 \newpage 
 
-\chapter{Appendix to Chapter 3}
-\section{Number of messages}
+\section{Appendix to Chapter 3}
+\subsection{Number of messages}
 As the same information sometimes refer to several companies, users are allowed to identify more than one ticker per message.  Figure \ref{fig:histtic} shows the histogram of the number of tickers tagged per message. As the vast majority of message includes only one ticker, we only show on this plot messages referring to more than one ticker. However, many messages refer to several tickers and this creates duplicates in the database because we consider the same message for all tickers tagged in the message. Figure \ref{fig:uniq} shows the number of messages with and without double counting. In our sample, the number of messages without double counting is 76 million, as opposed to 90 million messages with double counting. Figure \ref{fig:ratio} shows the ratio between the number of messages with double counting divided by the number of messages without double counting. Throughout this paper, we only refer to the number of messages with double counting.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{hist_tic.JPG}
-    \caption{Histogram of the number of tickers per message, across all messages referring to more than one ticker. The maximum number of tickers per message amounts to 28 and corresponds to 11 messages in the sample.}
+    \mycaption{Number of tickers per message}{Histogram of the number of tickers per message, across all messages referring to more than one ticker. The maximum number of tickers per message amounts to 28 and corresponds to 11 messages in the sample.}
     \label{fig:histtic}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{uniq.JPG}
-    \caption{Total number of messages with double counting (red) compared to the total number of messages without double counting (blue). Numbers are aggregated daily.}
+    \mycaption{Number of messages}{Total number of messages with double counting (red) compared to the total number of messages without double counting (blue). Numbers are aggregated daily.}
     \label{fig:uniq}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{ratio.JPG}
-    \caption{Ratio between the number of messages with double counting and the number of messages without double counting. Numbers are aggreaged daily.}
+    \mycaption{Number of messages II}{Ratio between the number of messages with double counting and the number of messages without double counting. Numbers are aggreaged daily.}
     \label{fig:ratio}
 \end{figure}
 
 \newpage 
 
-\section{Coverage}
+\subsection{Coverage}
 
 Stocktwits is neither regulated nor moderated, so one needs to filter the information that we use. Even if Stocktwits has valuable information from respected contributors, a blog\footnote{\url{https://www.warriortrading.com/stocktwits-review}} describes the concerns that may rise when using Stocktwits as a financial information provider, namely self-promotion, lack of credibility and other noise. To diversify noise and better extract information, we exclude from our sample tickers that are rarely discussed. Thereto, we compute the median of daily message volume for each ticker and exclude from our sample tickers with a median of less than 50. Decreasing the median threshold increases the coverage at the expense of more noise in the daily polarity. Figure \ref{fig:coverage} shows the coverage as a function of the median threshold. To increase the coverage we need to decrease the threshold a lot (e.g., decreasing the median threshold to 40 from 50 would increase the number of tickers covered to merely 22 from 19). We chose a median threshold of 50 as a balanced trade-off between noise and coverage. Table \ref{tab:listcov} shows the list of tickers covered and associated market capitalization as of 31st of December 2019. To avoid bias in the polarity, we restrict the universe and focus on the most discussed tickers. On top of that, it appears that the most discussed tickers are not always big firms, so it is has the advantage of covering all sizes of firm and we avoid big-firm bias. Also, we do not consider only firms but also ETFs on alternative investments. Finally, we cover several sectors so even if we have a restrictive universe, it is well diversified.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{trim.JPG}
-    \caption{Coverage as a function of the median threshold. A lower threshold increases the coverage at the expense of a bigger bias in the polarity.}
+    \mycaption{Coverage}{Coverage as a function of the median threshold. A lower threshold increases the coverage at the expense of a bigger bias in the polarity.}
     \label{fig:coverage}
 \end{figure}
 
@@ -685,14 +687,14 @@ TSLA   & Tesla                   & 76 \\
 TWTR   & Twitter                 & 25 \\
 UVXY   & VIX ETF                 & 0.8 \\
 \end{tabular}
-\caption{Coverage after the trimming process. List of tickers and corresponding market capitalization as of 31st of December 2019.}
+\mycaption{Coverage}{Coverage after the trimming process. List of tickers and corresponding market capitalization as of 31st of December 2019.}
 \label{tab:listcov}
 \end{table}
 
 %\input{ros.tex}
 
 \newpage
-\section{Tutorial for StockTwits messages extraction}
+\subsection{Tutorial for StockTwits messages extraction}
 We use CRSP to get stock prices of all US and Canadian listed firms from 1990 to 2020. Out of this dataset, we create the list of unique tickers for which we will extract messages. We will later be able to merge the two datasets using the date and ticker for every observation. We use the StockTwits Application Programming Interface (API) to collect messages from StockTwits. One query on StockTwits API is called a JavaScript Object Notation (JSON) request. Every message on StockTwits has a unique identifier ("msg\_id") posted by a user with a unique identifier ("user\_id"). JSON requests allow to query the database by ticker (called "symbol method") or by user (called "user method"). We use the query by ticker. One query only outputs the latest 30 messages concerning that ticker. However, it is possible to set a parameter ("max") to output the latest 30 messages up to this particular message identifier. This parameter allows us to crawl the message history of a ticker by recursively changing the "max" parameter to the oldest message identifier in the query. To perform a JSON request for Apple (AAPL) up to the message identifier 30'000'000, simply enter the following URL in a browser : https://api.stocktwits.com/api/2/streams/symbol/AAPL.json?\&max=30000000. The page we get looks unreadable but it has always the same structure : several pairs of keys and values. The structure of JSON can easily be interpreted by modern programming languages. We create a Python script to query the API and extract the message history of every ticker in the ticker list. We store the output of every JSON request in .txt files in dedicated ticker folders.
 
 
@@ -706,14 +708,14 @@ We use CRSP to get stock prices of all US and Canadian listed firms from 1990 to
 \clearpage
 \newpage
 
-\section{Portfolio construction - various $x$}
+\subsection{Portfolio construction - various $x$}
 As the thresholds $U_t(x)$ and $L_t(x)$ are functions of the hyperparameter $x$, we provide for robustness check the results of our portfolio construction with $x$ = 1.96  (95\% confidence band) and $x$ = 2.81 (99.5\% confidence band).
-\subsection{x = 1.96}
+\subsubsection{x = 1.96}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{cumulative_log_return1.jpg}
-    \caption{Cumulative log returns of both portfolios (x=1.96) and the S\&P500.}
+    \mycaption{Cumulative log returns of both portfolios (x=1.96) and the S\&P500.}{}
     \label{fig:cumpf1}
 \end{figure}
 
@@ -754,17 +756,17 @@ As the thresholds $U_t(x)$ and $L_t(x)$ are functions of the hyperparameter $x$,
             \includegraphics[width=\textwidth]{returns1.jpg}
             \caption*{Daily returns}  
         \end{subfigure}
-        \caption{Long and Short portfolio for x = 1.96.} 
+        \mycaption{Long and Short portfolios for x = 1.96.}{}
         \label{fig:pf1}
     \end{figure*}
 
 \clearpage
-\subsection{x = 2.81}
+\subsubsection{x = 2.81}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{cumulative_log_return3.jpg}
-    \caption{Cumulative log returns of both portfolios (x=2.81) and the S\&P500.}
+    \mycaption{Cumulative log returns of both portfolios (x=2.81) and the S\&P500.}{}
     \label{fig:cumpf3}
 \end{figure}
 
@@ -805,7 +807,7 @@ As the thresholds $U_t(x)$ and $L_t(x)$ are functions of the hyperparameter $x$,
             \includegraphics[width=\textwidth]{returns3.jpg}
             \caption*{Daily returns}  
         \end{subfigure}
-        \caption{Long and Short portfolio for x=2.81.} 
+        \mycaption{Long and Short portfolio for x=2.81.}{}
         \label{fig:pf3}
     \end{figure*}
 

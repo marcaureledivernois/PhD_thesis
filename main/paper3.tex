@@ -32,7 +32,7 @@ StockTwits is a large social network similar to Twitter but designed for investo
  \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{tweet_vol_daily.JPG}
-    \caption{Number of messages posted daily on StockTwits.}
+    \mycaption{Number of messages posted daily on StockTwits.}{}
     \label{fig:tweet_vol_daily}
 \end{figure}
 
@@ -41,7 +41,7 @@ Every message comes with the following eight features: (1) the ticker discussed 
 \begin{figure*}[h]
 \centering
 \includegraphics[width=0.75\textwidth]{stocktwits_screeshot_3march2020.JPG}
-\caption{Screenshot of StockTwits as of 3rd March 2020. The first message is labeled as bullish by the user ``satkaru", the two next are unlabeled messages that will be classified using a machine learning classifier and the last message is labeled as bearish by the user ``Etrading''.}
+\mycaption{Screenshot of StockTwits as of 3rd March 2020.}{The first message is labeled as bullish by the user ``satkaru", the two next are unlabeled messages that will be classified using a machine learning classifier and the last message is labeled as bearish by the user ``Etrading''.}
 \label{screenshot}
 \end{figure*}
 
@@ -56,7 +56,7 @@ Figure \ref{categrepartition-preclassif} shows the distribution of user-labeled 
             \centering 
             \includegraphics[width=\textwidth]{preclassif.JPG}
         \end{subfigure}
-        \caption{Number of user-labeled messages in each category. There are around 60 million unlabeled messages that we classify using the 30 million user-labeled bullish and bearish messages.} 
+        \mycaption{Number of user-labeled messages in each category.}{There are around 60 million unlabeled messages that we classify using the 30 million user-labeled bullish and bearish messages.} 
         \label{categrepartition-preclassif}
 \end{figure*}
 
@@ -77,7 +77,7 @@ Figure \ref{fig:data-stocktwits1} shows a log-log histogram of the number of fol
             \includegraphics[width=\textwidth]{Tweets.jpg}
         \end{subfigure}
 
-        \caption{User summary statistics. Top graph is a log-log histogram of the number of followers per user and the bottom graph shows the log-log histogram of the number of messages posted by users.} 
+        \mycaption{User summary statistics.}{Top graph is a log-log histogram of the number of followers per user and the bottom graph shows the log-log histogram of the number of messages posted by users.} 
         \label{fig:data-stocktwits1}
 \end{figure*}
 
@@ -95,7 +95,7 @@ Figure \ref{fig:data-stocktwits2} shows the top 30 most discussed tickers on the
             \centering 
             \includegraphics[width=\textwidth]{LogTweetsPerFirm_3.jpg}
         \end{subfigure}
-        \caption{Firm summary statistics. Top graph shows the top 30 most discussed tickers on the platform. SPY is the ticker of the S\&P and AAPL is the ticker for Apple. Bottom graph shows the distribution of the number of messages across tickers.} 
+        \mycaption{Firm summary statistics.}{Top graph shows the top 30 most discussed tickers on the platform. SPY is the ticker of the S\&P and AAPL is the ticker for Apple. Bottom graph shows the distribution of the number of messages across tickers.} 
         \label{fig:data-stocktwits2}
 \end{figure*}
 
@@ -116,7 +116,7 @@ On another note, most of the times messages are written by humans. It is however
 
     \includegraphics[width=0.75\textwidth]{Negative rate words.jpg}
    \vspace{0.1cm}
-    \caption{Bullish word cloud (top), bearish word cloud (bottom). These correspond to the most frequent terms (up to 3-grams) in user-labeled bullish (bearish) messages relative to their total appearance. The size of the terms represent their importance in the cloud.}
+    \mycaption{Bullish and bearish word clouds.}{Bullish word cloud (top), bearish word cloud (bottom). These correspond to the most frequent terms (up to 3-grams) in user-labeled bullish (bearish) messages relative to their total appearance. The size of the terms represent their importance in the cloud.}
     \label{wordclouds}
   \end{center}
 \end{figure}
@@ -144,7 +144,7 @@ On another note, most of the times messages are written by humans. It is however
 (4) & nice upgrade as company go into its quiet period     \\ 
 (5) & market will not reverse again towards closing get put options \\ \hline                                          
 \end{tabular*}
-\caption{Preprocessing of five sample messages. Preprocessing operations include: punctuation removal, lower casing, apostrophe handling, contraction form handling (i.e. ``won't" becomes ``will not"), tickers removal, users removal, URLs removal, parsing and a simple spell corrector dealing with more than two repeated characters (i.e. ``goooood" becomes ``good")}
+\mycaption{Preprocessing of five sample messages.}{Preprocessing operations include: punctuation removal, lower casing, apostrophe handling, contraction form handling (i.e. ``won't" becomes ``will not"), tickers removal, users removal, URLs removal, parsing and a simple spell corrector dealing with more than two repeated characters (i.e. ``goooood" becomes ``good")}
 \label{tab:preprocess}
 \end{table}
 
@@ -155,7 +155,7 @@ Since mid-2010, StockTwits users have the choice to label their own messages as 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{preclassif_acrosstime.JPG}
-    \caption{Proportions of user-labeled messages in each category: bullish (green), bearish (red), and unlabeled (gray). Proportions are aggregated monthly.}
+    \mycaption{Proportions of user-labeled messages in each category}{Proportions of user-labeled messages in each category: bullish (green), bearish (red), and unlabeled (gray). Proportions are aggregated monthly.}
     \label{fig:ts_neutral_vs_uncl}
 \end{figure}
 
@@ -182,7 +182,7 @@ Precision, recall, and F1 scores of the two algorithms differ because they depen
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{optimal thresholds.JPG}
-    \caption{Optimal classification thresholds. The green (red) line is the F1 score for the bullish versus non-bullish (bearish versus non-bearish) classification, respectively. Circles indicate the maximal F1 scores, along with the corresponding classification score thresholds.}
+    \mycaption{Optimal classification thresholds.}{The green (red) line is the F1 score for the bullish versus non-bullish (bearish versus non-bearish) classification, respectively. Circles indicate the maximal F1 scores, along with the corresponding classification score thresholds.}
     \label{fig:optimal_thresholds}
 \end{figure}
 
@@ -196,7 +196,7 @@ Figure \ref{fig:postclassif_acrosstime} shows the proportions of classified mess
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{postclassif_acrosstime3.JPG}
-    \caption{Proportions of classified messages in each category: bullish (light green predicted, green user-labeled), bearish (light red predicted, red user-labeled), and neutral (gray). Proportions are aggregated monthly.}
+    \mycaption{Proportions of classified messages in each category}{Bullish (light green predicted, green user-labeled), bearish (light red predicted, red user-labeled), and neutral (gray). Proportions are aggregated monthly.}
     \label{fig:postclassif_acrosstime}
 \end{figure}
 
@@ -219,7 +219,7 @@ Figure \ref{fig:marketpolspy} shows a scatter plot of the market polarity $P_{t}
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{spy_vs_marketpol.JPG}
-    \caption{Market polarity on the y-axis versus the polarity of the SPY on the x-axis. The red line shows the linear regression line and coefficients.}
+    \mycaption{Market polarity versus the SPY polarity.}{Market polarity on the y-axis versus the polarity of the SPY on the x-axis. The red line shows the linear regression line and coefficients.}
     \label{fig:marketpolspy}
 \end{figure}
 
@@ -245,7 +245,7 @@ $CAP_{i,5}$         &            & 0.0007***     &            & -0.0002       \\
 $R^2$                & 0.012      & 0.000         & 0.000      & 0.000              \\
 No. Obs.             & 34100      & 34024         & 34100      & 34024             
 \end{tabular}
-\caption{Results from linear regressions of contemporaneous and next period stock returns on polarity. Stock returns are trimmed at the 5\% percentile on both sides. Standard errors are reported in parentheses. Statistical significance at the 99\%, 95\%, and 90\% level is indicated with ***, **, *, respectively.}
+\mycaption{Linear regressions }{Results from linear regressions of contemporaneous and next period stock returns on polarity. Stock returns are trimmed at the 5\% percentile on both sides. Standard errors are reported in parentheses. Statistical significance at the 99\%, 95\%, and 90\% level is indicated with ***, **, *, respectively.}
 \label{regpolret}
 \end{table}
 
@@ -281,7 +281,7 @@ No. Obs.             & 34100      & 34024         & 34100      & 34024
             \centering 
             \includegraphics[width=\textwidth]{ts_pol_ret_fb.JPG}
         \end{subfigure}
-        \caption{Time series of daily polarity (red - left axis) and daily stock returns (blue - right axis) since 1st of January 2019 for the top 6 most discussed tickers. Pearson correlation between the two time series is shown in the title.} 
+        \mycaption{Time series of daily polarity}{Time series of daily polarity  (red - left axis) and daily stock returns (blue - right axis) since 1st of January 2019 for the top 6 most discussed tickers. Pearson correlation between the two time series is shown in the title.} 
         \label{fig:ts}
     \end{figure*}
 
@@ -301,7 +301,7 @@ To design an event study, the first step is to define events of interest and the
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{timeline.JPG}
-    \caption{Timeline of our event studies. $\tau$ is an event date, the event window has 41 business days centered around the event date and the estimation window is a one-year rolling period prior the event.}
+    \mycaption{Timeline of our event studies.}{$\tau$ is an event date, the event window has 41 business days centered around the event date and the estimation window is a one-year rolling period prior the event.}
     \label{fig:timeline}
 \end{figure}
 
@@ -321,7 +321,7 @@ We define an event as an unusual high number of daily messages for a particular 
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{activity-volume.jpg}
-    \caption{Changes in weekly volume of transactions on the y-axis versus changes in message activity on the x-axis. Activity is measured in weekly messages posted per firm.}
+    \mycaption{Volume of transactions and message activity.}{Changes in weekly volume of transactions on the y-axis versus changes in message activity on the x-axis. Activity is measured in weekly messages posted per firm.}
     \label{fig:actvol}
 \end{figure}
 
@@ -353,7 +353,7 @@ Then, we define the type of the event as either bullish, neutral or bearish. We 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{abnpol_distr_all.JPG}
-    \caption{Empirical distribution of abnormal polarities. Red dashed lines show the one-third and two-third percentiles.}
+    \mycaption{Empirical distribution of abnormal polarities.}{Red dashed lines show the one-third and two-third percentiles.}
     \label{fig:abnpol_all}
 \end{figure}
 
@@ -364,7 +364,7 @@ As an illustration, Figure \ref{fig:activityaapl} shows for Apple the time-serie
 \begin{figure}[]
     \centering
     \includegraphics[width=0.75\textwidth]{activity_aapl.JPG}
-    \caption{Daily message volume for Apple. Events are days with an unusual high number of messages. Green upper-triangles show bullish events, gray circles are neutral events and red down-triangles represent bearish events.}
+    \mycaption{Daily message volume for Apple.}{Events are days with an unusual high number of messages. Green upper-triangles show bullish events, gray circles are neutral events and red down-triangles represent bearish events.}
     \label{fig:activityaapl}
 \end{figure}
 
@@ -429,7 +429,7 @@ Figure \ref{fig:ES_CAAR_MM} shows the CAAR around the events identified. This pl
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{caar.JPG}
-    \caption{Cumulative average abnormal returns around identified events. CAAR related to bearish, neutral and bullish events are displayed with the red, gray and green line, respectively. Areas around lines show confidence intervals at the 95\% level.}
+    \mycaption{Cumulative average abnormal returns around identified events.}{CAAR related to bearish, neutral and bullish events are displayed with the red, gray and green line, respectively. Areas around lines show confidence intervals at the 95\% level.}
     \label{fig:ES_CAAR_MM}
 \end{figure}
 
@@ -451,7 +451,7 @@ Table \ref{utest_res} shows U-test estimates for pairwise comparisons. The null 
 \begin{figure}[]
     \centering
     \includegraphics[width=0.75\textwidth]{caap.JPG}
-    \caption{Cumulative average abnormal polarity around identified events. CAAP related to bearish, neutral and bullish events are displayed with the red, gray and green line, respectively. Areas around lines show confidence intervals at the 95\% level.}
+    \mycaption{Cumulative average abnormal polarity around identified events.}{CAAP related to bearish, neutral and bullish events are displayed with the red, gray and green line, respectively. Areas around lines show confidence intervals at the 95\% level.}
     \label{fig:ES_cum_abn_pol_MM}
 \end{figure}
 
@@ -492,7 +492,7 @@ Table \ref{utest_res} shows U-test estimates for pairwise comparisons. The null 
             \includegraphics[width=\textwidth]{box_cap_t+5.JPG}
             \caption*{CAP 5 days after the event}  
         \end{subfigure}
-        \caption{Distributions of CAP and CAR 5 days before an event, on event date and 5 days after an event. The line inside a box shows the median while the edges of each box represent the 25\% and 75\% quantile of the distribution. From the edges of a box, a distance of 1.5 times the interquartile range is measured and a whisker is drawn up to the largest and lowest observed point from the data that falls within this distance.} 
+        \mycaption{Distributions of CAP and CAR}{Distributions of CAP and CAR 5 days before an event, on event date and 5 days after an event. The line inside a box shows the median while the edges of each box represent the 25\% and 75\% quantile of the distribution. From the edges of a box, a distance of 1.5 times the interquartile range is measured and a whisker is drawn up to the largest and lowest observed point from the data that falls within this distance.} 
         \label{fig:boxplotcaar}
     \end{figure*}
 
@@ -519,7 +519,7 @@ Table \ref{utest_res} shows U-test estimates for pairwise comparisons. The null 
 \multirow{2}{*}{$\tau$+5}                       & $H_1$ : $\theta_{bullish} > \theta_{neutral}$ & 44364 & -7.55*** & 452  & 292  \\
                                            & $H_1$ : $\theta_{neutral} > \theta_{bearish}$  & 40515 & -6.00*** & 292  & 380  \\ \hline
 \end{tabular}
-\caption{Mann-Whitney U-test estimates for pairwise significant differences between distribution medians. Under the null hypothesis, the two samples represent two distributions with equal median values. Statistical significance at the 99\%, 95\%, and 90\% level is indicated with ***, **, *, respectively.}
+\mycaption{Mann-Whitney U-test estimates}{Mann-Whitney U-test estimates for pairwise significant differences between distribution medians. Under the null hypothesis, the two samples represent two distributions with equal median values. Statistical significance at the 99\%, 95\%, and 90\% level is indicated with ***, **, *, respectively.}
 \label{utest_res}
 \end{table}
 
@@ -549,7 +549,7 @@ We use time-varying thresholds to build a long and a short portfolio. For every 
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{cross_sectional_cap.jpg}
-    \caption{Cross-sectional statistics of $CAP^{(R)}$. The blue lines shows the cross-sectional mean of the CAP across the 19 tickers over the year. The green and red lines show the up and down 99\% confidence band. We use them as up and down thresholds for the portfolio construction. }
+    \mycaption{Cross-sectional statistics of $CAP^{(R)}$.}{The blue lines shows the cross-sectional mean of the CAP across the 19 tickers over the year. The green and red lines show the up and down 99\% confidence band. We use them as up and down thresholds for the portfolio construction. }
     \label{fig:cross-sec stats}
 \end{figure}
 
@@ -635,7 +635,7 @@ Figure \ref{fig:cumretpf} shows the cumulative log returns of long and short por
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{cumulative_log_return.jpg}
-    \caption{Cumulative log returns of both portfolios (x=2.58) and the S\&P500.}
+    \mycaption{Cumulative log returns of both portfolios (x=2.58) and the S\&P500.}{}
     \label{fig:cumretpf}
 \end{figure}
 
@@ -676,7 +676,7 @@ Figure \ref{fig:cumretpf} shows the cumulative log returns of long and short por
             \includegraphics[width=\textwidth]{returns.JPG}
             \caption*{Daily returns}  
         \end{subfigure}
-        \caption{Long and Short portfolio for x=2.58.} 
+        \mycaption{Long and Short portfolios for x=2.58.}{}
         \label{fig:pf}
     \end{figure*}
 
