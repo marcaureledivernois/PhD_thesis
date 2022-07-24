@@ -1,6 +1,6 @@
 \chapter{Causal Networks with Neural Networks}
 
-\section{Introduction}\label{S:1}
+\section{Introduction}\label{S:2.1}
 
 The causal network of a dynamical system provides important information that may help to better understand its behavior and ultimately design better policies to predict and control it. 
 Large number of banks, insurances, hedge funds, and other financial institutions around the globe are interacting daily and thus their causal network is of great importance in econometrics.  
@@ -13,21 +13,22 @@ Otherwise, when the forecast does not improve by including the information of $X
 This idea is reflected in the information-theoretic measure that we use in this work to infer the causal interactions among a network of time series.  
 
 In the great majority of practical applications, Granger-causality has been studied in the context of Vector Autoregressive (VAR) models. 
-For instance, \citet{billio2012econometric} proposes several measures  based on Granger-causality to capture the connections between the monthly returns of different financial institutions. 
-It uses principle component analysis and ``pairwise'' Granger-causality tests to identify the causal networks. 
+For instance, \citet{billio2012econometric} propose several measures  based on Granger-causality to capture the connections between the monthly returns of different financial institutions. 
+It uses principle component analysis and pairwise Granger-causality tests to identify the causal networks. 
 Other related works are \citet{diebold2014network} and \citet{barigozzi2016network} in which the authors propose connectedness measures based on generalized variance decomposition.
 However, the measures introduced in these works are again limited to linear systems and they are based on pairwise comparison which as we show in Section  \ref{sec:dig} fails to infer the true causal relationships.
 %and they are based on pairwise comparison which as we show in Section \ref{sec:dig}, it fail to infer the true causal relationships.
  %focuses on one particular network structure: the long-run variance decomposition network. Such networks are characterized by the infinite vector moving average and similar to \citet{diebold2014network}, they are limited to linear systems.
 
-Contributions of this paper are both in network identification literature as well in finance.
+\clearpage
+Contributions of this chapter are both in network identification literature and in finance.
 %This paper adds contribution in the network identification literature as well as in finance literature. 
-Our contribution to network identification are as follows:
+Our contributions to network identification are as follows:
 \begin{itemize}
     \item We use an information-theoretic measure known as directed information (DI) to infer the Granger-causalities among a set of time series. 
-This measure is non-parametric, i.e., it does not depend on the underlying model of the dynamics and it is capable of capturing causal relationships in both linear and nonlinear systems. The output of this approach is a directed graph known as Directed Information Graph (DIG) that visualizes the interconnections among a set of time series such as stock returns. 
+This measure is non-parametric (i.e. it does not depend on the underlying model of the dynamics) and it is capable of capturing causal relationships in both linear and nonlinear systems. The output of this approach is a directed graph known as Directed Information Graph (DIG) that visualizes the interconnections among a set of time series such as stock returns. 
 
-\item Computing DI has both high computational and sample complexity which makes it not suitable for inferring the causal structure of large networks. 
+\item Computing DI has high computational and sample complexity which makes it not suitable for inferring the causal structure of large networks. 
 To overcome this problem, we develop a novel approach based on Recurrent Neural Networks (RNNs) that reduces the complexity of evaluating DIs in high-dimensional settings. 
 \end{itemize}
 
@@ -39,7 +40,7 @@ In particular, we recommend to use it as a preliminary feature selection of anot
 For example, \citet{fs1} and \citet{fs2} show that extraneous features are prone to reduce model's performance measures. 
 Finance applications of feature selection models are various and include credit scoring, stock market behavior analysis  or even fraud detection (\citet{fs_fraud}).
 \citet{tsai2009} states that feature selection preprocessing is not addressed carefully enough in the bankruptcy prediction literature. They compare five feature selection methods used in bankruptcy prediction: t-test, correlation matrix, step-wise regression, Principle Component Analysis (PCA) and factor analysis and show that any of these methods improves performance. 
-\citet{fs_stock} uses a Sequential Forward Selection algorithm to select relevant features predicting the Turkish market index. The use of such feature selection model reduces model prediction error compared to the case where all features are used. This is due to information embedded in several economic factors already included in the market index. They show that only the lagged value of the market index is enough to predict the forthcoming value of the index.
+\citet{fs_stock} uses a Sequential Forward Selection algorithm to select relevant features predicting the Turkish market index. The use of such feature selection model reduces model prediction error compared to the case where all features are used. This is due to information embedded in several economic factors already included in the market index. 
 
 %In this work, we use an information-theoretic measure known as directed information (DI) to infer the Granger-causalities among a set of time series. 
 %This measure does not depend on the underlying model of the dynamic and it is capable of capturing causal relationships in both linear and nonlinear systems.
@@ -48,22 +49,22 @@ Finance applications of feature selection models are various and include credit 
 
 \subsection{Related Work}
 In recent years, several approaches have been developed to generalize the applicability of Granger-causality to non-linear and large dynamics. 
-To mention a few, \citet{psaradakis2005markov} that introduces different terminologies for causality based on Granger’s ideas and provide a set of parametric non-causality constraints in the context of Markov switching VAR models.
-In a similar context, \citet{bianchi2019modeling} investigates time-varying systemic risk based on a range of multi-factor asset pricing models and develops a Markov Chain Monte Carlo (MCMC) scheme to infer their model parameters and consequently obtain their corresponding networks.
-Another attempt is \citet{bonaccolto2019estimation} in which the authors explore quantile-based methods of Granger causality.
+To mention a few, \citet{psaradakis2005markov} introduce different terminologies for causality based on Granger’s ideas and provide a set of parametric non-causality constraints in the context of Markov switching VAR models.
+In a similar context, \citet{bianchi2019modeling} investigate time-varying systemic risk based on a range of multi-factor asset pricing models and develop a Markov Chain Monte Carlo (MCMC) scheme to infer their model parameters and consequently obtain their corresponding networks.
+Another attempt is \citet{bonaccolto2019estimation} in which the authors explore quantile-based methods of Granger-causality.
 %This work focuses on the linear factor model augmented with network dependence introduced by \citet{billio2018networks} and develops a method to identify causality among quantiles of the time series. 
 This method is consistent with \citet{hong2009granger} and \citet{corsi2018measuring} that focus on causality among tail events. 
-These methods are suitable for capturing causal relationships that are not in the center of their distributions, or in the mean but they are in the tails of their distributions.
+These methods are suitable for capturing causal relationships that are not in the center of their distributions, or in the mean but in the tails of their distributions.
 It is important to emphasize that our proposed approach using DI is also capable of capturing such causal relations. 
 
 Most of the above aforementioned approaches are developed and tested for small size networks. 
 Often, the problem of network identification in high dimensional settings requires more considerations and even its own techniques. 
-For instance, \citet{billio2019bayesian} proposes a Bayesian non-parametric Lasso prior (BNP-Lasso) for high-dimensional VAR models that can improve efficiency and accuracy. 
+For instance, \citet{billio2019bayesian} propose a Bayesian non-parametric Lasso prior (BNP-Lasso) for high-dimensional VAR models that can improve efficiency and accuracy. 
 In order to overcome overparametrization and overfitting issues in large VAR models, BNP-Lasso clusters the VAR coefficients into groups and shrinks the coefficients of each group toward a common location.
 %Although, the proposed method in this work is suitable for inference in high dimensional VAR models but 
 However, this method is limited to linear models with Gaussian innovations.
-To overcome this limitation, \citet{kalli2018bayesian} proposes a Bayesian non-parametric approach that allows for nonlinearity in the conditional mean, heteroskedasticity in the conditional variance, and non-Gaussian innovations. However, unlike the BNP-Lasso, it does not allow sparsity in the model.
-\citet{petrova2019quasi} proposes yet another non-parametric, quasi-Bayesian likelihood estimation methodology for high dimensional setting with time varying parameters. 
+To overcome this limitation, \citet{kalli2018bayesian} propose a Bayesian non-parametric approach that allows for nonlinearity in the conditional mean, heteroskedasticity in the conditional variance, and non-Gaussian innovations. However, unlike the BNP-Lasso, it does not allow sparsity in the model.
+\citet{petrova2019quasi} proposes yet another non-parametric, quasi-Bayesian likelihood estimation methodology for high dimensional setting with time-varying parameters. 
 %This method is also non-parametric. 
 The work in \citet{iacopini2019bayesian} tackles the curse of dimensionality by a two-stage approach. In the first stage, a spike-and-slab prior distribution is used for each entry of the coefficient matrix which also identifies the interconnection network.
 In the second stage, it imposes prior dependence on the coefficients by specifying a Markov process for their random distribution. 
@@ -73,17 +74,17 @@ However, both methods are limited to VAR models.
 
 
 
-The rest of the paper is organized as follows. 
-Section \ref{Sec1} reviews the notion of Granger causality and formally introduce directed information graphs which is suitable for linear and nonlinear systems. 
+The rest of the chapter is organized as follows. 
+Section \ref{Sec1} reviews the notion of Granger-causality and formally introduces directed information graphs which are suitable for linear and nonlinear systems. 
 In Section \ref{sec:method}, we introduce a novel approach for inferring the Granger-causal network of high dimensional nonlinear systems. 
-Finally, in Section \ref{sec:exp}, we apply our method to learn the causal network of both synthetic and real-world dataset. For the real-world experiment, we used the daily stock prices of major US firms.
+Finally, in Section \ref{sec:exp}, we apply our method to learn the causal network of both synthetic and real-world dataset. For the real-world experiment, we use the daily stock prices of US firms.
 
 %Afterwards, we evaluate the performance of our method in both synthetic linear and nonlinear settings and also apply it to infer the interconnections among the major US financial institutions.
 
 
 \section{Causal Network}\label{Sec1}
 
-In this section, we present a statistical approach to learn the causal interconnections in a dynamical systems based on Granger causality \citet{granger}. 
+In this section, we present a statistical approach to learn the causal interconnections in a dynamical systems based on Granger-causality (see \citet{granger}). 
 We begin by introducing some notations.
 Plain capital letters denote random variables or processes, while lowercase letters denote their realizations. 
 Bold letters are used for column vectors, matrices, and tensors and calligraphy letters are used for sets. 
@@ -98,19 +99,19 @@ For a set $\mathcal{A}=\{a_1,...,a_n\}$ and an index set $\mathcal{I}\subseteq\{
 \subsection{Granger Causality}\label{sec:granger}
 
 Researchers from different fields have developed various frameworks and graphical models to capture and represent interconnections among variables or processes.
-One of the most popular and widely used frameworks in economics is the notion of Granger causality.
-The basic idea in this framework was originally introduced by Wiener \citet{wiener1956theory}, and later formalized by Granger \citet{granger}. 
+One of the most popular and widely used frameworks in economics is the notion of Granger-causality.
+The basic idea in this framework was originally introduced by \citet{wiener1956theory}, and later formalized by \citet{granger}. 
 The idea is as follows: ``we say that $X$ is causing $Y$ if we are better able to predict the future of $Y$ using all available information than if the information apart from the past of $X$ had been used."
 
 Despite broad philosophical viewpoint of \citet{granger1963economic}, his formulation for practical implementation was done using multivariate autoregressive (MVAR) models and linear regression which has been widely adopted in econometric and other disciplines.
-More precisely, in order to identify the influence of $X_t$ on $Y_t$ in a MVAR comprises of three time series $\{X,Y,Z\}$, Granger's idea is to compare the performance of two linear regressions: the first one predicts $Y_t$ given $\{X^{t-1},Y^{t-1},Z^{t-1}\}$ and the second one predicts $Y_t$ given $\{Y^{t-1},Z^{t-1}\}$. Clearly, the performance of the second predictor is bounded by the first predictor. If they have the same performance, then we say $X$ does not Granger cause $Y$. It is important to emphasize that this formulation is only applicable in linear systems. 
+More precisely, in order to identify the influence of $X_t$ on $Y_t$ in a MVAR comprises of three time series $\{X,Y,Z\}$, Granger's idea is to compare the performance of two linear regressions: the first one predicts $Y_t$ given $\{X^{t-1},Y^{t-1},Z^{t-1}\}$ and the second one predicts $Y_t$ given $\{Y^{t-1},Z^{t-1}\}$. Clearly, the performance of the second predictor is bounded by the first predictor. If they have the same performance, then we say $X$ does not Granger-cause $Y$. It is important to emphasize that this formulation is only applicable in linear systems. 
 
-To go beyond linear systems, works such as \citet{directed} and \citet{massey} use information-theoretical measures and generalize Granger causality. 
-In this work, we introduce and apply directed information (DI) \citet{directed}, an information-theoretical tools to measure interconnections among firms.
-DI has been used in many applications to infer causal relationships. For example, \citet{spike} and \citet{di12} used it for analyzing neuroscience data and \citet{acc2014}  and \citet{etesami2018econometric} applied to market data. 
+To go beyond linear systems, works such as \citet{directed} and \citet{massey} use information-theoretical measures and generalize Granger-causality. 
+In this work, we introduce and apply directed information (see \citet{directed}), an information-theoretical tools to measure interconnections among firms.
+Directed information (DI) has been used in many applications to infer causal relationships. For example, \citet{spike} and \citet{di12} use it for analyzing neuroscience data and \citet{acc2014}  and \citet{etesami2018econometric} apply to market data. 
 
 
-In order to visualize the inferred interconnections among time series using DI, directed information graphs (DIGs) have been developed \citet{directed}.  
+Directed information graphs (DIGs) have been developed to visualize the inferred interconnections among time series (see \citet{directed}).  
 DIGs are a type of graphical models in which nodes represent time series and arrows indicate the direction of causation. We use DIG to represent the causal network among the covered firms. 
 
 
@@ -118,7 +119,7 @@ DIGs are a type of graphical models in which nodes represent time series and arr
 \subsection{Directed Information Graphs (DIGs)}\label{sec:dig}
 
 
-In the rest of this section, we describe how the DI can capture the interconnections in causal\footnote{In causal systems, given the full past of the system, the present of the processes become statistically independent. In other words, there are no simulations relationships between the time series.} dynamical systems (linear or non-linear) and formally define DIGs.
+In the rest of this section, we describe how the DI can capture the interconnections in causal dynamical systems (linear or non-linear) and formally define DIGs.
 
 Consider a dynamical system comprised of three time series $\{X,Y,Z\}$ that we assume they have a joint probability density function $p(X,Y,Z)$. 
 To answer whether $X$ has influence on $Y$ or not over time horizon $[1,T]$,  following the idea of Granger, we compare the average performance of two particular predictors over this time horizon. 
@@ -141,9 +142,9 @@ According to the above measures of goodness, the better the predictor is, the sm
 This loss function has meaningful information-theoretical interpretations.
 Namely, the log-loss is the Shannon's code length\footnote{It is also called the description length of $y_t$. For more information see \citet{cover2012elements}.}, i.e., the number of bits required to efficiently represent $y_t$. 
 
-At time $t$ for an outcome $y_t\in \mathcal{Y}$, the difference between the log-losses of the two predictors compares their performances.  This difference is also called \textit{regret},
+At time $t$ for an outcome $y_t\in \mathcal{Y}$, the difference between the log-losses of the two predictors compares their performances.  This difference is also called regret, denoted $r_t$ :
 \begin{align}
-r_t&:=-\log{p(Y_t=y_t|Y^{t-1},Z^{t-1})}-\big(-\log {p(Y_t=y_t|Y^{t-1},Z^{t-1},X^{t-1})}\big)\\
+r_t:&=-\log{p(Y_t=y_t|Y^{t-1},Z^{t-1})}-\big(-\log {p(Y_t=y_t|Y^{t-1},Z^{t-1},X^{t-1})}\big) \nonumber \\
 &=\log \frac{p(Y_t=y_t|Y^{t-1},Z^{t-1},X^{t-1})}{p(Y_t=y_t|Y^{t-1},Z^{t-1})}.
 \end{align}
 Note that the regrets are non-negative for all $t$ and all outcomes $y_t$.
@@ -155,7 +156,7 @@ where the expectation is taken over the joint density function\footnote{For the 
 \begin{align}
     \mathbb{E}[r_t]=\int p(y^{t},z^{t-1},x^{t-1})\log \frac{p(y_t|y^{t-1},z^{t-1},x^{t-1})}{p(y_t|y^{t-1},z^{t-1})}dy^tdx^{t-1}dz^{t-1}.
 \end{align}
-The average regret in \eqref{eq:ave} is called \textit{directed information} (DI) and will be our measure of causation in this work.
+The average regret in \eqref{eq:ave} is called directed information (DI) and will be our measure of causation in this work.
 This measure is always positive and if it is zero, it indicates that the history of time series $X$ contains no significant information that would help in predicting the future of time series $Y$ given the history of $Y$ and $Z$. 
 This definition can be generalized to more than three time series as follows,
 
@@ -195,7 +196,7 @@ A simple way to represent the DIG $G$ of a dynamical system is via the adjacency
 \right. 
 \end{align}
 Given a DIG $G=(\mathcal{V},\mathcal{E})$, we define the parent set of node $R_j$ denoted by $\mathcal{PA}_j\subset \mathcal{V}$ to be the set of all times series that have direct influences on $R_j$, i.e., $\mathcal{PA}_j:=\{R_k: d_{j,k}=1\}$. Similarly, the children set of node $R_j$ is given by $\mathcal{CH}_j:=\{R_k: d_{k,j}=1\}$. 
-Next example demonstrates the DIG of a simple linear system.
+Example \ref{r1} demonstrates the DIG of a simple linear system.
 \begin{example}\label{r1}
 Consider a network of three times series $\{X,Y,Z\}$ with the following linear dynamic,
 \begin{small}
@@ -220,12 +221,19 @@ N_{Z_t}
 \end{equation}
 \end{small}
 where $N_X$, $N_Y$, and $N_Z$ are three independent stationary Gaussian processes with zero mean and a diagonal covariance matrix (1, 0.9, 1). 
-Since the dynamic is linear and the exogenous noises are Gaussian, we can compute the DIs using the following expression\footnote{Equation \eqref{simueq} does not hold in general setting.}\citet{acc2014}.
+Since the dynamic is linear and the exogenous noises are Gaussian, we can compute the DIs using the following expression\footnote{Equation \eqref{simueq} does not hold in more general settings.}(see \citet{acc2014}).
 \begin{equation}\label{simueq}
 I(Z\rightarrow Y||X)=\frac{1}{2T}\sum_{t=1}^{T}\log\frac{|\Sigma_{Y_{t-1},Y_{t},X_{t-1}}||\Sigma_{Z_{t-1},Y_{t-1},X_{t-1}}|}{|\Sigma_{Y_{t-1},X_{t-1}}||\Sigma_{Z_{t-1},Y_{t-1},Y_{t},X_{t-1}}|},
 \end{equation}
-where $|\Sigma_{Y_{t-1},Y_{t},X_{t-1}}|$ denotes the determinant of the covariance matrix of $\{Y_{t-1},Y_{t},X_{t-1}\}$. Using \eqref{simueq}, we computed the DIs of this system,
-\begin{figure}
+where $|\Sigma_{Y_{t-1},Y_{t},X_{t-1}}|$ denotes the determinant of the covariance matrix of $\{Y_{t-1},Y_{t},X_{t-1}\}$. Using \eqref{simueq}, we compute the DIs of this system,
+\begin{small}
+\begin{align}  \label{di_xyz}
+&I(Y\rightarrow X||Z)=0,\ \ I(Z\rightarrow X||Y)=0,\ \ I(Z\rightarrow Y||X)=0,\ \ I(Z\rightarrow Z||X,Y)=0,\\
+&I(X\rightarrow Z||Y)=0,\ \ \ \ I(X\rightarrow Y||Z)\approx 0.1, \ \ \ I(Y\rightarrow Z||X)\approx 0.03. \nonumber
+\end{align}
+\end{small}
+Figure \ref{fig:example_dig} illustrates the DIG of the system \eqref{model1}. In this example, $\mathcal{PA}_Z=\{Y\}$ and $\mathcal{CH}_Z=\{\}$.
+\begin{figure}[h]
 \hspace{4cm}
 \xygraph{ !{<0cm,0cm>;<1.9cm,0cm>:<0cm,1.7cm>::} 
 !{(-.7,1) }*+{X}="x"
@@ -236,16 +244,9 @@ where $|\Sigma_{Y_{t-1},Y_{t},X_{t-1}}|$ denotes the determinant of the covarian
 "x":"y"
 "y":"z"
 }
-   \mycaption{DIG of the system in \eqref{model1}}{}
+\mycaption{DIG estimated from the directed informations \eqref{di_xyz}}{X influences Y, Y influences Z. This DIG correctly estimates the dynamics of the system in \eqref{model1}.}
 \label{fig:example_dig}
 \end{figure}
-\begin{small}
-\begin{align*}
-&I(Y\rightarrow X||Z)=0,\ \ I(Z\rightarrow X||Y)=0,\ \ I(Z\rightarrow Y||X)=0,\ \ I(Z\rightarrow Z||X,Y)=0,\\
-&I(X\rightarrow Z||Y)=0,\ \ \ \ I(X\rightarrow Y||Z)\approx 0.1, \ \ \ I(Y\rightarrow Z||X)\approx 0.03.
-\end{align*}
-\end{small}
-Figure \ref{fig:example_dig} illustrates the DIG of this system. In this example, $\mathcal{PA}_Z=\{Y\}$ and $\mathcal{CH}_Z=\{\}$.
 \end{example}
 
 
@@ -260,9 +261,9 @@ More precisely, without conditioning on $Y$, we obtain
 Notice that the DI in \eqref{cdif} is not a measure based on pairwise comparison. On the contrary, it measures the influence by conditioning on the remaining time series within the network. 
 %his will incorporate the information that the rest of network.
 
+\clearpage
 
 \begin{remark}
-
 A causal model allows a factorization of the joint density function in some specific ways.
 It was shown in \citet{directed} that under a mild assumption, the joint density function of a causal discrete-time dynamical system with DIG $G(\mathcal{R},\mathcal{E})$ can be factorized as follows,
 \begin{equation}\label{abo}
@@ -270,16 +271,13 @@ p(R_1,...,R_m)=\prod_{i=1}^{m}\prod_{t=1}^T p(R_{i,t}|\mathcal{R}_{\mathcal{PA}_
 \end{equation}
 %where $\mathcal{B}_i$ denotes the parent set of node $R_i$ in graph $G$ and $\mathcal{R}_{B_i\cup\{i\}}^{t-1}$ denotes the time series with indices $B_i\cup\{i\}$ up to time $t-1$.  
 Such factorization is called a generative model. 
-
 \end{remark}
-
-
 
 
 \subsection{Inferring  DIGs}
 Inferring the DIG of a dynamical system requires estimating the DIs between all ordered pairs of time series within that system. More precisely, inferring the DIG of a network of $m$ time series requires computing $m(m-1)$ number of DIs. 
 On the other hand, estimating DI  requires estimating all the expectation terms in (\ref{cdif}).
-In information theory this expectation is known as \textit{conditional mutual information}\footnote{For more details see \citet{cover2012elements}.}, i.e., 
+In information theory this expectation is known as \textit{conditional mutual information}\footnote{See \citet{cover2012elements} for more details.}, i.e., 
 \begin{align}
     I(R_{j,t};R_{i}^{t-1}|\mathcal{R}^{t-1}_{-\{i,j\}},R^{t-1}_{j}):=\mathbb{E}\left[\log\frac{p(R_{j,t}|\mathcal{R}^{t-1}_{-\{i,j\}},R_{j}^{t-1},R_{i}^{t-1})}{p(R_{j,t}|\mathcal{R}^{t-1}_{-\{i,j\}},R_{j}^{t-1})}\right].
 \end{align}
@@ -288,7 +286,7 @@ Using this notation, \eqref{cdif} can be written as follows
 I(R_i\rightarrow R_j||\mathcal{R}_{-\{i,j\}})=\frac{1}{T}\sum_{t=1}^T I(R_{j,t};R_{i}^{t-1}|\mathcal{R}^{t-1}_{-\{i,j\}},R^{t-1}_{j}),
 \end{align}
 Therefore, parametric and non-parametric estimators for the conditional mutual information can be used to estimate the DIs. 
-There are different methods that can be used to estimate the terms in (\ref{estdi}) given i.i.d. samples of the time series such as plug-in empirical estimator and k-nearest neighbor estimator. For an overview of such estimators see the Appendix and the articles in \citet{paninski2003estimation}, \citet{noshad2019scalable}, and \citet{jiao2013universal}. 
+There are different methods that can be used to estimate the terms in (\ref{estdi}) given i.i.d. samples of the time series such as plug-in empirical estimator and k-nearest neighbor estimator. For an overview of such estimators see Appendix \ref{appendix2} and the articles in \citet{paninski2003estimation}, \citet{noshad2019scalable}, and \citet{jiao2013universal}. 
  
  
  In general, estimating the DI in (\ref{estdi}) is a complicated task and has high sample complexity.
@@ -299,9 +297,9 @@ Clearly, the covariance matrix can be estimated with lower complexity compared t
 For our experimental results, we used \eqref{simueq} for the linear Gaussian experiment and  the k-nearest method in \citet{sricharan2011k} for the non-linear experiment. 
 The main reason for selecting k-nearest method is because it has shown relatively better performance compared to the other non-parametric estimators. 
 %More precisely, we estimated each of the above conditional mutual information using the $k$-nearest method of \citet{sricharan2011k}. 
-For the sake of completeness, we describe the steps of this method in Appendix.
+For the sake of completeness, we describe the steps of this method in Appendix \ref{appendix2}.
 
-Side information can also help to infer the DIG of a dynamical system without directly estimating the DIs but instead it provides an alternative approach to identify the DIG. 
+Side information can also help to infer the DIG of a dynamical system without directly estimating the DIs but instead providing an alternative approach to identify the DIG. 
 For example, if it is given that the underlying dynamic is linear, i.e., $\textbf{X}_t = \textbf{AX}_{t-1} + \textbf{N}_t$, then it has been shown in \citet{acc2014} that the support\footnote{The support of a matrix $\textbf{B}=[b_{i,j}]$ is a binary matrix of the same dimension as $\textbf{B}$ such that its entry $(i,j)$ is one if and only if $b_{i,j}\neq0$.} of the coefficient matrix $\textbf{A}$ is equal to the adjacency matrix of its corresponding DIG.   
 This result implies that in linear systems, one can obtain the DIG by estimating the coefficient matrix. The latter problem has lower complexity and it can be done using e.g., linear regression. 
 For similar examples in econometric models see \citet{etesami2018econometric}.
@@ -315,7 +313,7 @@ For similar examples in econometric models see \citet{etesami2018econometric}.
 \subsection{DIG in High-dimensional Settings}
 For large networks with thousands nodes and millions of edges such as social or financial networks, DIGs become too complex to infer and analyze.
 The main reason is that without any side information, estimating the DI has high computational and sample complexity. 
-Furthermore, the estimating complexity of DI increase with the dimension of the network.
+Furthermore, the estimating complexity of DI increases with the dimension of the network.
 This is due to the fact that the DI in \eqref{cdif} measures the influence from $R_i$ to $R_j$ by conditioning on the information from the remaining network $\mathcal{R}_{-\{i,j\}}$. 
 Therefore, the size of the conditioning set grows with the size of the network.
 This motivates the prior works to reduce the complexity of estimating  DIs and thus make it more suitable for inferring the DIG of large networks by reducing the size of the conditioning set. 
@@ -325,7 +323,7 @@ One such approaches is proposed by \citet{quinn2013efficient}, in which they dev
 This means reducing the size of the conditioning set to zero, i.e., no conditioning.  
 However, this approach comes with the price of an approximation error and furthermore it fails to identify many interconnections between the processes. 
 
-The authors in \citet{quinn2015bounded} presented a more generalized version of the above approximation in which they identify the optimal connected bounded in-degree\footnote{Connected bounded in-degree graphs with bound $k$ are connected directed graphs in which each node has at most $k$ number of parents.} approximations.  
+The authors in \citet{quinn2015bounded} present a more generalized version of the above approximation in which they identify the optimal connected bounded in-degree\footnote{Connected bounded in-degree graphs with bound $k$ are connected directed graphs in which each node has at most $k$ number of parents.} approximations.  
 This method reduces the size of the conditioning set in \eqref{cdif} to some constant value (bound of the in-degrees) which is independent of the network size. 
 Although, this approach improves upon the approximation error but there is still a trade-off between the sample complexity and the approximation error. In another words, as the in-degree bound increases, the sample complexity increases but the approximation error decreases.
 
@@ -338,7 +336,7 @@ Next section explains this idea in more details.
 
 \section{Methodology}\label{sec:method}
 
-In order to present our method, we need the following preliminary result that characterizes an important property of DI in \eqref{cdif}. All the proofs are presented in Appendix A.
+In order to present our method, we need the following preliminary result that characterizes an important property of DI in \eqref{cdif}. All the proofs are presented in the Appendix \ref{appendix2}.
 
 \begin{lemma}\label{lemma:small}
 Consider a network of $m$ time series $\mathcal{R}=\{R_1,...,R_m\}$ with corresponding DIG $G=(\mathcal{V},\mathcal{E})$. Let $\mathcal{C}$ be a subset of $\mathcal{R}_{-\{i,j\}}$ such that $\mathcal{PA}_j\subseteq \mathcal{C}$. If $R_i\not\in\mathcal{PA}_j$, then we have
@@ -425,6 +423,7 @@ The dynamic is called \textit{Markovian} if $\mathcal{X}^{t-1}$ is replaced by $
 
 Below, we generalize the result of Lemma \ref{lemma:lin} to the non-linear system in \eqref{nonlinear} by showing that in such systems, it is possible to reduce the conditioning set in the DI to one time series. 
 %Afterward, we propose two approaches for two sub-classes of \eqref{nonlinear} to obtain this times series.
+\clearpage
 \begin{lemma}\label{lemma:nonlinear}
 In \eqref{nonlinear}, $X_i$ has no direct influence on $X_j$ if and only if 
 \begin{align}\label{eq:non-q}
@@ -434,7 +433,7 @@ where $Q$ is a time series defined by $Q_{t-1}:=F_{j}(\mathcal{X}^{t-1}_{-\{i\}}
 \end{lemma}
 In the remaining of this section, we propose two methods to obtain the time series $Q$ introduced in the above Lemma. 
 
-\paragraph{Koopman-based lifting technique}
+\subsubsection{Koopman-based lifting technique}
 Consider a particular sub-class of the non-linear system in \eqref{nonlinear} whose dynamic is defined by
 \begin{align}\label{nonlin}
 F_{j}(\mathcal{X}^{t-1}) = \sum_{k=1}^K w_{j,k} h_k(\mathcal{X}_{t-1}), \ \ j=1,...,m,
@@ -460,35 +459,42 @@ In this setting, the results of Lemma \ref{lemma:nonlinear} implies that the fol
     Q_t = \sum_{k=1}^K w_{j,k} h_k(\mathcal{X}_{-\{i\},t-1}).
 \end{align}
 However, in this formulation, the weights $\{w_{,k}\}$ are unknown. 
-An approach to obtain the weights is a non-linear filtering technique known as Koopman-based lifting \citet{koopman1931hamiltonian}. 
+An approach to obtain the weights is a non-linear filtering technique known as Koopman-based lifting (see \citet{koopman1931hamiltonian}). 
 This technique takes observational data and a set of library functions as inputs and obtains the unknown coefficients $\{w_{,k}\}$.
-The main steps of this technique are; transforming the data (lifting the data),  applying a linear identification on the lifted data, and finally applying another transformation to bring down the results into the original vector field.  Figure \ref{fig:koopman} illustrates the main steps. For more details see Appendix and \citet{mauroy2019koopman}. 
-\begin{figure}
+The main steps of this technique are transforming the data (lifting the data),  applying a linear identification on the lifted data, and finally applying another transformation to bring down the results into the original vector field.  Figure \ref{fig:koopman} illustrates the main steps. For more details see Appendix \ref{appendix2} and \citet{mauroy2019koopman}. 
+\begin{figure}[h]
 \centering
 \includegraphics[scale=.4]{koopman.pdf}
-\mycaption{Koopman lifting technique compared to classical non-linear identification}{}
+\mycaption{Koopman lifting technique compared to classical non-linear identification}{Starting from the bottom left plot, the main steps of this technique are transforming the data (lifting the data),  applying a linear identification on the lifted data, and finally applying another transformation to bring down the results into the original vector field.}
 \label{fig:koopman}
 \end{figure}
 
 Although, the Koopman-based lifting technique is theoretically sound but it has some shortcomings facing real-world applications.
 First, the Koopman's performance depends on the choice of the library functions and second, it often fails to estimate the real time series $Q$.
-More precisely, this technique involves the computation of matrix $\textbf{L}:=log(\textbf{P}_x^{\dagger}\textbf{P}_y)/T_s$, where $\textbf{P}_x$ and $\textbf{P}_y$ are estimated from the observational data\footnote{See Appendix for more details.}.
+More precisely, this technique involves the computation of matrix $\textbf{L}:=log(\textbf{P}_x^{\dagger}\textbf{P}_y)/T_s$, where $\textbf{P}_x$ and $\textbf{P}_y$ are estimated from the observational data\footnote{See Appendix \ref{appendix2} for more details.}.
 Matrix $\textbf{P}_x^{\dagger}$ denotes the pseudo-inverse, and the function $\log(\cdot)$ denotes the (principal) matrix logarithm.
 On the other hand, Koopman lifting technique is applicable for estimating the time series $Q$ only when the resulting matrix $\textbf{L}$ is real\footnote{See \citet{culver1966existence} for conditions under which a real matrix has a real logarithm.}.
 However, this is not always the case in real-world applications due to observational noises and lack of sufficient data. 
 %In fact, as it is stated in \citet{culver1966existence}, a real matrix has a real logarithm if and only if it is invertible and each Jordan block belonging to a negative eigenvalue occurs an even number of times. 
 To overcome such shortcomings, we propose an alternative approach to estimate $Q$ using recurrent neural networks (RNNs).
 
-\paragraph{RNNs method}
- Recurrent neural networks are a specific class of Neural Networks well suited to learn time series. 
+\subsubsection{RNNs method}
+ Recurrent neural networks are a specific class of neural networks well suited to learn time series. 
  They are distinguished by their memory as they are able to remember information from prior inputs to influence their current outputs.
  The universal approximation theorem states that a neural network with enough hidden layers can approximate any non-linear continuous function such as $F_j(\cdot)$ in \eqref{nonlinear} (see \citet{HORNIK1989359}). 
  
- \begin{algorithm}[t]
+ Given the aforementioned result, we train a RNN using the observational data to estimate the time series $Q$ defined in Lemma \ref{lemma:nonlinear}.
+ More precisely, our RNN maps $\mathcal{X}_{-\{i\}}^{t-1}$ as the inputs to $X_{j,t}$ as the output. 
+ Let $R_j(\mathcal{X}_{-\{i\}}^{t-1};\Theta^*)$ denotes the trained RNN with parameters $\Theta^*$. 
+ In this case, the time series $Q$ can be written as  $Q_{t-1}=R_{j}(\mathcal{X}_{-\{i\}}^{t-1};\Theta^*)$.
+ Finally, we use \eqref{eq:non-q} to detect whether $X_i$ has influence on $X_j$ or not. 
+ Algorithm \ref{alg}  summarizes the steps of our RNN method.
+
+ \begin{algorithm}[h]
  \textbf{Input:} Observational data of $m$ time series up to time $T$, $\mathcal{X}^T$, Threshold $\alpha>0$\;
  \textbf{Output:} Adjacency matrix of $\textbf{DIG}=[d_{i,j}]$\;
  \For{ $i,j=1,...,m$}{
-  Train an RNN $R_j(\cdot;\Theta^*)$ that maps $\mathcal{X}_{-\{i\}}^{t-1}$ to $X_{j,t}$\; 
+  Train a RNN $R_j(\cdot;\Theta^*)$ that maps $\mathcal{X}_{-\{i\}}^{t-1}$ to $X_{j,t}$\; 
   Define $Q_{t-1}=R_{j}(\mathcal{X}_{-\{i\}}^{t-1};\Theta^*)$\;
   \eIf{$I(X_{i}\rightarrow X_j || Q) > \alpha$}{
    $d_{j,i}=1$
@@ -499,20 +505,11 @@ To overcome such shortcomings, we propose an alternative approach to estimate $Q
  \mycaption{Infer-DIG}{}
  \label{alg}
 \end{algorithm}
- Given the aforementioned result, we train an RNN using the observational data to estimate the time series $Q$ defined in Lemma \ref{lemma:nonlinear}.
- More precisely, our RNN maps $\mathcal{X}_{-\{i\}}^{t-1}$ as the inputs to $X_{j,t}$ as the output. 
- Let $R_j(\mathcal{X}_{-\{i\}}^{t-1};\Theta^*)$ denotes the trained RNN with parameters $\Theta^*$. 
- In this case, the time series $Q$ can be written as  $Q_{t-1}=R_{j}(\mathcal{X}_{-\{i\}}^{t-1};\Theta^*)$.
- Finally, we use \eqref{eq:non-q} to detect whether $X_i$ has influence on $X_j$ or not. 
- Algorithm Infer-DIG in \ref{alg} summarizes the steps of our RNN method.
-
-
 
 
  %\begin{align}
   %   \min_{\theta}||X_{j,t} - F_{j}(\mathcal{X}_{-}^{t-1};\theta)||^2.
  %\end{align}
- 
  
 \section{Experimental Results}\label{sec:exp}
 
@@ -522,7 +519,7 @@ To overcome such shortcomings, we propose an alternative approach to estimate $Q
  Finally, we apply our approach to a set of empirical data describing the daily stock prices of US firms and obtain their corresponding causal network. 
  
  \subsection{Linear Gaussian Framework} \label{linfr}
- In this experiment, we consider a linear system, a VAR(1) model whose dynamic is given by 
+ In this experiment, we consider a linear system, a VAR(1) model whose dynamics are given by 
 \begin{equation}\label{eq:ex_lin}
     \textbf{X}_t = \textbf{A} \textbf{X}_{t-1} + \textbf{N}_t
 \end{equation}
@@ -550,19 +547,20 @@ Afterward, for every entry $(i,j)$ of $\textbf{A}$, we independently generated a
 \right.
 \end{align}
 where $1_{a>b}$ denotes the indicator function which is equal to 1 when $a>b$ and $0$ otherwise and $\underline{\epsilon}$ and $\bar{\epsilon}$ are thresholds to define non-zero entries in the upper-left and the lower part of $\textbf{A}$, respectively.
+
 Figure \ref{fig:matrix} illustrates the structure of the resulting $\textbf{A}$.
 We select these thresholds such that $\underline{\epsilon}<\bar{\epsilon}$. 
 This ensures that the upper-left of $\textbf{A}$ is denser than its lower part or equivalently, assets with indices $\{1,...,s\}$ are more connected than the ones with indices $\{1+s,...,m\}$.
 In our experiment, we select $(s,m)=(85,100)$ and $(\underline{\epsilon},\bar{\epsilon})=(0.4,0.7)$. 
-%further results are robust to changes of parameters.
-\begin{figure}
-    \centering
-    \includegraphics[scale=.2]{fig_matrix.pdf}
-    \mycaption{Structure of matrix $\textbf{A}$ in \eqref{eq:ex_lin} that is build using \eqref{eq:rules}.}{}
-    \label{fig:matrix}
-\end{figure}
 Finally, to guarantee the stability of the time series, we rescale\footnote{Formally, we use $\textbf{A}/(\rho(\textbf{A}) + \epsilon)$, where $0<\epsilon$.} $\textbf{A}$ such that its spectral radius is strictly less than one, i.e.,  $\rho(\textbf{A})< 1$. 
 Once the matrix $\textbf{A}$ is defined, we simulate the time series using \eqref{eq:ex_lin} for a period of $T = 30000$ and use the resulting data for our estimations.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.2]{fig_matrix.pdf}
+    \mycaption{Adjency matrix A for the linear Gaussian framework}{Structure of matrix A in \eqref{eq:ex_lin} that is built using \eqref{eq:rules}.}
+    \label{fig:matrix}
+\end{figure}
 
 To study the effect of the conditioning set on detecting the influences, in our experiments, we consider four different conditioning sets.
 More precisely, to measure whether asset $i$ influences asset $j$, we estimate $I(X_i\rightarrow X_j||\mathcal{C}_j)$ for the following choices of the conditioning set; 
@@ -593,7 +591,7 @@ Finally, we obtain the adjacency matrix of the corresponding DIGs by comparing t
 \end{array} 
 \right.
 \end{align}
-where $\widehat{I}(\cdot\rightarrow\cdot||\cdot)$ denotes the estimated DI from the data. 
+where $\widehat{I}(X_i\rightarrow X_j||\mathcal{C}_j)$ denotes the estimated DI from $X_i$ to $X_j$ given the conditioning set $\mathcal{C}_j$. 
 In order to compare the performances of the aforementioned four approaches, we use the precision and recall measure between the true DIG (obtained from $\textbf{A}$) and their estimated DIGs. 
 Formally, the precision and the recall are defined by
 \begin{align*}
@@ -606,7 +604,7 @@ where
     %\item $TN := \sum_{i,j=1}^m 1_{a_{j,i} = 0}1_{[\textbf{DIG}]_{j,i} \leq \alpha}$.
 \end{align*}
 
-\begin{figure*}
+\begin{figure*}[h]
         \centering
         \begin{subfigure}[b]{0.48\textwidth}
             \centering
@@ -627,7 +625,7 @@ where
             \centering 
             \includegraphics[width=\textwidth]{Linear_Performance_RNN.jpg}
         \end{subfigure}
-        \mycaption{Precision and recall curves in the linear framework.}{Precision and recall curves for the \textit{True parents}, \textit{Most correlated}, \textit{Ideal portfolio}, and the \textit{RNN}, respectively.} 
+        \mycaption{Precision and recall curves in the linear framework.}{Precision and recall curves for the \textit{true parents}, \textit{most correlated}, \textit{ideal portfolio}, and the \textit{RNN}, respectively.} 
         \label{perflin}
     \end{figure*}
     
@@ -640,7 +638,7 @@ As we will see in the next section, its performance declines when the underlying
 For the \textit{most correlated} approach, we used $k=10$ but as it is shown in Figure \ref{perflin}, it has the worst performance among the four conditioning methods. 
 This is due to the fact that the set of the ten most correlated assets with a given asset $j$ does not necessarily contains the true parents of asset $j$.
 On the other hand, we observe high accuracy from the \textit{RNN} approach which is a striking result.
-This result is an evidence that an RNN is capable of estimating the ideal portfolio, i.e., the time series $Q$ in Lemma \ref{lemma:lin} without any side information about the underlying model. 
+This result is an evidence that a RNN is capable of estimating the ideal portfolio, i.e., the time series $Q$ in Lemma \ref{lemma:lin} without any side information about the underlying model. 
 
 
 %On the other hand, the \textit{RNN} approach keeps its high performance even in non-linear system.  
@@ -670,39 +668,34 @@ Precision-recall curves are a standard tools to illustrate and compare the perfo
 In this curve the precision is demonstrated in the y-axis vs. the recall on the x-axis for all potential values of the threshold $\alpha$. 
 
 Similar to the linear setting, we use the \textit{true parents} as a benchmark since it has the ideal performance. 
-%Conditioning on the true parents obviously performs the best as all the information is included in the Directed Information. 
-%However, it is also the heaviest in terms of computational time. 
 It is however important to emphasize that this conditioning approach has higher complexity compared to the others. 
 This is because in the \textit{true parent} approach, the size of the conditioning set is relatively larger than the other approaches. 
 
-
 For the \textit{most correlated} approach, we use $k=5$, i.e., the size of the conditioning set is five.
 With this method, we could slightly reduce the estimation complexity of the DIs compared to the  \textit{true parent} approach but this comes with the price of losing the performance.
-clearly, the performance of the \textit{most correlated} approach can be improved by increasing $k$ but this will increase the complexity.
-
+Clearly, the performance of the \textit{most correlated} approach can be improved by increasing $k$ but this will increase the complexity.
 
 The performance of the \textit{ideal portfolio} approach (using the time series in Lemma \ref{lemma:lin} as the conditioning) is worse than all others which is not surprising as the model is no longer linear. 
 %\TODO{that is not the ideal portfolio, the ideal portfolio is not linear in the quadratic framework. that is the estimated linear portfolio using (31)}
 This means that the information embedded in the linear portfolio is not sufficient to decide the non-linear influences among the time series. 
 
-
 Finally, as it is shown in Figure \ref{fig:perfnonlin}, the \textit{RNN} approach outperforms the \textit{most correlated} and the \textit{ideal portfolio} approaches and it shows close performance to the \textit{true parents} but with the size of the conditioning set equal to one. 
-This result once more fortifies our claim that with an RNN we can summarize the information of the network into one time series and use it for detecting the causal relationships. 
+This result once more fortifies our claim that with a RNN we can summarize the information of the network into one time series and use it for detecting the causal relationships. 
 This claim is due to Lemma \ref{lemma:nonlinear} and the universal approximation theorem which states that a neural network with enough hidden layers can approximate any non-linear function  \citet{HORNIK1989359}.
-The slight difference between the performance of the \textit{RNN} and the \textit{true Parents} is because of the estimation error in the recurrent neural network. 
+The slight difference between the performance of the \textit{RNN} and the \textit{true parents} is because of the estimation error in the recurrent neural network. 
 
 %The latter result suggests that a one-dimension time series conditioning coming from the Neural Network is able to keep as much information as the N-dimensions conditioning coming from the True Parents. This is consistent with the Universal Approximation Theorem  (see ).  Complexity and computational time are also reduced; this reduction is growing as more and more assets are included in the DIG. 
 
-\begin{figure}
+\begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{precrecall_15assets.jpg}
-\mycaption{Precision-Recall curves for the quadratic model.}{}
+\includegraphics[width=0.75\textwidth]{precrecall_15assets.jpg}
+\mycaption{Precision-recall curves for the quadratic model}{Blue, green, yellow and red lines show the precision-recall curve of the \textit{true parents}, \textit{most correlated}, \textit{ideal portfolio}, and the \textit{RNN}, respectively.}
 \label{fig:perfnonlin}
 \end{figure}
 
 \subsection{Empirical DIG}
 
-This section describes how to apply our approach to empirical data and obtain the DIG of some US firms. 
+This section describes how to apply our approach to empirical data and obtain the DIG of US firms. 
 We extracted the daily stock prices and the daily US Treasury rate as risk free returns from the CRSP database from 1990 to 2020. 
 As the market is likely to evolve through these years, 
 we chose to divide the dataset into six subsets, each of which has a length of five years and estimate the corresponding DIG of each subset separately. 
@@ -724,7 +717,7 @@ Each graph consists of 60 nodes illustrating the cause firm on the top hemispher
 For instance, if there is an edge between ``from: AAPL'' on the top and ``to: GOOGL'' on the bottom, it means that Apple influences Google. The dynamic evolution of the DIGs through time can often be explained by real events that happened in the market. For instance, in the DIG 2010-2014, Apple was not influencing General Electric (GE). However, on the 17th October 2017, Apple announced a partnership with GE to bring Predix, GE's data and analytics platform, to their iPhones and iPads. We are able to capture this partnership in the DIG 2015-2019 as an edge is now present from Apple to GE. Another example is the announced collaboration between AT\&T and Cisco to manage IoT devices and launch 5G service at the end of the 2010s: 
 there was neither an edge from AT\&T to Cisco nor from  Cisco to AT\&T during the first half of the 2010s, but the DIG for the second half of the 2010s shows a mutual influence, reflecting an increased relationship between the two companies.
 
-Table \ref{GrangerCausality} shows the Degree of Granger Causality (DGC) defined as the fraction of relationships in the network among all potential relationships. Formally,
+Table \ref{GrangerCausality} shows the Degree of Granger-Causality (DGC) defined as the fraction of relationships in the network among all potential relationships. Formally,
 \begin{equation}
     DGC = \dfrac{1}{N^2} \sum_i \sum_j [\textbf{DIG}]_{j,i},
 \end{equation}
@@ -740,6 +733,7 @@ This result suggests that the market return is influencing a high number of firm
 
 
 \begin{table}[]
+\centering
 \begin{tabular}{cccccc}
 \hline
 \multicolumn{1}{|c|}{1990-1994} &
@@ -916,7 +910,7 @@ MOT  & 1  & EMC  & 1  & JNJ  & 0  & PG   & 1  & BRK   & 4  & VZ    & 1  \\ \hlin
 
 \section{Conclusion}\label{sec:con}
 
-In this work, we introduce an information-theoretic measure known as directed information that is capable of capturing nonlinear Granger-causality in an interactive system. 
+In this chapter, we introduce an information-theoretic measure known as directed information that is capable of capturing nonlinear Granger-causality in an interactive system. 
 We develop a novel algorithm based on recurrent neural network utilized with directed information. 
 This algorithm can infer the interconnections within a large network with less complexity than previous works. As a proof of concept, we show that our approach performs well both in a linear and in a non-linear simulated environments. Finally, we apply this algorithm to infer the causal relationships among the major US firms during 1990 to 2020. 
 

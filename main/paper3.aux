@@ -1,130 +1,108 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\citation{nikfarjam2010text}
 \citation{antweiler2004all}
-\citation{shirata2011extracting}
-\citation{cecchini2010making}
-\citation{loughran2011barron}
-\citation{renault2017intraday}
-\citation{nikolov2014agency}
-\citation{challet2013predicting}
-\citation{tetlock2008more}
-\citation{Ghoshal}
+\citation{tet_07}
+\citation{loughran2011liability}
+\citation{wilson2005recognizing}
+\citation{chen2020large}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}StockTwits Classified Sentiment and Stock Returns}{51}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction}{51}{section.3.1}\protected@file@percent }
-\newlabel{S:1}{{3.1}{51}{Introduction}{section.3.1}{}}
-\citation{ranco2015effects}
-\citation{sprenger2014tweets}
-\citation{loughran2011liability}
-\citation{erdemlioglu2017market}
-\citation{loughran2011barron}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Data}{53}{section.3.2}\protected@file@percent }
-\newlabel{S:data}{{3.2}{53}{Data}{section.3.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Number of messages posted daily on StockTwits.\relax }}{54}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:tweet_vol_daily}{{3.1}{54}{Number of messages posted daily on StockTwits.\relax }{figure.caption.32}{}}
+\newlabel{S:3.1}{{3.1}{51}{Introduction}{section.3.1}{}}
+\citation{Ghoshal}
 \citation{renault2017intraday}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Screenshot of StockTwits as of 3rd March 2020. The first message is labeled as bullish by the user ``satkaru", the two next are unlabeled messages that will be classified using a machine learning classifier and the last message is labeled as bearish by the user ``Etrading''.\relax }}{55}{figure.caption.33}\protected@file@percent }
-\newlabel{screenshot}{{3.2}{55}{Screenshot of StockTwits as of 3rd March 2020. The first message is labeled as bullish by the user ``satkaru", the two next are unlabeled messages that will be classified using a machine learning classifier and the last message is labeled as bearish by the user ``Etrading''.\relax }{figure.caption.33}{}}
+\citation{renault2020sentiment}
+\citation{ranco2015effects}
+\citation{ke_kel_xiu_20}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}StockTwits and Stock Market Data}{53}{section.3.2}\protected@file@percent }
+\newlabel{S:data}{{3.2}{53}{StockTwits and Stock Market Data}{section.3.2}{}}
+\citation{loughran2011barron}
+\citation{sprenger2014tweets}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Number of messages posted daily on StockTwits.\relax }}{54}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:tweet_vol_daily}{{3.1}{54}{Number of messages posted daily on StockTwits.\relax }{figure.caption.34}{}}
 \citation{renault2020sentiment}
 \citation{saif2014stopwords}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Number of user-labeled messages in each category. There are around 60 million unlabeled messages that we classify using the 30 million user-labeled bullish and bearish messages.\relax }}{56}{figure.caption.34}\protected@file@percent }
-\newlabel{categrepartition-preclassif}{{3.3}{56}{Number of user-labeled messages in each category. There are around 60 million unlabeled messages that we classify using the 30 million user-labeled bullish and bearish messages.\relax }{figure.caption.34}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces User summary statistics. Top graph is a log-log histogram of the number of followers per user and the bottom graph shows the log-log histogram of the number of messages posted by users.\relax }}{57}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:data-stocktwits1}{{3.4}{57}{User summary statistics. Top graph is a log-log histogram of the number of followers per user and the bottom graph shows the log-log histogram of the number of messages posted by users.\relax }{figure.caption.35}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Firm summary statistics. Top graph shows the top 30 most discussed tickers on the platform. SPY is the ticker of the S\&P and AAPL is the ticker for Apple. Bottom graph shows the distribution of the number of messages across tickers.\relax }}{58}{figure.caption.36}\protected@file@percent }
-\newlabel{fig:data-stocktwits2}{{3.5}{58}{Firm summary statistics. Top graph shows the top 30 most discussed tickers on the platform. SPY is the ticker of the S\&P and AAPL is the ticker for Apple. Bottom graph shows the distribution of the number of messages across tickers.\relax }{figure.caption.36}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Bullish word cloud (top), bearish word cloud (bottom). These correspond to the most frequent terms (up to 3-grams) in user-labeled bullish (bearish) messages relative to their total appearance. The size of the terms represent their importance in the cloud.\relax }}{60}{figure.caption.37}\protected@file@percent }
-\newlabel{wordclouds}{{3.6}{60}{Bullish word cloud (top), bearish word cloud (bottom). These correspond to the most frequent terms (up to 3-grams) in user-labeled bullish (bearish) messages relative to their total appearance. The size of the terms represent their importance in the cloud.\relax }{figure.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Screenshot of StockTwits as of 3rd March 2020, for a query of AAPL.\relax }}{56}{figure.caption.35}\protected@file@percent }
+\newlabel{screenshot}{{3.2}{56}{Screenshot of StockTwits as of 3rd March 2020, for a query of AAPL.\relax }{figure.caption.35}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Ticker summary statistics}}{56}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:data-stocktwits2}{{3.3}{56}{Ticker summary statistics}{figure.caption.36}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Preprocessing of five sample messages}}{57}{table.caption.37}\protected@file@percent }
+\newlabel{tab:preprocess}{{3.1}{57}{Preprocessing of five sample messages}{table.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Word clouds}}{57}{figure.caption.38}\protected@file@percent }
+\newlabel{wordclouds}{{3.4}{57}{Word clouds}{figure.caption.38}{}}
+\citation{renault2017intraday}
+\citation{chawla2004special}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Sentiment Classification}{58}{section.3.3}\protected@file@percent }
+\newlabel{S:classification}{{3.3}{58}{Sentiment Classification}{section.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Message classification}}{58}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:classif_time}{{3.5}{58}{Message classification}{figure.caption.39}{}}
 \citation{nlp1}
 \citation{classifq}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Preprocessing of five sample messages. Preprocessing operations include: punctuation removal, lower casing, apostrophe handling, contraction form handling (i.e. ``won't" becomes ``will not"), tickers removal, users removal, URLs removal, parsing and a simple spell corrector dealing with more than two repeated characters (i.e. ``goooood" becomes ``good")\relax }}{61}{table.caption.39}\protected@file@percent }
-\newlabel{tab:preprocess}{{3.1}{61}{Preprocessing of five sample messages. Preprocessing operations include: punctuation removal, lower casing, apostrophe handling, contraction form handling (i.e. ``won't" becomes ``will not"), tickers removal, users removal, URLs removal, parsing and a simple spell corrector dealing with more than two repeated characters (i.e. ``goooood" becomes ``good")\relax }{table.caption.39}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Sentiment classification}{61}{section.3.3}\protected@file@percent }
-\newlabel{S:classification}{{3.3}{61}{Sentiment classification}{section.3.3}{}}
-\citation{chawla2004special}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Proportions of user-labeled messages in each category: bullish (green), bearish (red), and unlabeled (gray). Proportions are aggregated monthly.\relax }}{62}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:ts_neutral_vs_uncl}{{3.7}{62}{Proportions of user-labeled messages in each category: bullish (green), bearish (red), and unlabeled (gray). Proportions are aggregated monthly.\relax }{figure.caption.40}{}}
+\citation{erdemlioglu2017market}
 \citation{wilson2005recognizing}
 \citation{chen2020large}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Optimal classification thresholds}}{60}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:optimal_thresholds}{{3.6}{60}{Optimal classification thresholds}{figure.caption.40}{}}
 \citation{ranco2015effects}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Optimal classification thresholds. The green (red) line is the F1 score for the bullish versus non-bullish (bearish versus non-bearish) classification, respectively. Circles indicate the maximal F1 scores, along with the corresponding classification score thresholds.\relax }}{64}{figure.caption.41}\protected@file@percent }
-\newlabel{fig:optimal_thresholds}{{3.8}{64}{Optimal classification thresholds. The green (red) line is the F1 score for the bullish versus non-bullish (bearish versus non-bearish) classification, respectively. Circles indicate the maximal F1 scores, along with the corresponding classification score thresholds.\relax }{figure.caption.41}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Proportions of classified messages in each category: bullish (light green predicted, green user-labeled), bearish (light red predicted, red user-labeled), and neutral (gray). Proportions are aggregated monthly.\relax }}{65}{figure.caption.42}\protected@file@percent }
-\newlabel{fig:postclassif_acrosstime}{{3.9}{65}{Proportions of classified messages in each category: bullish (light green predicted, green user-labeled), bearish (light red predicted, red user-labeled), and neutral (gray). Proportions are aggregated monthly.\relax }{figure.caption.42}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Polarity}{65}{section.3.4}\protected@file@percent }
-\newlabel{S:polarity}{{3.4}{65}{Polarity}{section.3.4}{}}
-\newlabel{marketpoleq}{{3.4}{65}{Polarity}{section.3.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Market polarity on the y-axis versus the polarity of the SPY on the x-axis. The red line shows the linear regression line and coefficients.\relax }}{66}{figure.caption.43}\protected@file@percent }
-\newlabel{fig:marketpolspy}{{3.10}{66}{Market polarity on the y-axis versus the polarity of the SPY on the x-axis. The red line shows the linear regression line and coefficients.\relax }{figure.caption.43}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Polarity}{61}{section.3.4}\protected@file@percent }
+\newlabel{S:polarity}{{3.4}{61}{Polarity}{section.3.4}{}}
+\newlabel{marketpoleq}{{3.5}{61}{Polarity}{equation.3.4.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Market polarity versus SPY polarity}}{62}{figure.caption.41}\protected@file@percent }
+\newlabel{fig:marketpolspy}{{3.7}{62}{Market polarity versus SPY polarity}{figure.caption.41}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Regressions of returns on polarity}}{62}{table.caption.42}\protected@file@percent }
+\newlabel{regpolret}{{3.2}{62}{Regressions of returns on polarity}{table.caption.42}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Correlation between return and polarity}}{63}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:ts}{{3.8}{63}{Correlation between return and polarity}{figure.caption.43}{}}
+\citation{mackinlay1997event}
 \citation{fama1969}
 \citation{fama1991efficient}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Event Study}{64}{section.3.5}\protected@file@percent }
+\newlabel{S:event studies}{{3.5}{64}{Event Study}{section.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Events}{64}{subsection.3.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Message activity and transaction volume}}{64}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:actvol}{{3.9}{64}{Message activity and transaction volume}{figure.caption.44}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Empirical distribution of abnormal polarities on event dates}}{65}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:abnpol_all}{{3.10}{65}{Empirical distribution of abnormal polarities on event dates}{figure.caption.45}{}}
 \citation{mackinlay1997event}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Results from linear regressions of contemporaneous and next period stock returns on polarity. Stock returns are trimmed at the 5\% percentile on both sides. Standard errors are reported in parentheses. Statistical significance at the 99\%, 95\%, and 90\% level is indicated with ***, **, *, respectively.\relax }}{67}{table.caption.44}\protected@file@percent }
-\newlabel{regpolret}{{3.2}{67}{Results from linear regressions of contemporaneous and next period stock returns on polarity. Stock returns are trimmed at the 5\% percentile on both sides. Standard errors are reported in parentheses. Statistical significance at the 99\%, 95\%, and 90\% level is indicated with ***, **, *, respectively.\relax }{table.caption.44}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Event studies}{67}{section.3.5}\protected@file@percent }
-\newlabel{S:event studies}{{3.5}{67}{Event studies}{section.3.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Time series of daily polarity (red - left axis) and daily stock returns (blue - right axis) since 1st of January 2019 for the top 6 most discussed tickers. Pearson correlation between the two time series is shown in the title.\relax }}{68}{figure.caption.45}\protected@file@percent }
-\newlabel{fig:ts}{{3.11}{68}{Time series of daily polarity (red - left axis) and daily stock returns (blue - right axis) since 1st of January 2019 for the top 6 most discussed tickers. Pearson correlation between the two time series is shown in the title.\relax }{figure.caption.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Number of events of each type across time}}{66}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:events}{{3.11}{66}{Number of events of each type across time}{figure.caption.46}{}}
 \citation{mackinlay1997event}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Timeline of our event studies. $\tau $ is an event date, the event window has 41 business days centered around the event date and the estimation window is a one-year rolling period prior the event.\relax }}{69}{figure.caption.46}\protected@file@percent }
-\newlabel{fig:timeline}{{3.12}{69}{Timeline of our event studies. $\tau $ is an event date, the event window has 41 business days centered around the event date and the estimation window is a one-year rolling period prior the event.\relax }{figure.caption.46}{}}
-\newlabel{eq_mm}{{3.5}{69}{Event studies}{figure.caption.46}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Events}{69}{subsection.3.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Changes in weekly volume of transactions on the y-axis versus changes in message activity on the x-axis. Activity is measured in weekly messages posted per firm.\relax }}{70}{figure.caption.47}\protected@file@percent }
-\newlabel{fig:actvol}{{3.13}{70}{Changes in weekly volume of transactions on the y-axis versus changes in message activity on the x-axis. Activity is measured in weekly messages posted per firm.\relax }{figure.caption.47}{}}
-\citation{mackinlay1997event}
-\citation{mackinlay1997event}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Empirical distribution of abnormal polarities. Red dashed lines show the one-third and two-third percentiles.\relax }}{71}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:abnpol_all}{{3.14}{71}{Empirical distribution of abnormal polarities. Red dashed lines show the one-third and two-third percentiles.\relax }{figure.caption.48}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Daily message volume for Apple. Events are days with an unusual high number of messages. Green upper-triangles show bullish events, gray circles are neutral events and red down-triangles represent bearish events.\relax }}{72}{figure.caption.49}\protected@file@percent }
-\newlabel{fig:activityaapl}{{3.15}{72}{Daily message volume for Apple. Events are days with an unusual high number of messages. Green upper-triangles show bullish events, gray circles are neutral events and red down-triangles represent bearish events.\relax }{figure.caption.49}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Number of events in each category across time. Numbers are aggregated monthly.\relax }}{72}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:events}{{3.16}{72}{Number of events in each category across time. Numbers are aggregated monthly.\relax }{figure.caption.50}{}}
-\citation{mackinlay1997event}
-\citation{mackinlay1997event}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}CAAR and CAAP}{73}{subsection.3.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Abnormal Returns}{73}{subsection.3.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Daily message volume for Apple}}{67}{figure.caption.47}\protected@file@percent }
+\newlabel{fig:activityaapl}{{3.12}{67}{Daily message volume for Apple}{figure.caption.47}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Abnormal Stock Returns}{67}{subsection.3.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Selected events and associated description and types for Apple}}{68}{table.caption.48}\protected@file@percent }
+\newlabel{tab:event_aapl}{{3.3}{68}{Selected events and associated description and types for Apple}{table.caption.48}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Abnormal Polarity}{68}{subsection.3.5.3}\protected@file@percent }
+\newlabel{eq_CAPtaut}{{3.18}{68}{Abnormal Polarity}{equation.3.5.18}{}}
 \citation{boxplot1}
 \citation{boxplot2}
 \citation{utest}
 \citation{sheskin}
 \citation{sheskin}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Cumulative average abnormal returns around identified events. CAAR related to bearish, neutral and bullish events are displayed with the red, gray and green line, respectively. Areas around lines show confidence intervals at the 95\% level.\relax }}{74}{figure.caption.51}\protected@file@percent }
-\newlabel{fig:ES_CAAR_MM}{{3.17}{74}{Cumulative average abnormal returns around identified events. CAAR related to bearish, neutral and bullish events are displayed with the red, gray and green line, respectively. Areas around lines show confidence intervals at the 95\% level.\relax }{figure.caption.51}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Abnormal Polarity}{74}{figure.caption.51}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Portfolios}{75}{section.3.6}\protected@file@percent }
-\newlabel{S:portfolios}{{3.6}{75}{Portfolios}{section.3.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces Cumulative average abnormal polarity around identified events. CAAP related to bearish, neutral and bullish events are displayed with the red, gray and green line, respectively. Areas around lines show confidence intervals at the 95\% level.\relax }}{76}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:ES_cum_abn_pol_MM}{{3.18}{76}{Cumulative average abnormal polarity around identified events. CAAP related to bearish, neutral and bullish events are displayed with the red, gray and green line, respectively. Areas around lines show confidence intervals at the 95\% level.\relax }{figure.caption.52}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Mann-Whitney U-test estimates for pairwise significant differences between distribution medians. Under the null hypothesis, the two samples represent two distributions with equal median values. Statistical significance at the 99\%, 95\%, and 90\% level is indicated with ***, **, *, respectively.\relax }}{76}{table.caption.54}\protected@file@percent }
-\newlabel{utest_res}{{3.3}{76}{Mann-Whitney U-test estimates for pairwise significant differences between distribution medians. Under the null hypothesis, the two samples represent two distributions with equal median values. Statistical significance at the 99\%, 95\%, and 90\% level is indicated with ***, **, *, respectively.\relax }{table.caption.54}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Distributions of CAP and CAR 5 days before an event, on event date and 5 days after an event. The line inside a box shows the median while the edges of each box represent the 25\% and 75\% quantile of the distribution. From the edges of a box, a distance of 1.5 times the interquartile range is measured and a whisker is drawn up to the largest and lowest observed point from the data that falls within this distance.\relax }}{77}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:boxplotcaar}{{3.19}{77}{Distributions of CAP and CAR 5 days before an event, on event date and 5 days after an event. The line inside a box shows the median while the edges of each box represent the 25\% and 75\% quantile of the distribution. From the edges of a box, a distance of 1.5 times the interquartile range is measured and a whisker is drawn up to the largest and lowest observed point from the data that falls within this distance.\relax }{figure.caption.53}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}CAP reset after an event}{78}{subsection.3.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}Cross-sectional thresholds}{78}{subsection.3.6.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces Cross-sectional statistics of $CAP^{(R)}$. The blue lines shows the cross-sectional mean of the CAP across the 19 tickers over the year. The green and red lines show the up and down 99\% confidence band. We use them as up and down thresholds for the portfolio construction. \relax }}{79}{figure.caption.55}\protected@file@percent }
-\newlabel{fig:cross-sec stats}{{3.20}{79}{Cross-sectional statistics of $CAP^{(R)}$. The blue lines shows the cross-sectional mean of the CAP across the 19 tickers over the year. The green and red lines show the up and down 99\% confidence band. We use them as up and down thresholds for the portfolio construction. \relax }{figure.caption.55}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.3}Portfolio and returns}{79}{subsection.3.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Long only:}{79}{subsection.3.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Short only:}{79}{subsection.3.6.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces Cumulative log returns of both portfolios (x=2.58) and the S\&P500.\relax }}{80}{figure.caption.56}\protected@file@percent }
-\newlabel{fig:cumretpf}{{3.21}{80}{Cumulative log returns of both portfolios (x=2.58) and the S\&P500.\relax }{figure.caption.56}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Long and Short portfolio for x=2.58.\relax }}{81}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:pf}{{3.22}{81}{Long and Short portfolio for x=2.58.\relax }{figure.caption.57}{}}
-\citation{challet2013predicting}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Conclusion}{82}{section.3.7}\protected@file@percent }
-\newlabel{S:conclusion}{{3.7}{82}{Conclusion}{section.3.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces CAAR and CAAP around identified events}}{69}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:caarcaap}{{3.13}{69}{CAAR and CAAP around identified events}{figure.caption.49}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Distributions of CAP and CAR around events}}{70}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:boxplotcaar}{{3.14}{70}{Distributions of CAP and CAR around events}{figure.caption.50}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Mann-Whitney U-test statistics}}{71}{table.caption.51}\protected@file@percent }
+\newlabel{utest_res}{{3.4}{71}{Mann-Whitney U-test statistics}{table.caption.51}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Sentiment-Sorted Portfolios}{72}{section.3.6}\protected@file@percent }
+\newlabel{S:portfolios}{{3.6}{72}{Sentiment-Sorted Portfolios}{section.3.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Cross-sectional statistics of $CAP_{i,t}^{(R)}$. \relax }}{73}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:cross-sec stats}{{3.15}{73}{Cross-sectional statistics of $CAP_{i,t}^{(R)}$. \relax }{figure.caption.52}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Conclusion}{73}{section.3.7}\protected@file@percent }
+\newlabel{S:conclusion}{{3.7}{73}{Conclusion}{section.3.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Bullish and bearish portfolios for $x=2.58$.\relax }}{74}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:pf}{{3.16}{74}{Bullish and bearish portfolios for $x=2.58$.\relax }{figure.caption.53}{}}
 \@setckpt{main/paper3}{
-\setcounter{page}{83}
-\setcounter{equation}{0}
+\setcounter{page}{75}
+\setcounter{equation}{21}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{10}
+\setcounter{footnote}{11}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{3}
@@ -133,12 +111,12 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{22}
-\setcounter{table}{3}
+\setcounter{figure}{16}
+\setcounter{table}{4}
 \setcounter{NAT@ctr}{0}
 \setcounter{lstnumber}{1}
 \setcounter{Item}{18}
-\setcounter{Hfootnote}{23}
+\setcounter{Hfootnote}{27}
 \setcounter{bookmark@seq@number}{0}
 \setcounter{AM@survey}{0}
 \setcounter{ttlp@side}{0}
