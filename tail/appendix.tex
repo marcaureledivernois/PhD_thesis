@@ -3,6 +3,8 @@
 \chapter{Appendix}
 
 \section{Appendix to Chapter 1}
+\label{appendix1}
+
 \subsection{Relation between $g_{it}(\tau)$ and $\psi_{it}(\tau)$}
 
 The relation between $g_{it}(\tau)$ and $\psi_{it}(\tau)$  is given by :
@@ -13,7 +15,7 @@ The relation between $g_{it}(\tau)$ and $\psi_{it}(\tau)$  is given by :
 
 \newtheorem*{proof1}{Proof}
 \begin{proof1}
-The last equation above can be computed with the first derivative of $\psi_{it}(\tau)$ with respect to time. Using definition \ref{eq:psi} we have :
+The last equation above can be computed with the first derivative of $\psi_{it}(\tau)$ with respect to time. Using Definition \ref{eq:psi} we have :
 \begin{align*}
 \psi_{it}'(\tau) &= \dfrac{u' v - u v'}{v^2} = \dfrac{\dfrac{F_{it}'(\tau)}{1-F_{it}(\tau)}\tau + \ln(1-F_{it}(\tau))}{\tau^2} \\
 &= \dfrac{\dfrac{F_{it}'(\tau)}{1-F_{it}(\tau)}}{\tau} + \dfrac{\ln(1-F_{it}(\tau))}{\tau^2}\\
@@ -45,7 +47,6 @@ Integrating both sides of equation \ref{gphi} leads to :
 \end{proof2}
 
 \subsection{Likelihood function}
-\label{appendix1}
 
 
 The likelihood function has been developed in \citet{Duan2012}. However, the likelihoods have to be slightly updated to be compatible with the neural network framework. That is, ($\lambda$, $\mu$) is the set of parameters in the neural network for the forward intensity of default $f_{it}$ and one for $h_{it}$ with the combined exit forward intensity being $g_{it} = f_{it} + h_{it}$. I impose non-negativity on both $f_{it}$ and $h_{it}$ to ensure that the combined exit intensity is at least bigger than the forward default intensity. The overall likelihood function for horizon of prediction $\tau$ is by definition given by 
@@ -105,8 +106,6 @@ Similar to previous literature, we can still decompose the likelihoods into term
 For all horizon of prediction s. We are now left with many small likelihoods that we can maximize separately instead of the huge maximum likelihood \ref{biglik}. Ultimately, we can design two neural networks $NN_{\lambda}$ and $NN_{\mu}$ with outputs $N_{it}^{\lambda}$ and $N_{it}^{\mu}$ respectively to maximize the two above loss functions. 
 
 \subsection{Distance-to-Default estimation}
-\label{appendix2}
-
 
 \subsubsection{Distance-to-default}
 
@@ -130,12 +129,12 @@ Note that similarly to the variance restriction method, $\mu$ cannot be estimate
 \begin{equation}
 DtD = \dfrac{\ln(\dfrac{V_A}{L})}{\sigma_A \sqrt{T-t}}.
 \end{equation}
-In the figure \ref{fig:DD} taken from \citet{KMV}, the distance to default is denoted by ``DD". The higher the asset value at horizon H the greater the distance-to-default will get, which lowers the default probability since the firm is more likely to be able to repay the debt owed. Similarly, the more debt the firm has, the smaller the DtD will be for a given level of asset value.
+In the Figure \ref{fig:DD} taken from \citet{KMV}, the distance-to-default is denoted by ``DD". The higher the asset value at horizon H the greater the distance-to-default will get, which lowers the default probability since the firm is more likely to be able to repay the debt owed. Similarly, the more debt the firm has, the smaller the DtD will be for a given level of asset value.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=6in]{DTD_Crosbie_Bohn.JPG} 
-\mycaption{Distance-to-default}{} 
+\includegraphics[width=0.75\textwidth]{DTD_Crosbie_Bohn.JPG} 
+\mycaption{Distance-to-default}{The distance-to-default is denoted by DD. It is defined as the difference between the expected value of the asset and the default point. } 
 \label{fig:DD}
 \end{figure}
 
@@ -196,6 +195,7 @@ where n is the number of period observations for each firm $i$. The likelihood a
 
 
 \section{Appendix to Chapter 2}
+\label{appendix2}
 \subsection{Technical proofs}
 \subsubsection{Proof of Lemma \ref{lemma:small}}
 From the definition of DIG, we know that for any $R_k\not\in\mathcal{PA}_j$, 
@@ -624,44 +624,116 @@ Equality \eqref{vareqXR} is not true in general for non-Gaussian $(X,\textbf{R})
 \newpage 
 
 \section{Appendix to Chapter 3}
-\subsection{Number of messages}
-As the same information sometimes refer to several companies, users are allowed to identify more than one ticker per message.  Figure \ref{fig:histtic} shows the histogram of the number of tickers tagged per message. As the vast majority of message includes only one ticker, we only show on this plot messages referring to more than one ticker. However, many messages refer to several tickers and this creates duplicates in the database because we consider the same message for all tickers tagged in the message. Figure \ref{fig:uniq} shows the number of messages with and without double counting. In our sample, the number of messages without double counting is 76 million, as opposed to 90 million messages with double counting. Figure \ref{fig:ratio} shows the ratio between the number of messages with double counting divided by the number of messages without double counting. Throughout this paper, we only refer to the number of messages with double counting.
+
+\subsection{Tutorial for StockTwits Messages Extraction}\label{app_tut}
+
+We use stock price data from CRSP/Compustat of all US and Canadian listed stocks from January 2010 to March 2020. From this dataset, we create the list of unique tickers for which we will extract messages. We will later be able to merge the two datasets using the date and ticker for every observation. We use the StockTwits Application Programming Interface (API) to download messages from StockTwits. One query on StockTwits API is called a JavaScript Object Notation (JSON) request. Every message on StockTwits has a unique identifier ("msg\_id") posted by a user with a unique identifier ("user\_id"). JSON requests allow to query the database by ticker (called "symbol method") or by user (called "user method"). We use the query by ticker. One query only outputs the latest 30 messages concerning that ticker. However, it is possible to set a parameter ("max") to output the latest 30 messages up to this particular message identifier. This parameter allows us to crawl the message history of a ticker by recursively changing the "max" parameter to the oldest message identifier in the query. To perform a JSON request for Apple (AAPL) up to the message identifier 30'000'000, simply enter the following URL in a browser : \url{https://api.stocktwits.com/api/2/streams/symbol/AAPL.json?\&max=30000000}. The page we get looks unreadable but it has always the same structure : several pairs of keys and values. The structure of JSON can easily be interpreted by modern programming languages. We create a Python script to query the API and extract the message history of every ticker in the ticker list. We store the output of every JSON request in .txt files in dedicated ticker folders.
 
 
-\begin{figure}
+
+\subsection{Message Count}\label{app_counting}
+
+A StockTwits message can refer to multiple tickers. Figure \ref{fig:tickerpermessage} shows the histogram of the number of tickers tagged per message. As the vast majority of message includes only one ticker, we only show on this plot messages referring to more than one ticker. The maximum number of tickers per message amounts to 28 and corresponds to 11 messages in the sample. Many messages refer to several tickers and this creates duplicates in the database because we consider the same message for all tickers tagged in the message. 
+
+
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{hist_tic.JPG}
-    \mycaption{Number of tickers per message}{Histogram of the number of tickers per message, across all messages referring to more than one ticker. The maximum number of tickers per message amounts to 28 and corresponds to 11 messages in the sample.}
-    \label{fig:histtic}
+    \includegraphics[width=0.75\textwidth]{hist_tic.jpg}
+    \mycaption{Histogram of the number of tickers per message}{Histogram of the number of tickers per message, across all messages referring to more than one ticker.}
+    \label{fig:tickerpermessage}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{uniq.JPG}
-    \mycaption{Number of messages}{Total number of messages with double counting (red) compared to the total number of messages without double counting (blue). Numbers are aggregated daily.}
-    \label{fig:uniq}
-\end{figure}
+Left plot of Figure \ref{fig:messagecount} shows the number of messages with and without double counting. In our sample, the number of messages without double counting is 76 million, as opposed to 90 million messages with double counting. Right plot of Figure \ref{fig:messagecount} shows the ratio between the number of messages with double counting and the number of messages without double counting. Throughout this paper, we only refer to the number of messages with double counting.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{ratio.JPG}
-    \mycaption{Number of messages II}{Ratio between the number of messages with double counting and the number of messages without double counting. Numbers are aggreaged daily.}
-    \label{fig:ratio}
-\end{figure}
 
-\newpage 
 
-\subsection{Coverage}
+\begin{figure*}[h!]
+\centering
+        \begin{subfigure}{0.49\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{uniq.jpg}
+        \end{subfigure}
+        \begin{subfigure}{0.49\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{ratio.jpg}
+        \end{subfigure}
+        \mycaption{Number of messages}{Left plot shows the total number of messages with double counting (red) compared to the total number of messages without double counting (blue). Right plot shows the ratio between the number of messages with double counting and the number of messages without double counting. Numbers are aggregated daily.} 
+        \label{fig:messagecount}
+\end{figure*}
 
-Stocktwits is neither regulated nor moderated, so one needs to filter the information that we use. Even if Stocktwits has valuable information from respected contributors, a blog\footnote{\url{https://www.warriortrading.com/stocktwits-review}} describes the concerns that may rise when using Stocktwits as a financial information provider, namely self-promotion, lack of credibility and other noise. To diversify noise and better extract information, we exclude from our sample tickers that are rarely discussed. Thereto, we compute the median of daily message volume for each ticker and exclude from our sample tickers with a median of less than 50. Decreasing the median threshold increases the coverage at the expense of more noise in the daily polarity. Figure \ref{fig:coverage} shows the coverage as a function of the median threshold. To increase the coverage we need to decrease the threshold a lot (e.g., decreasing the median threshold to 40 from 50 would increase the number of tickers covered to merely 22 from 19). We chose a median threshold of 50 as a balanced trade-off between noise and coverage. Table \ref{tab:listcov} shows the list of tickers covered and associated market capitalization as of 31st of December 2019. To avoid bias in the polarity, we restrict the universe and focus on the most discussed tickers. On top of that, it appears that the most discussed tickers are not always big firms, so it is has the advantage of covering all sizes of firm and we avoid big-firm bias. Also, we do not consider only firms but also ETFs on alternative investments. Finally, we cover several sectors so even if we have a restrictive universe, it is well diversified.
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.75\textwidth]{hist_tic.JPG}
+%    \caption{Histogram of the number of tickers per message, across all messages referring to more than one ticker. The maximum number of tickers per message amounts to 28 and corresponds to 11 messages in the sample.}
+%    \label{fig:histtic}
+%\end{figure}
+
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.75\textwidth]{uniq.JPG}
+%    \caption{Total number of messages with double counting (red) compared to the total number of messages without double counting (blue). Numbers are aggregated daily.}
+%    \label{fig:uniq}
+%\end{figure}
+
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.75\textwidth]{ratio.JPG}
+%    \caption{Ratio between the number of messages with double counting and the number of messages without double counting. Numbers are aggreaged daily.}
+%    \label{fig:ratio}
+%\end{figure}
+
+%\newpage 
+
+
+%\clearpage
+\subsection{User Summary Statistics}\label{app_userstats}
+
+Left plot of Figure \ref{fig:data-stocktwits1} shows a log-log histogram of the number of followers per user and a right plot shows a log-log histogram of the number of messages posted by users. There are a few users with many followers (they can be seen as ``influencers"), and many users with a few followers. In addition, most users seem to post on average between 10 and 400 messages and a few post a lot more. Overall, this appears to be a well balanced network structure. A more detailed study of the network effects on market sentiment is beyond the scope of this paper.
+
+
+
+\begin{figure*}[h]
+\centering
+        \begin{subfigure}{0.49\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{Followers.JPG}
+        \end{subfigure}
+        \begin{subfigure}{0.49\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Tweets.jpg}
+        \end{subfigure}
+
+        \mycaption{User summary statistics}{Left graph is a log-log histogram of the number of followers per user and the right graph shows the log-log histogram of the number of messages posted by users.} 
+        \label{fig:data-stocktwits1}
+\end{figure*}
+
+
+
+%\clearpage
+\subsection{Anomalies} \label{app_ano}
+
+We discuss here two anomalies that appear in the word clouds in Figure \ref{wordclouds}.
+
+The term ``aldox'' in the bullish cloud caught our attention. After some research, it is an abbreviation for Aldoxorubicin, a drug against tumors and is associated with pharmaceutical messages where investors were very enthusiastic about it. An example of a related message is ``aldox is on the slide. have great faith this is truly world change". That is why the term is appearing almost exclusively in bullish messages, hence in the bullish cloud.
+
+The bearish cloud contains the term "long position open", which seems like a bullish signal. Closer inspection shows that this term frequently appears in bearish user-labeled messages of intraday alerts such as ``sell \$labd close labd long position. open labd short position. time: 14:53 ny price: \$13.64 zquant intraday alerts''. However, this anomaly is not an issue. We tested what happened when "long position open" is fed as a message into our sentiment classifier. As a message, it consists of the trigram "long position open", the two bigrams ``long position'' and ``position open'', and the single words as unigrams. This results in a bullish score of 0.91 and the message is---correctly---classified as bullish. 
+
+
+
+
+%\clearpage
+\subsection{Coverage}\label{app_coverage}
+
+Stocktwits is neither regulated nor moderated, so one needs to filter the information that we use. Even if Stocktwits has valuable information from respected contributors, a blog\footnote{\url{https://www.warriortrading.com/stocktwits-review}, last accessed on 1st of July 2022.} describes the concerns that may rise when using Stocktwits as a financial information provider, namely self-promotion, lack of credibility and other noise. To diversify noise and better extract information, we exclude from our sample tickers that are rarely discussed. Thereto, we compute the median of daily message volume for each ticker and exclude from our sample tickers with a median of less than 50. Decreasing the median threshold increases the coverage at the expense of more noise in the daily polarity. Figure \ref{fig:coverage} shows the coverage as a function of the median threshold. To increase the coverage we need to decrease the threshold a lot (e.g., decreasing the median threshold to 40 from 50 would increase the number of tickers covered to merely 22 from 19). We chose a median threshold of 50 as a balanced trade-off between noise and coverage. 
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{trim.JPG}
-    \mycaption{Coverage}{Coverage as a function of the median threshold. A lower threshold increases the coverage at the expense of a bigger bias in the polarity.}
+    \mycaption{Ticker coverage}{Coverage as a function of the median threshold. A lower threshold increases the coverage at the expense of a bigger bias in the polarity.}
     \label{fig:coverage}
 \end{figure}
 
+Table \ref{tab:listcov} shows the list of the 19 tickers above this threshold and their associated market capitalization as of 31st of December 2019. It appears that these most discussed tickers cover all sizes of stock, and hence we avoid big-firm bias. Also, it includes not only single firms but also ETFs on alternative investments. Finally, we cover several sectors so even if we have a restrictive universe, it is well diversified.
 
 \begin{table}[h]
 \centering
@@ -687,17 +759,53 @@ TSLA   & Tesla                   & 76 \\
 TWTR   & Twitter                 & 25 \\
 UVXY   & VIX ETF                 & 0.8 \\
 \end{tabular}
-\mycaption{Coverage}{Coverage after the trimming process. List of tickers and corresponding market capitalization as of 31st of December 2019.}
+\mycaption{Ticker coverage}{Coverage after the trimming process. List of tickers and corresponding market capitalization as of 31st of December 2019.}
 \label{tab:listcov}
 \end{table}
 
 %\input{ros.tex}
 
-\newpage
-\subsection{Tutorial for StockTwits messages extraction}
-We use CRSP to get stock prices of all US and Canadian listed firms from 1990 to 2020. Out of this dataset, we create the list of unique tickers for which we will extract messages. We will later be able to merge the two datasets using the date and ticker for every observation. We use the StockTwits Application Programming Interface (API) to collect messages from StockTwits. One query on StockTwits API is called a JavaScript Object Notation (JSON) request. Every message on StockTwits has a unique identifier ("msg\_id") posted by a user with a unique identifier ("user\_id"). JSON requests allow to query the database by ticker (called "symbol method") or by user (called "user method"). We use the query by ticker. One query only outputs the latest 30 messages concerning that ticker. However, it is possible to set a parameter ("max") to output the latest 30 messages up to this particular message identifier. This parameter allows us to crawl the message history of a ticker by recursively changing the "max" parameter to the oldest message identifier in the query. To perform a JSON request for Apple (AAPL) up to the message identifier 30'000'000, simply enter the following URL in a browser : https://api.stocktwits.com/api/2/streams/symbol/AAPL.json?\&max=30000000. The page we get looks unreadable but it has always the same structure : several pairs of keys and values. The structure of JSON can easily be interpreted by modern programming languages. We create a Python script to query the API and extract the message history of every ticker in the ticker list. We store the output of every JSON request in .txt files in dedicated ticker folders.
 
 
+
+
+
+\clearpage
+\subsection{Classifier Performance}\label{app_class}
+
+
+We first recap the definition of the basic performance measures for a binary classifier. First, one has to choose one class as the positive class. Instances (messages) are then divided according to their predicted and actual labels into true positives TP (predicted positive, actual positive), false positives FP (predicted positive, actual negative), true negatives TN (predicted negative, actual negative), and false negatives FN (predicted negative, actual positive). Precision $PRE=\dfrac{TP}{TP+FP}$ is the proportion of true positives among the predicted positives. Recall $REC = \dfrac{TP}{TP+FN}$ is the proportion of true positives among the actual positives. The precision-recall trade-off is captured by the F1 score, $\dfrac{2 \cdot PRE \cdot REC}{PRE + REC}$, the harmonic mean of precision and recall.  
+
+Tables \ref{classif-out} and \ref{classif-in} show the confusion matrices of our combined classifier out-of-sample and in-sample, respectively. We define accuracy as the fraction of correct predictions, omitting the messages with a predicted neutral sentiment. We thus obtain an out-of-sample accuracy of 85.9\%. The in-sample accuracy is 87.4\%. 
+ 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cl|ll|}
+\cline{3-4}
+\multicolumn{1}{l}{}                        &         & \multicolumn{2}{c|}{True}               \\ \cline{3-4}
+\multicolumn{1}{l}{}                        &         & \multicolumn{1}{l|}{Bullish} & Bearish  \\ \cline{1-4}
+\multicolumn{1}{|c|}{\multirow{3}{*}{Predicted}} & Bullish & 3'555'896                      & 155'280   \\ \cline{2-2}
+\multicolumn{1}{|c|}{}                      & Neutral & 663'541                       & 160'423    \\ \cline{2-2}
+\multicolumn{1}{|c|}{}                      & Bearish & 550'928                       & 746'261  \\ \cline{1-4}
+\end{tabular}
+\mycaption{Confusion matrix for the combined classifier out-of-sample}{Rows are the predicted class of the combined classifier, columns are the user-labels. Values are the number of messages in the corresponding category.}
+\label{classif-out}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cl|ll|}
+\cline{3-4}
+\multicolumn{1}{l}{}                        &         & \multicolumn{2}{c|}{True}               \\ \cline{3-4}
+\multicolumn{1}{l}{}                        &         & \multicolumn{1}{l|}{Bullish} & Bearish   \\ \cline{1-4}
+\multicolumn{1}{|c|}{\multirow{3}{*}{Predicted}} & Bullish &  14'433'375                            & 532'509    \\ \cline{2-2}
+\multicolumn{1}{|c|}{}                      & Neutral &  2'656'730                            &  642'329  \\ \cline{2-2}
+\multicolumn{1}{|c|}{}                      & Bearish &  1'992'535                            &  3'071'837 \\ \cline{1-4}
+\end{tabular}
+\mycaption{Confusion matrix for the combined classifier in-sample}{Rows are the predicted class of the combined classifier, columns are the user-labels. Values are the number of messages in the corresponding category.}
+\label{classif-in}
+\end{table}
 
 
 %Good comment to include
@@ -705,19 +813,26 @@ We use CRSP to get stock prices of all US and Canadian listed firms from 1990 to
 %So the more risk-averse the investor, the larger should be the precision.
 %On the other hand, a risky profit seeking investor would regret having missed a good opportunity, i.e., false negative.
 %So the risky profit seeking investor prefers a large recall.
-\clearpage
-\newpage
 
-\subsection{Portfolio construction - various $x$}
-As the thresholds $U_t(x)$ and $L_t(x)$ are functions of the hyperparameter $x$, we provide for robustness check the results of our portfolio construction with $x$ = 1.96  (95\% confidence band) and $x$ = 2.81 (99.5\% confidence band).
-\subsubsection{x = 1.96}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.75\textwidth]{cumulative_log_return1.jpg}
-    \mycaption{Cumulative log returns of both portfolios (x=1.96) and the S\&P500.}{}
-    \label{fig:cumpf1}
-\end{figure}
+ 
+ 
+%\clearpage
+\subsection{Examples of Classified Messages}\label{app_exampleclass}
+
+Here are some representative examples of classifications. Typical messages classified as bullish contain terms such as “buy buy” or “hope the pump come soon”. Whereas typical bearish messages contain terms such as “sell everything” or “start short position here”. Neutral messages are either empty, or irrelevant to finance (e.g., ``political posturing friend''\footnote{This is a reply to the message ``honestly, how dumb can you be to believe that china was going to buy significant amount of agricultural products after the breakdown in trade talks. Even if they buy it will be just a little bit and not significant''}), or ambiguous (e.g., “lol wow”).
+
+%\clearpage
+\subsection{Sentiment-Sorted Portfolios for Various Thresholds}\label{app_CAPport}
+As the thresholds $U_t(x)$ and $L_t(x)$ are functions of the hyperparameter $x$, we provide for robustness check the results of our CAP-sorted portfolios for the values $x = 1.96$  (95\% confidence band) in Figure \ref{fig:pf1}, and for $x = 2.81$ (99.5\% confidence band) in Figure \ref{fig:pf3}. The portfolio performance arguably depends on the choice of $x$. In particular, the smaller $x$ the more likely the bearish portfolio exhibits positive returns. On the other hand, the larger $x$ the more likely the bullish portfolio misses the opportunities of positive returns. A careful gauging of $x$, possibly asymmetric in bullish and bearish, is therefore required for a real-world implementation of these strategies. Results could also improve for a larger cross-section of stocks than the 19 of our reduced sample.
+
+
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{cumulative_log_return1.jpg}
+%    \caption{Cumulative log returns of bullish and bearish portfolios for $x=1.96$, and S\&P500.}
+%    \label{fig:cumpf1}
+%\end{figure}
 
 \begin{figure*}[h]
         \centering
@@ -735,14 +850,14 @@ As the thresholds $U_t(x)$ and $L_t(x)$ are functions of the hyperparameter $x$,
        %\vskip\baselineskip
         \begin{subfigure}[b]{0.42\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{distribution_long_positions1.jpg}
-            \caption*{Number of positions - Long portfolio}   
+    \includegraphics[width=\textwidth]{cumulative_log_return1.jpg}
+    \caption*{Cumulative log returns}
         \end{subfigure}
         \quad
         \begin{subfigure}[b]{0.42\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{distribution_short_positions1.jpg}
-            \caption*{Number of positions - Short portfolio}   
+            \includegraphics[width=\textwidth]{distribution_positions1.jpg}
+            \caption*{Distribution of number of positions}   
         \end{subfigure}
                 \vskip\baselineskip
         \begin{subfigure}[b]{0.42\textwidth}   
@@ -756,19 +871,17 @@ As the thresholds $U_t(x)$ and $L_t(x)$ are functions of the hyperparameter $x$,
             \includegraphics[width=\textwidth]{returns1.jpg}
             \caption*{Daily returns}  
         \end{subfigure}
-        \mycaption{Long and Short portfolios for x = 1.96.}{}
+        \mycaption{Bullish and bearish portfolios for $x = 1.96$}{Top left plot shows the cumulative log returns of the portfolios over the years, top right plot shows the distribution of the number of positions in the portfolios, bottom left plot is the number of positions over time and bottom right plot is the daily returns of both portfolios.}
         \label{fig:pf1}
     \end{figure*}
 
-\clearpage
-\subsubsection{x = 2.81}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.75\textwidth]{cumulative_log_return3.jpg}
-    \mycaption{Cumulative log returns of both portfolios (x=2.81) and the S\&P500.}{}
-    \label{fig:cumpf3}
-\end{figure}
+ 
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{cumulative_log_return3.jpg}
+%    \caption{Cumulative log returns of bullish and bearish portfolios for $x=2.81$, and S\&P500.}
+%    \label{fig:cumpf3}
+%\end{figure}
 
 \begin{figure*}[h]
         \centering
@@ -786,14 +899,14 @@ As the thresholds $U_t(x)$ and $L_t(x)$ are functions of the hyperparameter $x$,
         %\vskip\baselineskip
         \begin{subfigure}[b]{0.42\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{distribution_long_positions3.jpg}
-            \caption*{Number of positions - Long portfolio}   
+        \includegraphics[width=\textwidth]{cumulative_log_return3.jpg}
+        \caption*{Cumulative log returns}
         \end{subfigure}
         \quad
         \begin{subfigure}[b]{0.42\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{distribution_short_positions3.jpg}
-            \caption*{Number of positions - Short portfolio}   
+            \includegraphics[width=\textwidth]{distribution_positions3.jpg}
+            \caption*{Distribution of number of positions}   
         \end{subfigure}
                 \vskip\baselineskip
         \begin{subfigure}[b]{0.42\textwidth}   
@@ -807,9 +920,141 @@ As the thresholds $U_t(x)$ and $L_t(x)$ are functions of the hyperparameter $x$,
             \includegraphics[width=\textwidth]{returns3.jpg}
             \caption*{Daily returns}  
         \end{subfigure}
-        \mycaption{Long and Short portfolio for x=2.81.}{}
+        \mycaption{Bullish and bearish portfolios for $x=2.81$}{Top left plot shows the cumulative log returns of the portfolios over the years, top right plot shows the distribution of the number of positions in the portfolios, bottom left plot is the number of positions over time and bottom right plot is the daily returns of both portfolios.}
         \label{fig:pf3}
     \end{figure*}
+
+
+% \newpage
+
+% \subsection*{To discuss}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{opti_thresh_monday.JPG}
+%     \caption{F1-score of long/not-long classifier in green, short/not-short classifier in red. Blue circles are optimal thresholds, maximizing F1 score. CAP is computed over the last 15 days and portfolio is rebalanced every Monday.}
+%     \label{fig:my_label}
+% \end{figure}
+
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{ll|lll|l}
+% \cline{3-5}
+%                               &       & \multicolumn{3}{c|}{event type}                                       &  \\ \cline{3-5}
+%                               &       & \multicolumn{1}{l|}{bullish} & \multicolumn{1}{l|}{neutral} & bearish &  \\ \cline{1-5}
+% \multicolumn{1}{|c|}{}         & long  & \multicolumn{1}{l|}{}      & \multicolumn{1}{l|}{20}      & 21      &  \\ \cline{2-5}
+% \multicolumn{1}{|c|}{position} & none  & \multicolumn{1}{l|}{275}     & \multicolumn{1}{l|}{275}     & 252     &  \\ \cline{2-5}
+% \multicolumn{1}{|l|}{}         & short & \multicolumn{1}{l|}{33}      & \multicolumn{1}{l|}{19}      & 88      &  \\ \cline{1-5}
+% \end{tabular}
+% \caption{Confusion matrix for the portfolio rebalanced every Monday. We build a long-short portfolio based on CAP over the last 15 days. Long-short positions are determined using optimal CAP thresholds, obtained by maximizing F1-Score of two distinct classifiers.}
+% \end{table}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{opti_thresh_tuesday.JPG}
+%     \caption{F1-score of long/not-long classifier in green, short/not-short classifier in red. Blue circles are optimal thresholds, maximizing F1 score. CAP is computed over the last 15 days and portfolio is rebalanced every Tuesday.}
+%     \label{fig:my_label}
+% \end{figure}
+
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{ll|lll|l}
+% \cline{3-5}
+%                               &       & \multicolumn{3}{c|}{event type}                                       &  \\ \cline{3-5}
+%                               &       & \multicolumn{1}{l|}{bullish} & \multicolumn{1}{l|}{neutral} & bearish &  \\ \cline{1-5}
+% \multicolumn{1}{|c|}{}         & long  & \multicolumn{1}{l|}{71}      & \multicolumn{1}{l|}{34}      & 13      &  \\ \cline{2-5}
+% \multicolumn{1}{|c|}{position} & none  & \multicolumn{1}{l|}{304}     & \multicolumn{1}{l|}{296}     & 278     &  \\ \cline{2-5}
+% \multicolumn{1}{|l|}{}         & short & \multicolumn{1}{l|}{21}      & \multicolumn{1}{l|}{36}      & 70      &  \\ \cline{1-5}
+% \end{tabular}
+% \caption{Confusion matrix for the portfolio rebalanced every Tuesday. We build a long-short portfolio based on CAP over the last 15 days. Long-short positions are determined using optimal CAP thresholds, obtained by maximizing F1-Score of two distinct classifiers.}
+% \end{table}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{opti_thresh_wednesday.JPG}
+%     \caption{F1-score of long/not-long classifier in green, short/not-short classifier in red. Blue circles are optimal thresholds, maximizing F1 score. CAP is computed over the last 15 days and portfolio is rebalanced every Wednesday.}
+%     \label{fig:my_label}
+% \end{figure}
+
+
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{ll|lll|l}
+% \cline{3-5}
+%                               &       & \multicolumn{3}{c|}{event type}                                       &  \\ \cline{3-5}
+%                               &       & \multicolumn{1}{l|}{bullish} & \multicolumn{1}{l|}{neutral} & bearish &  \\ \cline{1-5}
+% \multicolumn{1}{|c|}{}         & long  & \multicolumn{1}{l|}{88}      & \multicolumn{1}{l|}{50}      & 21      &  \\ \cline{2-5}
+% \multicolumn{1}{|c|}{position} & none  & \multicolumn{1}{l|}{296}     & \multicolumn{1}{l|}{299}     & 281     &  \\ \cline{2-5}
+% \multicolumn{1}{|l|}{}         & short & \multicolumn{1}{l|}{20}      & \multicolumn{1}{l|}{17}      & 59      &  \\ \cline{1-5}
+% \end{tabular}
+% \caption{Confusion matrix for the portfolio rebalanced every Wednesday. We build a long-short portfolio based on CAP over the last 15 days. Long-short positions are determined using optimal CAP thresholds, obtained by maximizing F1-Score of two distinct classifiers.}
+% \end{table}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{opti_thresh_thursday.JPG}
+%     \caption{F1-score of long/not-long classifier in green, short/not-short classifier in red. Blue circles are optimal thresholds, maximizing F1 score. CAP is computed over the last 15 days and portfolio is rebalanced every Thursday.}
+%     \label{fig:my_label}
+% \end{figure}
+
+
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{ll|lll|l}
+% \cline{3-5}
+%                               &       & \multicolumn{3}{c|}{event type}                                       &  \\ \cline{3-5}
+%                               &       & \multicolumn{1}{l|}{bullish} & \multicolumn{1}{l|}{neutral} & bearish &  \\ \cline{1-5}
+% \multicolumn{1}{|c|}{}         & long  & \multicolumn{1}{l|}{188}     & \multicolumn{1}{l|}{123}     & 73      &  \\ \cline{2-5}
+% \multicolumn{1}{|c|}{position} & none  & \multicolumn{1}{l|}{196}     & \multicolumn{1}{l|}{223}     & 228     &  \\ \cline{2-5}
+% \multicolumn{1}{|l|}{}         & short & \multicolumn{1}{l|}{20}      & \multicolumn{1}{l|}{20}      & 60      &  \\ \cline{1-5}
+% \end{tabular}
+% \caption{Confusion matrix for the portfolio rebalanced every Thursday. We build a long-short portfolio based on CAP over the last 15 days. Long-short positions are determined using optimal CAP thresholds, obtained by maximizing F1-Score of two distinct classifiers.}
+% \end{table}
+
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{opti_thresh_friday.JPG}
+%     \caption{F1-score of long/not-long classifier in green, short/not-short classifier in red. Blue circles are optimal thresholds, maximizing F1 score. CAP is computed over the last 15 days and portfolio is rebalanced every Friday.}
+%     \label{fig:my_label}
+% \end{figure}
+
+
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{ll|lll|l}
+% \cline{3-5}
+%                               &       & \multicolumn{3}{c|}{event type}                                       &  \\ \cline{3-5}
+%                               &       & \multicolumn{1}{l|}{bullish} & \multicolumn{1}{l|}{neutral} & bearish &  \\ \cline{1-5}
+% \multicolumn{1}{|c|}{}         & long  & \multicolumn{1}{l|}{94}      & \multicolumn{1}{l|}{43}      & 21      &  \\ \cline{2-5}
+% \multicolumn{1}{|c|}{position} & none  & \multicolumn{1}{l|}{284}     & \multicolumn{1}{l|}{283}     & 263     &  \\ \cline{2-5}
+% \multicolumn{1}{|l|}{}         & short & \multicolumn{1}{l|}{26}      & \multicolumn{1}{l|}{40}      & 77      &  \\ \cline{1-5}
+% \end{tabular}
+% \caption{Confusion matrix for the portfolio rebalanced every Friday. We build a long-short portfolio based on CAP over the last 15 days. Long-short positions are determined using optimal CAP thresholds, obtained by maximizing F1-Score of two distinct classifiers.}
+% \end{table}
+
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=\textwidth]{marketvol_relchange.JPG}
+%    \caption{Caption}
+%    \label{fig:my_label}
+%\end{figure}
+%
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=\textwidth]{aapl_vol_relchange.JPG}
+%    \caption{Caption}
+%    \label{fig:my_label}
+%\end{figure}
+%
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=\textwidth]{rel_activity_volume.JPG}
+%    \caption{Caption}
+%    \label{fig:my_label}
+%\end{figure}
+
 
 
 
