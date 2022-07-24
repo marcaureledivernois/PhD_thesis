@@ -1,0 +1,22 @@
+\babel@toc {english}{}\relax 
+\babel@toc {french}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {french}{}\relax 
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Number of firms in each category for each horizon of prediction $\tau $}}{13}{table.caption.13}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Mean of variables for surviving firms, defaulted firms and other exits}}{15}{table.caption.14}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces Gini coefficients}}{20}{table.caption.18}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Degree of Granger Causality (DGC) for each sub-graph.}}{44}{table.caption.28}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Outdegrees ranked for each sub-graph.}}{48}{table.caption.32}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Indegrees ranked for each sub-graph.}}{49}{table.caption.33}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Preprocessing of five sample messages}}{57}{table.caption.37}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Regressions of returns on polarity}}{62}{table.caption.42}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Selected events and associated description and types for Apple}}{68}{table.caption.48}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Mann-Whitney U-test statistics}}{71}{table.caption.51}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Ticker coverage}}{92}{table.caption.59}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Confusion matrix for the combined classifier out-of-sample. \relax }}{93}{table.caption.60}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Confusion matrix for the combined classifier in-sample. \relax }}{93}{table.caption.61}%

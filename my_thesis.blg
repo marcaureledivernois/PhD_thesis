@@ -1,12 +1,8 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: my_thesis.aux
-Reallocating 'name_of_file' (item size: 1) to 20 items.
-A level-1 auxiliary file: head/dedication.aux
 Reallocating 'name_of_file' (item size: 1) to 26 items.
 A level-1 auxiliary file: head/acknowledgements.aux
-Reallocating 'name_of_file' (item size: 1) to 17 items.
-A level-1 auxiliary file: head/preface.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 A level-1 auxiliary file: head/abstracts.aux
 Reallocating 'name_of_file' (item size: 1) to 26 items.
@@ -27,53 +23,44 @@ Reallocating 'name_of_file' (item size: 1) to 18 items.
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: tail/cv.aux
 Database file #1: tail/bibliography.bib
-Warning--empty journal in KMV
-Warning--empty publisher in boxplot1
-Warning--empty journal in etesami2018econometric
-Warning--empty journal in iacopini2019bayesian
-Warning--empty journal in nikfarjam2010text
-Warning--empty journal in saif2014stopwords
-Warning--empty publisher in sheskin
-Warning--empty publisher in boxplot2
-You've used 80 entries,
+You've used 76 entries,
             1935 wiz_defined-function locations,
-            855 strings with 16407 characters,
-and the built_in function-call counts, 27034 in all, are:
-= -- 2542
-> -- 1220
-< -- 42
-+ -- 421
-- -- 400
-* -- 2117
-:= -- 4990
-add.period$ -- 234
-call.type$ -- 80
-change.case$ -- 595
-chr.to.int$ -- 79
-cite$ -- 88
-duplicate$ -- 1102
-empty$ -- 1776
-format.name$ -- 520
-if$ -- 5111
+            813 strings with 15163 characters,
+and the built_in function-call counts, 24312 in all, are:
+= -- 2269
+> -- 1137
+< -- 39
++ -- 393
+- -- 372
+* -- 1841
+:= -- 4619
+add.period$ -- 228
+call.type$ -- 76
+change.case$ -- 565
+chr.to.int$ -- 75
+cite$ -- 76
+duplicate$ -- 988
+empty$ -- 1521
+format.name$ -- 484
+if$ -- 4518
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 84
-newline$ -- 395
-num.names$ -- 240
-pop$ -- 593
+missing$ -- 76
+newline$ -- 383
+num.names$ -- 228
+pop$ -- 526
 preamble$ -- 1
-purify$ -- 599
+purify$ -- 565
 quote$ -- 0
-skip$ -- 851
+skip$ -- 800
 stack$ -- 0
-substring$ -- 1236
-swap$ -- 94
-text.length$ -- 2
+substring$ -- 932
+swap$ -- 76
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 470
-warning$ -- 8
-while$ -- 182
+type$ -- 456
+warning$ -- 0
+while$ -- 152
 width$ -- 0
-write$ -- 960
-(There were 8 warnings)
+write$ -- 914

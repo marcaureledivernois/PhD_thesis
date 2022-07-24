@@ -1,0 +1,49 @@
+\babel@toc {english}{}\relax 
+\babel@toc {french}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {french}{}\relax 
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Example of the lifespan of a firm}}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Illustration of a neural network \text {[}5, 3\text {]}}}{11}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Defaults, exits for other reasons and survivals each year}}{13}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Correlation matrix for firm-specific and macroeconomic covariates}}{16}{figure.caption.15}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Gini coefficient : Linear vs Neural Networks}}{18}{figure.caption.16}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Out-of-sample Lorenz Curves for each horizon}}{19}{figure.caption.17}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Comparison with the benchmark model \citet {Duan2012}}}{20}{figure.caption.19}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Trained \text {[}5, 3\text {]} Neural Network for forward default intensity at horizon 0}}{21}{figure.caption.20}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Sensitivities for each horizon}}{23}{figure.caption.21}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces DIG of the system in \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {model1}\unskip \@@italiccorr )}}}}{31}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Koopman lifting technique compared to classical non-linear identification}}{36}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Structure of matrix A in \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:ex_lin}\unskip \@@italiccorr )}} that is build using \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:rules}\unskip \@@italiccorr )}}.}}{39}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Precision and recall curves in the linear framework.}}{40}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Precision-Recall curves for the quadratic model.}}{42}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Empirical DIG for the periods 1990-1994 and 1995-1999.}}{45}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Empirical DIG for the periods 2000-2004 and 2005-2009.}}{46}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Empirical DIG for the periods 2010-2014 and 2015-2019.}}{47}{figure.caption.31}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Number of messages posted daily on StockTwits.\relax }}{54}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Screenshot of StockTwits as of 3rd March 2020, for a query of AAPL.\relax }}{56}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Ticker summary statistics}}{56}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Word clouds}}{57}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Message classification}}{58}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Optimal classification thresholds}}{60}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Market polarity versus SPY polarity}}{62}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Correlation between return and polarity}}{63}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Message activity and transaction volume}}{64}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Empirical distribution of abnormal polarities on event dates}}{65}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Number of events of each type across time}}{66}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Daily message volume for Apple}}{67}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces CAAR and CAAP around identified events}}{69}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Distributions of CAP and CAR around events}}{70}{figure.caption.50}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Cross-sectional statistics of $CAP_{i,t}^{(R)}$. \relax }}{73}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Bullish and bearish portfolios for $x=2.58$.\relax }}{74}{figure.caption.53}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Distance-to-default}}{80}{figure.caption.54}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Histogram of the number of tickers per message}}{89}{figure.caption.55}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Number of messages}}{89}{figure.caption.56}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces User summary statistics}}{90}{figure.caption.57}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Ticker coverage}}{91}{figure.caption.58}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Bullish and bearish portfolios for $x = 1.96$.\relax }}{94}{figure.caption.62}%
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Bullish and bearish portfolios for $x=2.81$.\relax }}{95}{figure.caption.63}%
