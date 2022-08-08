@@ -1,0 +1,12 @@
+\cleardoublepage
+\chapter*{Conclusion}
+\markboth{Conclusion}{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+The three chapters presented in this thesis use neural networks and natural language processing to develop or improve financial risk models.
+
+The first chapter contributes to the literature on reduced-form models for multiperiod corporate default prediction using a doubly stochastic formulation. The probability of default in a specific horizon is a function of the forward default intensity and of the forward combined intensity. Previous literature proposes a model to predict corporate default at multiple horizons by estimating these forward intensities via maximum likelihood. To do so, they use a linear assumption in the relationship between the variables and the forward intensities. I show in the first chapter that a significant improvement is achieved by relaxing the linear assumption and using an artificial neural network instead. To allow comparison with the benchmark model, I choose to work with a similar set of features consisting of firm-specific accounting variables and macroeconomic variables. However, a growing area of study is building market sentiment measure and is showing their predictive power on the stock market. A potential and interesting venue for future research would be to gauge the predictive power of such features for default prediction. 
+
+The second chapter investigates the interconnections among a set of financial instutions. We propose a recurrent neural network approach to reduce the computational complexity of computing directed information. This approach is well-suited to infer the causal structure of large networks. Future research could focus on using this new methodology as a preliminary feature selection of another predictive model. Feature selection is a process used in machine learning which consists of keeping only a subset of relevant features to avoid overfitting or reduce dimensionality.
+
+The third chapter classifies the sentiment of a large sample of social media messages to create stock-aggregate daily sentiment polarity measure. We show that conditionally on a stock market event happening, investors are on average able to anticipate the type of the event. Future research could focus on understanding the causes of this result at the user-level. In particular, some users have more influence than others because they either have more followers or they are more active on the platform. Are these users performing on average better than less active users ?
