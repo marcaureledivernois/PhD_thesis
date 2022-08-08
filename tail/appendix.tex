@@ -49,7 +49,7 @@ Integrating both sides of equation \ref{gphi} leads to :
 \subsection{Likelihood function}
 
 
-The likelihood function has been developed in \citet{Duan2012}. However, the likelihoods have to be slightly updated to be compatible with the neural network framework. That is, ($\lambda$, $\mu$) is the set of parameters in the neural network for the forward intensity of default $f_{it}$ and one for $h_{it}$ with the combined exit forward intensity being $g_{it} = f_{it} + h_{it}$. I impose non-negativity on both $f_{it}$ and $h_{it}$ to ensure that the combined exit intensity is at least bigger than the forward default intensity. The overall likelihood function for horizon of prediction $\tau$ is by definition given by 
+The likelihood function has been developed in \citet{Duan2012}. However, the likelihoods have to be slightly updated to be compatible with the neural network framework. One neural network is trained to compute $f_{it}$ and the other is trained to output $h_{it}$ where $g_{it} = f_{it} + h_{it}$.  Let us denote $\lambda$ and $\mu$ the set of parameters (weights) tuned in the neural network for $f_{it}$ and $h_{it}$ respectively. I impose non-negativity on both $f_{it}$ and $h_{it}$ to ensure that the combined exit intensity is at least bigger than the forward default intensity. The overall likelihood function for horizon of prediction $\tau$ is by definition given by 
 \begin{equation} \label{biglik}
 \mathcal{L}_\tau(\lambda,\mu; \tau_C,\tau_D, X) = \prod_{i=1}^N \prod_{t=0}^{T-1} \mathcal{L}_{\tau,i,t}(\lambda,\mu; \tau_{C_i},\tau_{D_i}, X_{it}),
 \end{equation}
@@ -57,7 +57,7 @@ where
 \begin{align}
     \mathcal{L}_{\tau,i,t}(\lambda,\mu; \tau_{C_i},\tau_{D_i}, X_{it}) &= \textbf{1}_{t_{0_i} \leq t, \tau_{C_i} > t+\tau+1} \cdot \mathbb{P}_t(\tau_{C_i} > t + \tau + 1) \\ \nonumber
     &+ \textbf{1}_{t_{0_i} \leq t, \tau_{D_i}=\tau_{C_i} \leq t+\tau} \cdot \mathbb{P}_t(t+\tau < \tau_{D_i} = \tau_{C_i} \leq t + \tau + 1) \\ \nonumber
-    &+ \textbf{1}_{t_{0_i} \leq t, \tau_{C_i} \leq t+\tau, \tau_{D_i} \neq \tau_{C_i}} \cdot \mathbb{P}_t(t+\tau < \tau_{C_i} \neq \tau_{C_i} \leq t+\tau + 1) \\ \nonumber
+    &+ \textbf{1}_{t_{0_i} \leq t, \tau_{C_i} \leq t+\tau, \tau_{D_i} \neq \tau_{C_i}} \cdot \mathbb{P}_t(t+\tau < \tau_{D_i} \neq \tau_{C_i} \leq t+\tau + 1) \\ \nonumber
     &+ \textbf{1}_{t_{0_i}>t} + \textbf{1}_{\tau_{C_i} \leq t},
 \end{align}
 with
@@ -69,7 +69,7 @@ with
       \exp(-\sum\limits_{s=0}^{\tau_{C_i}-t-2}g_{it}(s)\Delta t) \times \\
           \qquad (1-\exp[-f_{it}(\tau_{C_i}-t-1)\Delta t], & \text{otherwise}
     \end{cases} \\
-    \mathbb{P}_t(t+\tau < \tau_{C_i} \neq \tau_{C_i} \leq t+\tau + 1)&=
+    \mathbb{P}_t(t+\tau < \tau_{D_i} \neq \tau_{C_i} \leq t+\tau + 1)&=
     \begin{cases}
       1-\exp(-g_{it}(0)\Delta t)- \\ 
       \qquad ( 1-\exp(-f_{it}(0)\Delta t)), & \text{if}\ \tau_{C_i} = t+1 \\
@@ -79,7 +79,7 @@ with
     \end{cases}
 \end{align}
 
-Since the indicator functions are all mutually exclusive, taking the log of the likelihood function is very helpful. After the log-linearization, the product terms become summation terms, and the two last indicator functions drop. We are left with the summation of the indicator functions times the logarithm of each probability defined above. Similar to the proposition 2 in \citet{DSW} and subsection 3.2 in \citet{Duan2012}, the pseudo log-likelihood is the product of seperate terms which are function of $f$ and $g$. The first decomposition consists of separating terms involving $f$ and terms involving $g$. The second decomposition consists on separating terms corresponding to different $\tau$. In the end, we get two likelihood functions to estimate for each horizon. For each horizon the parameters of the likelihood function involving $f$ are estimated in a neural network with output $N_{it}^{(\lambda)}$. $g$ is assumed to be of the form $f + h$ as in previous literature. The parameters of the likelihood function involving $h$ are estimated in a neural network with output $N_{it}^{(\mu)}$. Since $\exp(-f)-\exp(-g) = \exp(-f)-\exp(-f-h) = \exp(-f)*(1-\exp(-h))$, the first decomposition is the following :
+Since the indicator functions are all mutually exclusive, taking the log of the likelihood function is very helpful. After the log-linearization, the product terms become summation terms, and the two last indicator functions drop. We are left with the summation of the indicator functions times the logarithm of each probability defined above. Similar to the proposition 2 in \citet{DSW} and subsection 3.2 in \citet{Duan2012}, the pseudo log-likelihood is the product of seperate terms which are function of $f$ and $g$. The first decomposition consists of separating terms involving $f$ and terms involving $g$. The second decomposition consists of separating terms corresponding to different $\tau$. In the end, we get two likelihood functions to estimate for each horizon. For each horizon the parameters of the likelihood function involving $f$ are estimated in a neural network with output $N_{it}^{(\lambda)}$. The parameters of the likelihood function involving $h$ are estimated in a neural network with output $N_{it}^{(\mu)}$. The combined exit forward intensity $g$ is assumed to be of the form $f + h$ as in previous literature. Since $\exp(-f)-\exp(-g) = \exp(-f)-\exp(-f-h) = \exp(-f)*(1-\exp(-h))$, the first decomposition is the following :
 \begin{align}
     \mathcal{L}_{\tau,i,t}(\lambda; \tau_{C_i},\tau_{D_i}, X_{it}) &= \textbf{1}_{t_{0_i} \leq t, \tau_{C_i} > t+\tau+1} \cdot \exp(-\sum_{s=0}^{\tau} f_{it}(s)\Delta t) \\ \nonumber
     &+ \textbf{1}_{t_{0_i} \leq t, \tau_{D_i}=\tau_{C_i} \leq t+\tau} \cdot \exp(-\sum_{s=0}^{\tau_{C_i}-t-2} f_{it}(s)\Delta t) \cdot (1 - \exp(-f_{it}(\tau_{C_i}-t-1)\Delta t) \\ \nonumber
@@ -92,7 +92,7 @@ Since the indicator functions are all mutually exclusive, taking the log of the 
     &+ \textbf{1}_{t_{0_i} \leq t, \tau_{C_i} \leq t+\tau, \tau_{D_i} \neq \tau_{C_i}} \cdot \exp(-\sum_{s=0}^{\tau_{C_i}-t-2} h_{it}(s) \Delta t) \cdot (1-\exp(-h_{it}(\tau_{C_i}-t-1)) \\  \nonumber
     &+ \textbf{1}_{t_{0_i}>t} + \textbf{1}_{\tau_{C_i} \leq t}.
 \end{align}
-Similar to previous literature, we can still decompose the likelihoods into terms involving different horizon of prediction $\tau$. For each $\tau$, we can consider as constant all terms involving previous horizons forward intensities. After log-linearization, the second decomposition is the following :
+Similar to previous literature, we can still decompose the likelihoods into terms involving different horizons of prediction $\tau$. For each $\tau$, we can consider as constant all terms involving previous horizons forward intensities. After log-linearization, the second decomposition is the following :
 
 \begin{align}
     \mathcal{L}_{i,t}(\lambda; \tau_{C_i},\tau_{D_i}, X_{it}) &= \textbf{1}_{t_{0_i} \leq t, \tau_{C_i} > t+\tau+1} \cdot (-f_{it}(s)\Delta t)) \\ \nonumber
@@ -109,11 +109,11 @@ For all horizon of prediction s. We are now left with many small likelihoods tha
 
 \subsubsection{Distance-to-default}
 
-Let $V_T$ be the firm value at time T, $L$ the amount of debt to be repaid and $E_T$ the equity value at time T. In case of bankruptcy debt holders receive money before shareholders in case of bankruptcy. The payoff to shareholders is then given by $E_T = \max(V_T - L,0)$. This payoff is the same as a call option $E_T$ on the underlying $V_T$ with the strike being $L$. \citet{Merton1974} model considers $V_t$ is following a geometric Brownian motion :
+Let $V_T$ be the firm value at time $T$, $L$ the amount of debt to be repaid and $E_T$ the equity value at time $T$. In case of bankruptcy, debt holders receive money before shareholders. The payoff to shareholders is then given by $E_T = \max(V_T - L,0)$. This payoff is the same as a call option $E_T$ on the underlying $V_T$ with the strike being $L$. \citet{Merton1974} model considers that $V_t$ is following a geometric Brownian motion :
 \begin{equation*}
 dV_t = \mu V_t d_t + \sigma V_t dB_t.
 \end{equation*}
-We can then use Black-Scholes formula to get the option price and firm's equity value $E_t$ at any time t :
+We can then use Black-Scholes formula to get the option price and firm's equity value $E_t$ at any time $t$ :
 \begin{equation} \label{blackscholes}
 E_t = V_t N(d_t) - e^{-r(T-t)}\cdot L \cdot N(d_t - \sigma \sqrt{T-t}),
 \end{equation}
@@ -129,7 +129,7 @@ Note that similarly to the variance restriction method, $\mu$ cannot be estimate
 \begin{equation}
 DtD = \dfrac{\ln(\dfrac{V_A}{L})}{\sigma_A \sqrt{T-t}}.
 \end{equation}
-In the Figure \ref{fig:DD} taken from \citet{KMV}, the distance-to-default is denoted by ``DD". The higher the asset value at horizon H the greater the distance-to-default will get, which lowers the default probability since the firm is more likely to be able to repay the debt owed. Similarly, the more debt the firm has, the smaller the DtD will be for a given level of asset value.
+In Figure \ref{fig:DD} taken from \citet{KMV}, the distance-to-default is denoted by ``DD". The higher the asset value at horizon H the greater the distance-to-default will get, which lowers the default probability since the firm is more likely to be able to repay the debt owed. Similarly, the more debt the firm has, the smaller the DtD will be for a given level of asset value.
 
 \begin{figure}[h!]
 \centering
@@ -141,7 +141,7 @@ In the Figure \ref{fig:DD} taken from \citet{KMV}, the distance-to-default is de
 
 
 \subsubsection{Variance restriction method to estimate DtD}
-The variance restriction method is used in \citet{DSW} to estimate the distance-to-default (DtD). This method is based on \citet{Merton1974} model which states that firm's equity value can be seen as a call option on the underlying asset and the strike being the amount of debt. This holds because stockholders receive money only once debt holders are fully paid. \\
+The variance restriction method is used in \citet{DSW} to estimate the distance-to-default (DtD). This method is based on \citet{Merton1974} model which states that the firm's equity value can be seen as a call option on the underlying asset and the strike being the amount of debt. This holds because stockholders receive money only once debt holders are fully paid. \\
 Applying the Black-Scholes call option formula to equity value, we get the following :
 \begin{equation*}
 \left\{
@@ -170,7 +170,7 @@ Once $V_A$ and $\sigma_A$ are estimated, the DtD is defined as the distance betw
 \begin{equation}
 DtD = \dfrac{\ln(\dfrac{V_A}{L})+(\mu-\dfrac{\sigma_A^2}{2})(T-t)}{\sigma_A \sqrt{T-t}}.
 \end{equation}
-However, many papers agree to say that $\mu$ is very tedious to estimate. Hence, DtD is often computed as
+However, many papers agree that $\mu$ is very tedious to estimate. Hence, DtD is often computed as
 \begin{equation}
 DtD = \dfrac{\ln(\dfrac{V_A}{L})}{\sigma_A \sqrt{T-t}}.
 \end{equation}
@@ -184,13 +184,13 @@ The default point in this method becomes :
 \begin{equation}
 L = \text{short-term debt} + 0.5 \times \text{long-term debt} + \delta \times \text{other liabilities}.
 \end{equation}
-\citet{Duan2012} and \citet{Duan2012DTD} usually estimate $\delta$ for many firms altogether (i.e. $\delta$ for a whole industry). However, we will improve the methodology by computing $\delta$ for each firm individually. We should obtain higher deltas for financial firms than for non-financial firms. Estimating $\delta$ for each firm is highly time consuming because of greater computation time but it should highly improve the granularity and precision of the model.
+\citet{Duan2012} and \citet{Duan2012DTD} usually estimate $\delta$ for many firms altogether (i.e. $\delta$ for a whole industry). However, we improve the methodology by computing $\delta$ for each firm individually. We should obtain higher deltas for financial firms than for non-financial firms. Estimating $\delta$ for each firm is highly time consuming because of greater computation time but it should highly improve the granularity and precision of the model.
 The log-likelihood function is given in \citet{Duan2012} and \citet{Duan2012DTD} by :
 \begin{align*}
 \mathcal{L}_i(\mu,\sigma,\delta) &= -\dfrac{n-1}{2}\ln(2\pi) - \dfrac{1}{2}\sum_{t=2}^n \ln(\sigma^2h_t) - \sum_{t=2}^n \ln(\dfrac{\hat{V}_t(\sigma,\delta)}{A_t}) \\
 &-\sum_{t=2}^n \ln(N(\hat{d}_t(\sigma,\delta))) -\sum_{t=2}^n \dfrac{1}{2\sigma^2h_t} \times (\ln(\dfrac{\hat{V}_t(\sigma,\delta)}{\hat{V}_{t-1}(\sigma,\delta)}\cdot \dfrac{A_{t-1}}{A_t}-(\mu - \dfrac{\sigma^2}{2}))^2.
 \end{align*}
-where n is the number of period observations for each firm $i$. The likelihood above differs from \citet{Duan2012} and \citet{Duan2012DTD} because of the index $i$ since we estimate the likelihood for each of the 2099 firms in our sample to get 2099 estimations of $\delta$. Using this kind of likelihood is complex and very time consuming because we have to solve many inverse Black-Scholes formulas to get the time values of implied asset value $\hat{V}_t(\sigma,\delta)$ for each firm by solving equation \ref{blackscholes}. However, inverse Black-Scholes formula doesn't have any closed form solution. The optimization is even more tedious since the implied asset value $\hat{V}_t(\sigma,\delta)$ depends on the final output of the likelihood $\delta$. $A_t$ is the book asset value and $h_t$ is the ``length of time between two consecutive equity values measured in trading days as a fraction of a year". $h_t$ in the model is set to be 0.25 since we performed a linear interpolation when we had a missing value in the sample (see ``Missing information"). To get rid of the inverse Black-Scholes formula problem, I use a dichotomic algorithm to compute the time series of asset values.\\
+where n is the number of period observations for each firm $i$. The likelihood above differs from \citet{Duan2012} and \citet{Duan2012DTD} because of the index $i$ since we estimate the likelihood for each of the 2099 firms in our sample to get 2099 estimations of $\delta$. Using this kind of likelihood is complex and very time consuming because we have to solve many inverse Black-Scholes formulas to get the time values of implied asset value $\hat{V}_t(\sigma,\delta)$ for each firm by solving equation \ref{blackscholes}. However, inverse Black-Scholes formula does not have any closed form solution. The optimization is even more tedious since the implied asset value $\hat{V}_t(\sigma,\delta)$ depends on the final output of the likelihood $\delta$. $A_t$ is the book asset value and $h_t$ is the time interval as a fraction of a year between two observations. $h_t$ in the model is set to be 0.25 since we performed a linear interpolation when we had a missing value in the sample (see ``Missing information"). To get rid of the inverse Black-Scholes formula problem, I use a dichotomic algorithm to compute the time series of asset values.\\
 
 
 
@@ -339,10 +339,7 @@ This is equivalent to
 \end{align*}
 
 
-
-
-
-
+\begin{comment}
 \subsection{k-Nearest Neighbors estimator of mutual information}
 Suppose that $N+M$ i.i.d. realizations $\{\textbf{x}_1, ..., \textbf{x}_{N+M}\}$ are available from $\PP_{X,Y,Z}$, where $\textbf{x}_i$ denotes the $i$-th realization of $(X,Y,Z)$.
 The data is randomly divided into two subsets $\mathcal{S}_1$ and $\mathcal{S}_2$ of $N$ and $M$ points, respectively.  
@@ -356,15 +353,15 @@ $\mathcal{S}_2$. The k-nearest region is $\mathcal{S}_k(\textbf{x}) := \{\textbf
 &\widehat{\PP}_{X,Y,Z}(\textbf{x}):=\frac{k-1}{M\cdot V_k(\textbf{x})}.
 \end{align*}
 \end{small}
-Similarly, we obtain k-nearest density estimators $\widehat{\PP}_{X,Z}, \widehat{\PP}_{Y,Z}$, and $\widehat{\PP}_{Z}$.
+\noindent Similarly, we obtain k-nearest density estimators $\widehat{\PP}_{X,Z}, \widehat{\PP}_{Y,Z}$, and $\widehat{\PP}_{Z}$.
 Subsequently, the $N$ samples of $\mathcal{S}_1$ is used to approximate the conditional mutual information:
 \begin{small}
 \begin{align*}
 &\widehat{I}(X;Y|Z):=\frac{1}{N}\sum_{i\in \mathcal{S}_1} \log \widehat{\PP}_{X,Y,Z}(\textbf{x}_i) + \log \widehat{\PP}_{Z}(\textbf{x}_i) -\log \widehat{\PP}_{X,Z}(\textbf{x}_i) -\log \widehat{\PP}_{Y,Z}(\textbf{x}_i).
 \end{align*}
 \end{small}
-For more details corresponding this estimator including its bias, variance, and confidence, please see the works by \cite{sricharan2011k} and \cite{loftsgaarden1965nonparametric}.
-
+\noindent For more details corresponding this estimator including its bias, variance, and confidence, please see the works by \cite{sricharan2011k} and \cite{loftsgaarden1965nonparametric}.
+\end{comment}
 
 \subsection{Koopman-based Lifting Method}
 Let $\textbf{X}_t:=\{X_{1,t}, ..., X_{m,t}\}$ denote a network of $m$ time series such that 
