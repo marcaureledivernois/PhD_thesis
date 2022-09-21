@@ -10,7 +10,7 @@ A well-known time series causality measure used in econometrics is Granger-causa
 This is based on statistical analysis of the financial time series such as their stock prices over a finite time period. 
 Granger’s definition of causality states that a time serie $X$ is a cause of another time serie $Y$, if the one-step future forecast of $Y$ is more precise when the forecasting information set includes X. 
 Otherwise, when the forecast does not improve by including the information of $X$, then it is declared that $X$ does not cause $Y$.
-This idea is reflected in the information-theoretic measure that we use in this work to infer the causal interactions among a network of time series.  
+This idea is reflected in the information-theoretic measure that we use in this chapter to infer the causal interactions among a network of time series.  
 
 Most empirical applications of Granger-causality have been studied with Vector Autoregressive (VAR) models. 
 For instance, \citet{billio2012econometric} propose several measures based on Granger-causality to capture the interconnections between the returns of financial institutions on a monthly basis. 
@@ -103,10 +103,10 @@ One of the most popular and widely used frameworks in economics is the notion of
 generalized by \citet{granger}. We say that $X$ Granger-causes $Y$ if the prediction of the future of $Y$ is more precise using all available information (including $X$) than using all available information except $X$.
 
 This formulation was originally implemented using multivariate autoregressive (MVAR) models and linear regressions.
-In particular, let $\{X,Y,Z\}$ be three time series. In order to identify the influence of $X_t$ on $Y_t$, Granger's idea is to compare the performance of two linear regressions\footnote{Note that this formulation is only applicable in linear systems.}: the first one predicts $Y_t$ given $\{X^{t-1},Y^{t-1},Z^{t-1}\}$ and the second one predicts $Y_t$ given $\{Y^{t-1},Z^{t-1}\}$. If they have the same performance, then we say $X$ does not Granger-cause $Y$.
+In particular, let $\{X,Y,Z\}$ be three time series. In order to identify the influence of $X_t$ on $Y_t$, Granger's idea is to compare the performance of two linear regressions\footnote{Note that this formulation is only applicable in linear systems.}: the first one predicts $Y_t$ given $\{X^{t-1},Y^{t-1},Z^{t-1}\}$ and the second one predicts $Y_t$ given $\{Y^{t-1},Z^{t-1}\}$. If they perform similarly, then we say $X$ does not Granger-cause $Y$.
 
 To go beyond linear systems, works such as \citet{directed} and \citet{massey} use information-theoretical measures and generalize Granger-causality. 
-In this work, we introduce and apply directed information (see \citet{directed}), an information-theoretical tool to measure interconnections among firms.
+In this chapter, we introduce and apply directed information (see \citet{directed}), an information-theoretical tool to measure interconnections among firms.
 Directed information (DI) has been used in many applications to infer causal relationships. For example, \citet{spike} and \citet{di12} use it for analyzing neuroscience data and \citet{acc2014}  and \citet{etesami2018econometric} apply it to market data. 
 
 
@@ -125,6 +125,8 @@ Granger-causality states that to know whether $X$ influences $Y$ or not, we need
 The first predictor uses the history of all information available (i.e. $\{X,Y,Z\}$) while the second predictor uses only the history of $\{Y,Z\}$
 If the former performs better than the latter, $X$ has information on $Y$. However, if they perform equally, it is an indication that $X$ is not causing $Y$ in this time interval.
 To rigorously formalize this idea, we need the predictors and a measure to compare their performances.
+
+\clearpage
 
 In the definition of DI,  the predictors belong to the space of probability measures.  
 More precisely,  
@@ -155,18 +157,18 @@ where the expectation is taken over the joint density function\footnote{For the 
     \mathbb{E}[r_t]=\int p(y^{t},z^{t-1},x^{t-1})\log \frac{p(y_t|y^{t-1},z^{t-1},x^{t-1})}{p(y_t|y^{t-1},z^{t-1})}dy^tdx^{t-1}dz^{t-1}.
 \end{align}
 The average regret in \eqref{eq:ave} is the directed information (DI). We use it as the measure of causation in this chapter.
-This measure is always positive and if it is zero, it indicates that the history of time series $X$ contains no significant information that would help in predicting the future of time series $Y$ given the history of $Y$ and $Z$. 
-This definition can be generalized to more than three time series as follows,
+This measure is always positive and if it is zero, it is an indication that the history of the time serie $X$ does not contain significant information helping in the prediction of the time serie $Y$ given the past of the time series $Y$ and $Z$. 
+We can generalize this definition to more than three time series as follows,
 
 \clearpage
 
  \begin{definition}\label{cdi}
-Consider a network of $m$ time series $\mathcal{R}=\{R_1,...,R_m\}$ with the joint probability density function $p$. The directed information from $R_i$ to $R_j$ over time horizon $[1,T]$ is given by
+Consider a network of $m$ time series $\mathcal{R}=\{R_1,...,R_m\}$ with the joint probability density function $p$. The directed information from $R_i$ to $R_j$ over the time interval $[1,T]$ is given by
 \begin{align}\label{cdif}
 I(R_i\rightarrow R_j||\mathcal{R}_{-\{i,j\}}):=\frac{1}{T}\sum_{t=1}^T\mathbb{E}\left[\log\frac{p(R_{j,t}|\mathcal{R}^{t-1}_{-\{i,j\}},R_{j}^{t-1},R_{i}^{t-1})}{p(R_{j,t}|\mathcal{R}^{t-1}_{-\{i,j\}},R_{j}^{t-1})}\right],
 \end{align}
 where $\mathcal{R}_{-\{i,j\}}^{t-1}\!:=\!\{R_{1}^{t-1},...,R_{m}^{t-1}\}\!\setminus\!\{R_{i}^{t-1},R_{j}^{t-1}\}$.
-We declare $R_i$ influences $R_j$ over time horizon $[1,T]$, if and only if
+We say that $R_i$ has influence on $R_j$ over the time interval $[1,T]$, if and only if
 \begin{align}\label{cdif1}
 I(R_i\rightarrow R_j||\mathcal{R}_{-\{i,j\}})>0.
 \end{align}
@@ -174,14 +176,14 @@ I(R_i\rightarrow R_j||\mathcal{R}_{-\{i,j\}})>0.
  
 An interpretation of $R_i$ influencing $R_j$ is that varying $R_i$ will change the value of $R_j$ even if all the other variables within the network remains unchanged. 
  In another words, if $R_i$ does not influence $R_j$, then varying $R_i$ would not change $R_j$ when the values of the remaining times series are fixed. 
- This can be seen from the fact that DI compares two conditional distributions of $R_j$ over a time horizon of length $T$; one is given the history of all the time series while the other one is given all the history except the history of $R_i$. Thus, if DI in \eqref{cdif} is zero, then these two conditional distributions are equal over this time horizon. This implies that the history of $R_i$ does not contain any useful information for $R_j$.  
+ This can be seen from the fact that DI compares two conditional distributions of $R_j$ over a time horizon of length $T$; one is conditioned on the past of all time series while the other one is conditioned on all the history except $R_i$. Thus, if DI in \eqref{cdif} is zero, then these two conditional distributions are equal over this time horizon. This implies that the history of $R_i$ does not contain any useful information for $R_j$.  
  
  
-Note that the definition of DI does not rely on any model assumption, thus DI is capable of inferring the causal relationships in general (linear or non-linear) dynamical systems. Next, we define the graphical model that we use in this work to visualize the causal network among firms.
+Note that the definition of DI does not rely on any model assumption, thus DI is capable of inferring the causal relationships in general (linear or non-linear) dynamical systems. Next, we define the graphical model that we use in this chapter to visualize the causal network among firms.
 
 
 \begin{definition}\label{DIG1}
-Directed information graph (DIG) of a set of $m$ time series $\mathcal{R}=\{R_1,...,R_m\}$ is a directed graph $G=(\mathcal{V},\mathcal{E})$, where nodes represent time series ($\mathcal{V}=\mathcal{R}$) and arrow $(R_i,R_j)\in \mathcal{E}$ denotes that $R_i$ influences $R_j$. 
+We denote by DIG the directed information graph of a set of $m$ time series $\mathcal{R}=\{R_1,...,R_m\}$ which consists of a directed graph $G=(\mathcal{V},\mathcal{E})$, where $\mathcal{V}$ stands for the set of nodes representing time series $\mathcal{R}$ while $\mathcal{E}$ stands for the set of arrows indicating influences between time series (i.e. an arrow from $R_i$ to  $R_j$ indicates that $R_i$ has an influence on $R_j$). 
 %with weight $w_{i,j}:=I(R_i\rightarrow R_j||\mathcal{R}_{-\{i,j\}})$. 
 %Consequently, $(R_i,R_j)\notin \mathcal{E}$ if and only if its corresponding weight is zero.
 \end{definition} 
@@ -331,7 +333,7 @@ This method reduces the size of the conditioning set in \eqref{cdif} to some con
 Although, this approach improves upon the approximation error but there is still a trade-off between the sample complexity and the approximation error. In another words, as the in-degree bound increases, the sample complexity increases but the approximation error decreases.
 
 
-In this work, we propose a new method that reduces the size of the conditioning set in \eqref{cdif} to only one for any given network while introducing less approximation error compared to the prior works. 
+In this chapter, we propose a new method that reduces the size of the conditioning set in \eqref{cdif} to only one for any given network while introducing less approximation error compared to the prior works. 
 In this method, we estimate the directed information from $R_i$ to $R_j$ by conditioning on an auxiliary time series. This auxiliary time series is defined such that it comprises the information that the remaining of the network $\mathcal{R}_{-\{i,j\}}$ has about $R_j$.
 Next section explains this idea in more details.
 
@@ -486,9 +488,10 @@ To overcome such shortcomings, we propose an alternative approach to estimate $Q
  They are distinguished by their memory as they are able to remember information from prior inputs to influence their current outputs.
  The universal approximation theorem states that a neural network with enough hidden layers can approximate any non-linear continuous function such as $F_j(\cdot)$ in \eqref{nonlinear} (see \citet{HORNIK1989359}). 
  
- Given the aforementioned result, we train a RNN using the observational data to estimate the time series $Q$ defined in Lemma \ref{lemma:nonlinear}.
- More precisely, our RNN maps $\mathcal{X}_{-\{i\}}^{t-1}$ as the inputs to $X_{j,t}$ as the output. 
- Let $R_j(\mathcal{X}_{-\{i\}}^{t-1};\Theta^*)$ denotes the trained RNN with parameters $\Theta^*$. 
+Given the aforementioned result, we train a RNN with LSTM layers using the observational data to estimate the time series $Q$ defined in Lemma \ref{lemma:nonlinear}.
+ More precisely, our RNN maps $\mathcal{X}_{-\{i\}}^{t-1}$ as the inputs to $X_{j,t}$ as the output. We choose the architecture of the network to be pyramid-like. That is, the width of layer $k$ is strictly bigger than the width of layer $k+1$. The pyramidal structure is known to retain and improve accuracy while reducing the number of parameters (see \citet{ullah2016pyramid} and \citet{TRIPATHY2018565}). In our case, the first hidden layer has 100 units, the second hidden layer has 50 units, the third hidden layer has 40 units and the fourth hidden layer has 30 units. In every layer, the activation function that we use for the recurrent step (i.e. : forget, input and output gates) is the sigmoid function while the activation function for the cell and hidden states is the hyperbolic tangent. Finally, to avoid overfitting and to allow the network to generalize better on out-of-sample data, we use dropout on every layer. Dropout is a regularization technique often used in neural networks where connections within the LSTM network are randomly selected and excluded from updates in the training process. This has the effect of introducing noise in the training process because every training step is performed with a different network layout and it allows more nodes to be involved. In our case, the fraction of units that we drop (i.e : the dropout rate) in each layer is 0.5, 0.3, 0.2, 0.1, respectively.
+ 
+Let $R_j(\mathcal{X}_{-\{i\}}^{t-1};\Theta^*)$ denotes the trained RNN with parameters $\Theta^*$. 
  In this case, the time series $Q$ can be written as  $Q_{t-1}=R_{j}(\mathcal{X}_{-\{i\}}^{t-1};\Theta^*)$.
  Finally, we use \eqref{eq:non-q} to detect whether $X_i$ has influence on $X_j$ or not. 
  Algorithm \ref{alg}  summarizes the steps of our RNN method.
@@ -566,7 +569,10 @@ Once the matrix $\textbf{A}$ is defined, we simulate the time series using \eqre
 \end{figure}
 
 To study the effect of the conditioning set on detecting the influences, in our experiments, we consider four different conditioning sets.
-More precisely, to measure whether asset $i$ influences asset $j$, we estimate $I(X_i\rightarrow X_j||\mathcal{C}_j)$ for the following choices of the conditioning set; 
+More precisely, to measure whether asset $i$ influences asset $j$, we estimate $I(X_i\rightarrow X_j||\mathcal{C}_j)$ for the following choices of the conditioning set:
+
+\clearpage 
+
 \begin{enumerate}
     \item \textit{True parents:} In this approach, we select $\mathcal{C}_j$ to be the true parents of $X_j$ excluding $X_i$, i.e., $\mathcal{C}_j=\mathcal{PA}_{j}\setminus\{X_i\}$.
     Note that this approach is not practical\footnote{This is because in structural learning problems, we do not know the true parents of each asset. In another words, if we had access to the true parents of each asset, we would have the DIG of the system and there is no need to compute the DIs.} and we use it only as the benchmark to better understand the performances of the other approaches. 
@@ -713,6 +719,8 @@ where $P_{i,t}$ denotes the stock price of the firm $i$ at time $t$ and $r_{t}$ 
 Afterwards, we apply Algorithm \ref{alg} with the excess returns as the input to estimate the corresponding DIG of each subset. 
 We use the k-nearest neighbor method to estimate the DIs.
 We define the threshold $\alpha$ to be the unconditional mean across the estimated DIs. Note that in this experiment, the true DIGs of the market are not known, hence, we could not compute the precision-recall curves.
+
+\clearpage
 
 For the sake of presentation, instead of the complete DIGs with 1000 nodes, we draw the sub-graphs consisting of the 30 largest firms in Figures\footnote{For a better presentation, interactive plots are available at https://marcaureledivernois.github.io/firm-network/} \ref{empdig1}, \ref{empdig2}, and \ref{empdig3} . 
 Each graph consists of 60 nodes illustrating the cause firm on the top hemisphere and the effect firm on the bottom hemisphere.
